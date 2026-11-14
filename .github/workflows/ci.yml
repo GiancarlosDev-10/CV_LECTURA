@@ -1,0 +1,51 @@
+# Integración continua (CI): GitHub ejecuta este archivo en sus servidores
+# cada vez que se hace push o se abre un pull request hacia main.
+# Cada ejecución queda registrada (fecha, resultado ✅/❌, reportes) en la
+# pestaña "Actions" del repositorio → evidencia de control continuo (E06, E09).
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  calidad:
+    name: Lint, tipos y pruebas
+    runs-on: ubuntu-latest # máquina Linux temporal que GitHub presta gratis
+
+    steps:
+      # 1. Descarga el código del repositorio en la máquina temporal
+      - uses: actions/checkout@v4
+
+      # 2. Instala Node.js (misma versión mayor que en tu PC) con caché de npm
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # 3. Instala las dependencias exactas de package-lock.json
+      - run: npm ci
+
+      # 4. Análisis estático + regla de capas (RQ-MAN-03): falla si hay violaciones
+      - name: ESLint
+        run: npm run lint
+
+      # 5. Verificación de tipos de TypeScript
+      - name: TypeScript
+        run: npm run typecheck
+
+      # 6. Pruebas unitarias con cobertura (RQ-MAN-01): falla si baja del 80 %
+      - name: Vitest con cobertura
+        run: npm run test:coverage
+
+      # 7. Guarda el reporte de cobertura como artefacto descargable (evidencia EV-xxx)
+      - name: Publicar reporte de cobertura
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-cobertura
+          path: coverage/
+          retention-days: 90
