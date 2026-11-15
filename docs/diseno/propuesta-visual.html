@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es" data-paleta="a" data-tipo="a">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta visual — CV Lectura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Neutros (comunes) */
+    --texto: #0F172A; --texto-2: #475569; --borde: #E2E8F0; --fondo: #F8FAFC; --superficie: #FFFFFF;
+    /* Semánticos (comunes, todos ≥ 5:1 sobre blanco) */
+    --exito: #15803D; --aviso: #B45309; --error: #B91C1C; --info: #1D4ED8;
+  }
+  html[data-paleta="a"] { --prim: #4338CA; --prim-osc: #3730A3; --acento: #0E7490; }
+  html[data-paleta="b"] { --prim: #0F766E; --prim-osc: #115E59; --acento: #B45309; }
+  html[data-paleta="c"] { --prim: #1E3A5F; --prim-osc: #172E4B; --acento: #C2410C; }
+
+  html[data-tipo="a"] { --f-titulo: "Plus Jakarta Sans", sans-serif; --f-texto: "Inter", sans-serif; }
+  html[data-tipo="b"] { --f-titulo: "Geist", sans-serif;             --f-texto: "Geist", sans-serif; }
+  html[data-tipo="c"] { --f-titulo: "Inter", sans-serif;             --f-texto: "Inter", sans-serif; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--texto); font-family: var(--f-texto); font-size: 15px; line-height: 1.55; }
+  h1, h2, h3, .marca { font-family: var(--f-titulo); letter-spacing: -0.015em; margin: 0; }
+  .num { font-variant-numeric: tabular-nums; }
+
+  /* Selector de propuesta */
+  .control { position: sticky; top: 0; z-index: 5; background: #0F172A; color: #fff; padding: 10px 24px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; font-family: Inter, sans-serif; font-size: 13px; }
+  .control b { font-weight: 600; margin-right: 6px; }
+  .control button { background: transparent; color: #CBD5E1; border: 1px solid #334155; padding: 5px 10px; border-radius: 6px; cursor: pointer; font: inherit; }
+  .control button[aria-pressed="true"] { background: #fff; color: #0F172A; border-color: #fff; }
+
+  /* App */
+  header.app { background: var(--superficie); border-bottom: 1px solid var(--borde); padding: 14px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .marca { font-size: 20px; font-weight: 800; color: var(--prim); }
+  .marca span { color: var(--texto); font-weight: 600; }
+  nav a { color: var(--texto-2); text-decoration: none; margin-left: 22px; font-weight: 500; }
+  nav a.activo { color: var(--prim); }
+  main { max-width: 1080px; margin: 0 auto; padding: 32px 24px 64px; display: grid; gap: 28px; }
+  .tarjeta { background: var(--superficie); border: 1px solid var(--borde); border-radius: 12px; padding: 24px; }
+  .etiqueta-seccion { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--texto-2); margin-bottom: 14px; }
+
+  /* Tipografía */
+  .escala h1 { font-size: 34px; font-weight: 800; line-height: 1.15; }
+  .escala h2 { font-size: 24px; font-weight: 700; margin-top: 14px; }
+  .escala h3 { font-size: 18px; font-weight: 600; margin-top: 12px; }
+  .escala p { margin: 10px 0 0; max-width: 68ch; }
+  .escala .pequeno { font-size: 13px; color: var(--texto-2); }
+
+  /* Colores */
+  .muestras { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .muestra { border: 1px solid var(--borde); border-radius: 10px; overflow: hidden; font-size: 13px; }
+  .muestra .color { height: 64px; display: flex; align-items: flex-end; padding: 8px; color: #fff; font-weight: 600; }
+  .muestra .datos { padding: 8px 10px; }
+  .muestra .datos code { color: var(--texto-2); }
+
+  /* Componentes */
+  .fila { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .btn { font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; }
+  .btn-prim { background: var(--prim); color: #fff; }
+  .btn-prim:hover { background: var(--prim-osc); }
+  .btn-sec { background: var(--superficie); color: var(--prim); border-color: var(--prim); }
+  .btn-fant { background: transparent; color: var(--texto-2); }
+  .btn:focus-visible, input:focus-visible { outline: 3px solid color-mix(in srgb, var(--prim) 45%, transparent); outline-offset: 2px; }
+  label { font-weight: 600; font-size: 14px; display: block; margin-bottom: 6px; }
+  input[type=text] { font: inherit; width: 320px; max-width: 100%; padding: 9px 12px; border: 1px solid #CBD5E1; border-radius: 8px; }
+  .ayuda { font-size: 13px; color: var(--texto-2); margin-top: 4px; }
+
+  .estado { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid; }
+  .estado::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .e-ok    { color: var(--exito);  background: color-mix(in srgb, var(--exito) 8%, white);  border-color: color-mix(in srgb, var(--exito) 30%, white); }
+  .e-ia    { color: var(--acento); background: color-mix(in srgb, var(--acento) 8%, white); border-color: color-mix(in srgb, var(--acento) 30%, white); }
+  .e-rev   { color: var(--aviso);  background: color-mix(in srgb, var(--aviso) 8%, white);  border-color: color-mix(in srgb, var(--aviso) 30%, white); }
+  .e-err   { color: var(--error);  background: color-mix(in srgb, var(--error) 8%, white);  border-color: color-mix(in srgb, var(--error) 30%, white); }
+
+  .advertencia { display: flex; gap: 12px; padding: 14px 16px; border-radius: 10px; background: color-mix(in srgb, var(--info) 6%, white); border: 1px solid color-mix(in srgb, var(--info) 25%, white); color: #1E3A8A; font-size: 14px; }
+  .advertencia strong { display: block; }
+
+  /* Ranking */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--texto-2); font-weight: 600; padding: 10px 12px; border-bottom: 1px solid var(--borde); }
+  td { padding: 12px; border-bottom: 1px solid var(--borde); vertical-align: middle; }
+  tr:last-child td { border-bottom: 0; }
+  .pos { color: var(--texto-2); width: 36px; }
+  .nombre { font-weight: 600; }
+  .sub { font-size: 13px; color: var(--texto-2); }
+  /* Escala de un solo color: el color nunca es la única señal (siempre va el número) */
+  .puntaje { display: inline-block; min-width: 64px; text-align: center; font-weight: 700; padding: 4px 10px; border-radius: 8px; }
+  .p-alto  { background: var(--prim); color: #fff; }
+  .p-medio { background: color-mix(in srgb, var(--prim) 18%, white); color: var(--prim-osc); }
+  .p-bajo  { background: #F1F5F9; color: var(--texto-2); border: 1px solid var(--borde); }
+  .barra { height: 6px; background: #EEF2F7; border-radius: 99px; overflow: hidden; width: 120px; }
+  .barra > span { display: block; height: 100%; background: var(--prim); }
+  .sin-puntaje { color: var(--texto-2); font-style: italic; }
+  .nota { font-size: 13px; color: var(--texto-2); margin-top: 12px; }
+</style>
+</head>
+<body>
+
+<div class="control" role="toolbar" aria-label="Elegir propuesta">
+  <div><b>Paleta</b>
+    <button data-paleta="a" aria-pressed="true">A · Índigo</button>
+    <button data-paleta="b" aria-pressed="false">B · Teal</button>
+    <button data-paleta="c" aria-pressed="false">C · Marino</button>
+  </div>
+  <div><b>Tipografía</b>
+    <button data-tipo="a" aria-pressed="true">(a) Jakarta + Inter</button>
+    <button data-tipo="b" aria-pressed="false">(b) Geist</button>
+    <button data-tipo="c" aria-pressed="false">(c) Inter</button>
+  </div>
+</div>
+
+<header class="app">
+  <div class="marca">CV<span> Lectura</span></div>
+  <nav><a href="#" class="activo">Mis ofertas</a><a href="#">Nueva oferta</a><a href="#">Cerrar sesión</a></nav>
+</header>
+
+<main>
+  <section class="tarjeta escala">
+    <div class="etiqueta-seccion">Tipografía</div>
+    <h1>Desarrollador Full Stack Junior</h1>
+    <h2>Ranking de postulantes</h2>
+    <h3>Requisitos de la oferta</h3>
+    <p>Buscamos una persona con experiencia en JavaScript, React y Node.js para el desarrollo de aplicaciones web. Áreas: diseño, programación y despliegue. Ñandú, acción, compañía — prueba de tildes y eñes.</p>
+    <p class="pequeno">Texto secundario · Publicada el 14/11/2026 · 12 postulaciones</p>
+    <p class="num" style="font-size:22px;font-weight:700;margin-top:14px">100,00 · 87,50 · 61,25 · 9,75</p>
+    <p class="pequeno">↑ Números tabulares: todos ocupan el mismo ancho y se alinean en columnas.</p>
+  </section>
+
+  <section class="tarjeta">
+    <div class="etiqueta-seccion">Colores (contraste medido sobre blanco · mínimo AA = 4,5:1)</div>
+    <div class="muestras" id="muestras"></div>
+  </section>
+
+  <section class="tarjeta">
+    <div class="etiqueta-seccion">Componentes</div>
+    <div class="fila">
+      <button class="btn btn-prim">Publicar oferta</button>
+      <button class="btn btn-sec">Ver CV</button>
+      <button class="btn btn-fant">Cancelar</button>
+    </div>
+    <div style="margin-top:20px">
+      <label for="titulo">Título de la oferta</label>
+      <input id="titulo" type="text" value="Analista de Datos">
+      <div class="ayuda">Entre 3 y 150 caracteres.</div>
+    </div>
+    <div class="fila" style="margin-top:20px">
+      <span class="estado e-ok">Procesada</span>
+      <span class="estado e-ia">Procesando con IA</span>
+      <span class="estado e-rev">Pendiente de revisión manual</span>
+      <span class="estado e-err">Error del sistema</span>
+    </div>
+  </section>
+
+  <section class="tarjeta">
+    <div class="etiqueta-seccion">Ranking (datos ficticios)</div>
+    <div class="advertencia" role="note">
+      <span aria-hidden="true">ⓘ</span>
+      <div><strong>El puntaje es un apoyo, no una decisión.</strong>Se calcula con una fórmula fija a partir de los datos que la IA extrajo del CV. Revisa cada perfil antes de decidir.</div>
+    </div>
+    <table style="margin-top:16px">
+      <thead><tr><th>#</th><th>Postulante</th><th>Puntaje</th><th>Ajuste</th><th>Estado</th></tr></thead>
+      <tbody>
+        <tr><td class="pos num">1</td><td><div class="nombre">Ana Torres</div><div class="sub">4 años · Universitario · Inglés C1</div></td><td><span class="puntaje p-alto num">92,50</span></td><td><div class="barra"><span style="width:92.5%"></span></div></td><td><span class="estado e-ok">Procesada</span></td></tr>
+        <tr><td class="pos num">2</td><td><div class="nombre">Luis Quispe</div><div class="sub">3 años · Técnico · Inglés B1</div></td><td><span class="puntaje p-medio num">71,25</span></td><td><div class="barra"><span style="width:71.25%"></span></div></td><td><span class="estado e-ok">Procesada</span></td></tr>
+        <tr><td class="pos num">3</td><td><div class="nombre">María Huamán</div><div class="sub">1 año · Técnico</div></td><td><span class="puntaje p-bajo num">38,00</span></td><td><div class="barra"><span style="width:38%"></span></div></td><td><span class="estado e-ok">Procesada</span></td></tr>
+        <tr><td class="pos">—</td><td><div class="nombre">Jorge Rojas</div><div class="sub">El PDF no tiene texto seleccionable</div></td><td><span class="sin-puntaje">Sin puntaje</span></td><td></td><td><span class="estado e-rev">Pendiente de revisión manual</span></td></tr>
+        <tr><td class="pos">—</td><td><div class="nombre">Carla Mendoza</div><div class="sub">Recibida hace 5 s</div></td><td><span class="sin-puntaje">Calculando…</span></td><td></td><td><span class="estado e-ia">Procesando con IA</span></td></tr>
+      </tbody>
+    </table>
+    <p class="nota">Escala de un solo color: el tono indica el rango (alto ≥ 80 · medio 50–79 · bajo &lt; 50), pero siempre va el número. Los puntajes bajos no se pintan de rojo; el rojo queda para errores del sistema.</p>
+  </section>
+</main>
+
+<script>
+  const html = document.documentElement;
+  const L = h => { const c = [1,3,5].map(i => parseInt(h.slice(i,i+2),16)/255).map(v => v<=0.03928 ? v/12.92 : ((v+0.055)/1.055)**2.4); return 0.2126*c[0]+0.7152*c[1]+0.0722*c[2]; };
+  const contraste = h => ((1.05)/(L(h)+0.05)).toFixed(2);
+  const nivel = r => r >= 7 ? "AAA" : r >= 4.5 ? "AA" : "✗";
+
+  function pintarMuestras() {
+    const css = getComputedStyle(html);
+    const items = [["Primario","--prim"],["Primario oscuro","--prim-osc"],["Acento","--acento"],["Texto","--texto"],["Texto secundario","--texto-2"],["Éxito","--exito"],["Aviso / revisión","--aviso"],["Error","--error"],["Información","--info"]];
+    document.getElementById("muestras").innerHTML = items.map(([nombre, v]) => {
+      const hex = css.getPropertyValue(v).trim(); const r = contraste(hex);
+      return `<div class="muestra"><div class="color" style="background:${hex}">${nombre}</div><div class="datos"><code>${hex}</code><br><span class="num">${r.replace(".", ",")}:1 · ${nivel(r)}</span></div></div>`;
+    }).join("");
+  }
+
+  document.querySelectorAll(".control button").forEach(b => b.addEventListener("click", () => {
+    const clave = b.dataset.paleta ? "paleta" : "tipo";
+    html.dataset[clave] = b.dataset[clave];
+    document.querySelectorAll(`.control button[data-${clave}]`).forEach(o => o.setAttribute("aria-pressed", o === b));
+    pintarMuestras();
+  }));
+  pintarMuestras();
+</script>
+</body>
+</html>

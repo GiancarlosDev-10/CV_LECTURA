@@ -51,6 +51,26 @@ export interface RepositorioPostulaciones {
   marcarRevisionManual(id: string, revision: RevisionManual): Promise<void>;
 }
 
+export interface NuevaPostulacion {
+  id: string;
+  ofertaId: string;
+  postulanteId: string;
+  rutaCv: string;
+  consentimientoVersion: string;
+  consentimientoEn: Date;
+}
+
+/** Operaciones del postulante sobre sus propios datos (con su sesión: pasan por la RLS). */
+export interface DatosDelPostulante {
+  leerInicioDelCv(ruta: string, bytes: number): Promise<Uint8Array | null>;
+  crearPostulacion(p: NuevaPostulacion): Promise<"creada" | "duplicada" | "oferta_no_disponible">;
+  rutaDelCv(postulacionId: string): Promise<string | null>;
+  rutasDeTodosMisCv(): Promise<string[]>;
+  eliminarArchivos(rutas: string[]): Promise<void>;
+  eliminarPostulacion(postulacionId: string): Promise<void>;
+  eliminarCuenta(): Promise<void>;
+}
+
 export class ErrorPdfIlegible extends Error {
   constructor(causa?: unknown) {
     super("No se pudo leer el PDF", { cause: causa });

@@ -109,10 +109,23 @@ Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 | Acceso a datos | `supabase-js` con tipos generados (**sin Prisma**, porque se saltaría la RLS) | — |
 | PDF → texto | **unpdf** | Determinista, se prueba aparte del LLM |
 | IA | **OpenAI** (modelo *mini*, versión exacta fijada, temperatura 0) + **Zod** | Salida validada; fallos registrados |
+| Subida del PDF | **Directa del navegador a Supabase Storage** (bucket privado: RLS por carpeta del postulante, solo `application/pdf`, máx. 5 MB). El servidor luego verifica la **firma real** `%PDF-` antes de registrar la postulación | Evita el límite de ~4,5 MB por petición de Vercel y el de 1 MB de las Server Actions; tres capas de validación verificables por separado |
 | Procesamiento | Asíncrono con `after()` de Next.js y marcas de tiempo en BD | Tiempo por CV medido desde la BD |
 | Pruebas | Vitest + cobertura, Playwright (4 navegadores), k6, OWASP ZAP, ESLint, SonarQube Community | Cada herramienta genera un reporte que sirve de evidencia |
 | Gestión | GitHub, **GitHub Actions**, **Trello** | Historial, CI y cumplimiento de plazos |
 | Monitoreo | UptimeRobot (o similar, gratuito) | Disponibilidad (RQ-FIA-02) |
+
+### 4.1 Diseño visual
+Decidido con la muestra comparativa [docs/diseno/propuesta-visual.html](diseno/propuesta-visual.html).
+
+| Elemento | Decisión |
+|---|---|
+| Tipografía | **Geist** (texto y títulos) y Geist Mono, con `next/font`; números tabulares en puntajes |
+| Paleta | **Índigo**: primario `#4338CA` (7,90:1, AAA), acento `#0E7490`, neutros *slate* |
+| Semánticos | éxito `#15803D`, aviso `#B45309`, error `#B91C1C`, información `#1D4ED8` (todos ≥ 5:1, AA) |
+| Puntaje | Escala de **un solo color** (alto ≥ 80, medio 50–79, bajo < 50) **siempre con el número** (WCAG 1.4.1). Los puntajes bajos no van en rojo; el rojo se reserva para errores del sistema |
+| Modo oscuro | Fuera de alcance (mejora futura en E13) |
+| Tokens | `src/app/globals.css` (`@theme` de Tailwind v4) |
 
 **Diferencia con el enunciado** (se justifica en E01): se mantienen Next.js, OpenAI, PostgreSQL y Vercel. **FastAPI (Python) y Render se reemplazan** por Route Handlers de Next.js para tener un solo lenguaje, una sola cadena de pruebas y un solo despliegue. **MarkItDown** queda como candidata de acción de mejora (AM) si la medición de extracción no alcanza el umbral.
 
@@ -396,6 +409,8 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 | Q22 | Hexagonal + Clean Architecture pragmática, capas en español, carpeta `infraestructura/` |
 | Q23 | Desarrollo local: Next.js en la PC + Supabase dev en la nube (sin Docker); migraciones y seed en el repo; despliegue a prod a más tardar el 24/11 |
 | Q24 | Cuenta de Supabase nueva y dedicada al proyecto, con 2 proyectos (dev y prod) en São Paulo; no se pausan los proyectos existentes |
+| Q25/Q26 (repo) | Repositorio público; `docs/curso/` excluido |
+| Q26–Q29 (diseño) | Geist + paleta Índigo; puntaje con escala de un solo color más el número; solo modo claro |
 
 ---
 

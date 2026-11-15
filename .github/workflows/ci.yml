@@ -18,10 +18,10 @@ jobs:
 
     steps:
       # 1. Descarga el código del repositorio en la máquina temporal
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # 2. Instala Node.js (misma versión mayor que en tu PC) con caché de npm
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: npm
@@ -44,7 +44,7 @@ jobs:
       # 7. Guarda el reporte de cobertura como artefacto descargable (evidencia EV-xxx)
       - name: Publicar reporte de cobertura
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: reporte-cobertura
           path: coverage/

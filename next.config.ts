@@ -1,9 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  // cacheComponents/partialPrefetching (activados por create-next-app) se desactivan:
+  // todas las páginas dependen de la sesión del usuario y se renderizan por petición.
   turbopack: {
     rules: {
       "*.css": {
