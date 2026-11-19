@@ -1,21 +1,30 @@
 /**
- * Reinicia los datos de prueba del proyecto Supabase DEV (npm run seed).
- * Crea 2 reclutadores, 3 postulantes y 3 ofertas. Todos los datos son ficticios
- * (dominio example.com). Nunca ejecutar contra prod.
+ * Reinicia los datos de prueba de un proyecto Supabase (npm run seed).
+ * Crea 2 reclutadores, 3 postulantes y 3 ofertas. Todos los datos son ficticios (dominio example.com).
+ * Dev:  SEED_PERMITIR=dev npm run seed
+ * Prod: SEED_ARCHIVO_ENV=.env.prod.local SEED_PERMITIR=prod npm run seed  (contraseña privada SEED_CLAVE)
  */
 import { createClient } from "@supabase/supabase-js";
 import { PESOS_POR_DEFECTO, RequisitosOfertaSchema, type RequisitosOferta } from "../src/dominio/entidades/oferta";
 
-process.loadEnvFile?.(".env.local");
+// Por defecto .env.local (dev). Para prod: SEED_ARCHIVO_ENV=.env.prod.local SEED_PERMITIR=prod
+process.loadEnvFile?.(process.env.SEED_ARCHIVO_ENV ?? ".env.local");
 
 const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
 const claveSecreta = process.env.SUPABASE_SECRET_KEY;
-if (!url || !claveSecreta) {
-  console.error("Faltan NEXT_PUBLIC_SUPABASE_URL o SUPABASE_SECRET_KEY en .env.local");
+const entorno = process.env.ENTORNO ?? "";
+if (!url || !claveSecreta || !entorno) {
+  console.error("Faltan NEXT_PUBLIC_SUPABASE_URL, SUPABASE_SECRET_KEY o ENTORNO en el archivo de entorno");
   process.exit(1);
 }
-if (process.env.SEED_PERMITIR !== "dev") {
-  console.error('Por seguridad, ejecuta con SEED_PERMITIR=dev (confirma que .env.local apunta al proyecto DEV).');
+// Doble confirmación: el entorno declarado en el archivo debe coincidir con el que se autoriza
+if (process.env.SEED_PERMITIR !== entorno) {
+  console.error(`Por seguridad, ejecuta con SEED_PERMITIR=${entorno} (confirma que el archivo apunta a ${entorno}).`);
+  process.exit(1);
+}
+// En prod la contraseña de las cuentas de prueba NO puede ser la publicada en el repo
+if (entorno === "prod" && !process.env.SEED_CLAVE) {
+  console.error("En prod se requiere SEED_CLAVE (contraseña privada de las cuentas de prueba).");
   process.exit(1);
 }
 
@@ -105,7 +114,7 @@ async function crearUsuario(email: string, nombre: string): Promise<string> {
 }
 
 async function main() {
-  console.log("Seed DEV →", url);
+  console.log(`Seed ${entorno.toUpperCase()} →`, url);
   await eliminarUsuariosDePrueba();
 
   const idsReclutadores: string[] = [];
@@ -128,7 +137,11 @@ async function main() {
   if (error) throw error;
 
   console.log(`  ${RECLUTADORES.length} reclutadores, ${POSTULANTES.length} postulantes, ${OFERTAS.length} ofertas`);
-  console.log(`  contraseña de todas las cuentas de prueba: ${CLAVE_PRUEBA}`);
+  console.log(
+    entorno === "prod"
+      ? "  contraseña de las cuentas de prueba: la de SEED_CLAVE en .env.prod.local"
+      : `  contraseña de todas las cuentas de prueba: ${CLAVE_PRUEBA}`,
+  );
 }
 
 main().catch((error) => {

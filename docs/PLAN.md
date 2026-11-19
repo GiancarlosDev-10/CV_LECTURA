@@ -115,6 +115,15 @@ Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 | Gestión | GitHub, **GitHub Actions**, **Trello** | Historial, CI y cumplimiento de plazos |
 | Monitoreo | UptimeRobot (o similar, gratuito) | Disponibilidad (RQ-FIA-02) |
 
+### 4.0 Entornos
+| Entorno | App | Supabase | Uso |
+|---|---|---|---|
+| Dev | `npm run dev` (local) | `cv-lectura-dev` (`qbymvaranqjoduwmlyqg`, São Paulo) | Desarrollo y pruebas automatizadas |
+| **Prod (evaluado)** | **https://cv-lectura.vercel.app** (Vercel, región `gru1` São Paulo; despliegue automático desde `main`) | `cv-lectura-prod` (`bgisdgiwgnetntasvctf`, São Paulo) | **Todas las mediciones oficiales** |
+
+- Prod creado por CLI el 15/11/2026; migraciones idénticas a dev (incluido el refuerzo explícito de privilegios). Las 20 pruebas de integración pasan contra prod.
+- Las cuentas de prueba de prod usan una **contraseña privada** (no la publicada para dev).
+
 ### 4.1 Diseño visual
 Decidido con la muestra comparativa [docs/diseno/propuesta-visual.html](diseno/propuesta-visual.html).
 

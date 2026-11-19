@@ -15,7 +15,8 @@ import { AlmacenArchivosSupabase } from "./AlmacenArchivosSupabase";
 import { DatosDelPostulanteSupabase } from "./DatosDelPostulanteSupabase";
 import { RepositorioPostulacionesSupabase } from "./RepositorioPostulacionesSupabase";
 
-process.loadEnvFile?.(".env.local");
+// Dev por defecto; contra prod: INTEGRACION_ARCHIVO_ENV=.env.prod.local npm run test:integracion
+process.loadEnvFile?.(process.env.INTEGRACION_ARCHIVO_ENV ?? ".env.local");
 
 const URL_SUPABASE = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const servicio = createClient(URL_SUPABASE, process.env.SUPABASE_SECRET_KEY!, { auth: { persistSession: false } });

@@ -6,7 +6,8 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
-process.loadEnvFile?.(".env.local");
+// Dev por defecto; contra prod: INTEGRACION_ARCHIVO_ENV=.env.prod.local npm run test:integracion
+process.loadEnvFile?.(process.env.INTEGRACION_ARCHIVO_ENV ?? ".env.local");
 
 const URL_SUPABASE = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const CLAVE_PUBLICA = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!;
@@ -150,6 +151,38 @@ describe("postulaciones (confidencialidad entre reclutadores y postulantes)", ()
     await postulante1.db.from("postulaciones").update({ puntaje: 100, estado: "procesada" }).eq("id", postulacionId);
     const { data } = await reclutador1.db.from("postulaciones").select("puntaje, estado").eq("id", postulacionId).single();
     expect(data).toEqual({ puntaje: null, estado: "recibida" });
+  });
+});
+
+describe("decisión del reclutador (permisos por columna)", () => {
+  it("el reclutador dueño registra su decisión con autor", async () => {
+    const { error } = await reclutador1.db
+      .from("postulaciones")
+      .update({ decision: "preseleccionado", decision_nota: "Buen perfil", decision_en: new Date().toISOString(), decidido_por: reclutador1.id })
+      .eq("id", postulacionId);
+    expect(error).toBeNull();
+    const { data } = await reclutador1.db.from("postulaciones").select("decision, decidido_por").eq("id", postulacionId).single();
+    expect(data).toEqual({ decision: "preseleccionado", decidido_por: reclutador1.id });
+  });
+
+  it("el reclutador NO puede cambiar el puntaje ni el estado", async () => {
+    const { error } = await reclutador1.db.from("postulaciones").update({ puntaje: 100, estado: "procesada" }).eq("id", postulacionId);
+    expect(error).not.toBeNull();
+  });
+
+  it("no puede firmar la decisión a nombre de otro reclutador", async () => {
+    const { error } = await reclutador1.db
+      .from("postulaciones")
+      .update({ decision: "descartado", decidido_por: reclutador2.id })
+      .eq("id", postulacionId);
+    expect(error).not.toBeNull();
+  });
+
+  it("otro reclutador y el postulante NO pueden registrar decisiones", async () => {
+    await reclutador2.db.from("postulaciones").update({ decision: "descartado", decidido_por: reclutador2.id }).eq("id", postulacionId);
+    await postulante1.db.from("postulaciones").update({ decision: "preseleccionado", decidido_por: postulante1.id }).eq("id", postulacionId);
+    const { data } = await reclutador1.db.from("postulaciones").select("decision, decidido_por").eq("id", postulacionId).single();
+    expect(data).toEqual({ decision: "preseleccionado", decidido_por: reclutador1.id });
   });
 });
 
