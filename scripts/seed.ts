@@ -87,7 +87,8 @@ async function eliminarUsuariosDePrueba() {
   const ids = deSeed.map((u) => u.id);
   if (ids.length === 0) return;
 
-  // Orden por claves foráneas: archivos → postulaciones (cascade con ofertas) → ofertas → usuarios
+  // Orden por claves foráneas: archivos → postulaciones (cascade con ofertas) → ofertas →
+  // registro de vistas (apunta al reclutador, sin cascade) → usuarios
   const { data: archivos } = await db.storage.from("cvs").list("", { limit: 1000 });
   for (const carpeta of archivos ?? []) {
     if (!ids.includes(carpeta.name)) continue;
@@ -95,6 +96,8 @@ async function eliminarUsuariosDePrueba() {
     await db.storage.from("cvs").remove((pdfs ?? []).map((f) => `${carpeta.name}/${f.name}`));
   }
   await db.from("ofertas").delete().in("reclutador_id", ids);
+  const { error: errorAccesos } = await db.from("accesos_cv").delete().in("reclutador_id", ids);
+  if (errorAccesos) throw errorAccesos;
   for (const id of ids) {
     const { error: e } = await db.auth.admin.deleteUser(id);
     if (e) throw e;

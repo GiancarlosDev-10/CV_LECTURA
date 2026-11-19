@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { generarRanking } from "@/aplicacion/generarRanking";
 import { RefrescoAutomatico } from "@/app/_componentes/RefrescoAutomatico";
-import { AdvertenciaPuntaje, Boton, EstadoPostulacion, Puntaje, Tarjeta, TituloPagina, formatoFecha } from "@/app/_componentes/ui";
+import { AdvertenciaPuntaje, Boton, BotonEnlace, EstadoPostulacion, Puntaje, Tarjeta, TituloPagina, formatoFecha } from "@/app/_componentes/ui";
 import { BarraDesglose, ChipsHabilidades, EstadoVacio, InsigniaDecision, LeyendaDesglose } from "@/app/_componentes/visual";
 import { requerirRol } from "@/app/_lib/sesion";
 import { MOTIVOS_REVISION, NIVEL_EDUCATIVO, textoAnios } from "@/app/_lib/textos";
@@ -53,9 +53,17 @@ export default async function PaginaRanking({ params }: PageProps<"/reclutador/o
         titulo={oferta.titulo}
         subtitulo={`${oferta.estado === "abierta" ? "Abierta" : "Cerrada"} · publicada el ${formatoFecha(oferta.creado_en)}`}
         acciones={
-          <form action={cambiarEstadoOferta.bind(null, oferta.id, oferta.estado === "abierta" ? "cerrada" : "abierta")}>
-            <Boton variante="secundario">{oferta.estado === "abierta" ? "Cerrar oferta" : "Reabrir oferta"}</Boton>
-          </form>
+          <div className="flex flex-wrap gap-2">
+            {/* Con postulaciones la oferta queda fija: sus puntajes dependen de estos requisitos */}
+            {filas.length === 0 && (
+              <BotonEnlace href={`/reclutador/ofertas/${oferta.id}/editar`} variante="secundario">
+                Editar oferta
+              </BotonEnlace>
+            )}
+            <form action={cambiarEstadoOferta.bind(null, oferta.id, oferta.estado === "abierta" ? "cerrada" : "abierta")}>
+              <Boton variante="secundario">{oferta.estado === "abierta" ? "Cerrar oferta" : "Reabrir oferta"}</Boton>
+            </form>
+          </div>
         }
       />
 

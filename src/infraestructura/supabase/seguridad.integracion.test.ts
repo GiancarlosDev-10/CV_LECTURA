@@ -119,6 +119,45 @@ describe("ofertas", () => {
   });
 });
 
+describe("edición de ofertas (RQ-FUN-03: los requisitos no cambian con postulaciones)", () => {
+  it("con postulaciones, el dueño no puede cambiar requisitos ni título", async () => {
+    const { data: antes } = await reclutador1.db.from("ofertas").select("titulo, requisitos").eq("id", ofertaDeReclutador1).single();
+    const { error } = await reclutador1.db
+      .from("ofertas")
+      .update({ titulo: "Título cambiado", requisitos: { ...antes!.requisitos, aniosExperiencia: 99 } })
+      .eq("id", ofertaDeReclutador1);
+    expect(error?.message).toContain("OFERTA_CON_POSTULACIONES");
+
+    const { data: despues } = await reclutador1.db.from("ofertas").select("titulo, requisitos").eq("id", ofertaDeReclutador1).single();
+    expect(despues).toEqual(antes);
+  });
+
+  it("con postulaciones, el dueño sí puede cerrar y reabrir la oferta", async () => {
+    const cerrar = await reclutador1.db.from("ofertas").update({ estado: "cerrada" }).eq("id", ofertaDeReclutador1);
+    const reabrir = await reclutador1.db.from("ofertas").update({ estado: "abierta" }).eq("id", ofertaDeReclutador1);
+    expect(cerrar.error).toBeNull();
+    expect(reabrir.error).toBeNull();
+  });
+
+  it("sin postulaciones, el dueño edita su oferta", async () => {
+    const { data: nueva } = await reclutador1.db
+      .from("ofertas")
+      .insert({ reclutador_id: reclutador1.id, titulo: "Oferta de prueba de edición", requisitos: {} })
+      .select("id")
+      .single();
+    try {
+      const { error } = await reclutador1.db.from("ofertas").update({ titulo: "Oferta editada" }).eq("id", nueva!.id);
+      expect(error).toBeNull();
+      const { data } = await reclutador1.db.from("ofertas").select("titulo").eq("id", nueva!.id).single();
+      expect(data?.titulo).toBe("Oferta editada");
+    } finally {
+      // authenticated no puede borrar ofertas: la limpieza usa la clave secreta del servidor
+      const servicio = createClient(URL_SUPABASE, process.env.SUPABASE_SECRET_KEY!, { auth: { persistSession: false } });
+      await servicio.from("ofertas").delete().eq("id", nueva!.id);
+    }
+  });
+});
+
 describe("postulaciones (confidencialidad entre reclutadores y postulantes)", () => {
   it("el reclutador dueño de la oferta ve la postulación", async () => {
     const { data } = await reclutador1.db.from("postulaciones").select("id").eq("id", postulacionId);
