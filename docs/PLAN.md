@@ -25,7 +25,7 @@
 5. Un % de pruebas aprobadas **no es** un % de "calidad total" (S09). No se da una nota global sin explicar el método.
 
 ### 1.3 Modelo de referencia
-**ISO/IEC 25010:2023**, que es la edición que usa el docente (S09), con su terminología en español. La calidad en uso (efectividad, eficiencia, satisfacción, ausencia de riesgo, cobertura de contexto) pasó a **ISO/IEC 25019:2023** y se trata como **referencia parcial** mediante la prueba de tareas y el SUS.
+**ISO/IEC 25010:2023**, que es la edición que usa el docente (S09), con su terminología en español. La calidad en uso pasó a **ISO/IEC 25019:2023** (tres características: beneficio —que incluye la usabilidad—, ausencia de riesgo y aceptabilidad) y se trata como **referencia parcial** mediante la prueba de tareas y el SUS.
 
 Familia SQuaRE que se citará: **25000** (guía), **25010** (modelo), **25019** (calidad en uso), **25023** (medidas de calidad del producto), **25030** (requisitos de calidad) y **25040** (proceso de evaluación).
 
@@ -46,12 +46,12 @@ Familia SQuaRE que se citará: **25000** (guía), **25010** (modelo), **25019** 
 ## 2. Equipo, roles y cronograma
 
 ### 2.1 Equipo (5 integrantes)
-Los nombres se completan en los encabezados de los entregables.
+Los nombres figuran en el encabezado de cada entregable.
 
 | Integrante | Rol en el proyecto | Participación verificable |
 |---|---|---|
-| Integrante 1 (Giancarlos) | Desarrollador, responsable de calidad y analista de pruebas | Todo el desarrollo, pruebas automatizadas, mediciones y redacción |
-| Integrantes 2–5 | Ejecutores de pruebas manuales y usuarios de prueba | Cada uno: **4–6 CP manuales con sus propias capturas**, **1 CV hecho a mano** con su respuesta esperada, **prueba de tareas + SUS** y **revisión manual cronometrada** (RQ-VAL-01) |
+| Integrante 1: Giancarlos Ormeño | Desarrollador, responsable de calidad y analista de pruebas | Todo el desarrollo, pruebas automatizadas, mediciones y redacción |
+| Integrantes 2–5: Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero | Ejecutores de pruebas manuales y usuarios de prueba | Cada uno: **4–6 CP manuales con sus propias capturas**, **1 CV hecho a mano** con su respuesta esperada, **prueba de tareas + SUS** y **revisión manual cronometrada** (RQ-VAL-01) |
 
 Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 
@@ -193,7 +193,7 @@ src/
 |---|---|---|---|
 | Adecuación funcional | **A fondo** | Corrección, completitud | Pertinencia (se cubre de forma cualitativa en la prueba de tareas) |
 | Eficiencia del desempeño | **A fondo** | Comportamiento temporal | Utilización de recursos y capacidad (plataforma gestionada, sin acceso a métricas de infraestructura) |
-| Seguridad | **A fondo** | Confidencialidad, integridad, responsabilidad, autenticidad | No repudio (no hay firma digital ni transacciones con valor legal) |
+| Seguridad | **A fondo** | Confidencialidad, integridad, responsabilidad, autenticidad, resistencia (agregada en la edición 2023; se cubre con RQ-SEG-02 y RQ-SEG-06) | No repudio (no hay firma digital ni transacciones con valor legal) |
 | Fiabilidad | Media | Tolerancia a fallos, disponibilidad | Ausencia de fallos y recuperación (sin operación prolongada; el respaldo lo da Supabase y no se prueba) |
 | Mantenibilidad | Media | Capacidad de prueba, analizabilidad, modularidad | Reutilización y modificabilidad (modificabilidad: evidencia cualitativa con el diff de las AM) |
 | Capacidad de interacción | Media | Capacidad de aprendizaje, operabilidad, protección contra errores del usuario | Inclusividad, compromiso, asistencia y autodescriptividad (sin muestra suficiente) |
@@ -347,8 +347,8 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 | Matriz | Entregable | Plantilla de Formatos que se usa | Clase base |
 |---|---|---|---|
 | E01 | Ficha de identificación y diagnóstico | Formatos 01 | S01, S08 |
-| E02 | Matriz de características y dimensiones | Formatos 02 (2.1, 2.2) | S02, S08 |
-| E03 | Selección y aplicación del modelo | Formatos 02 (2.3–2.5): McCall, Boehm, FURPS y 25010:2023 | S03, S09 |
+| E02 | Matriz de características y dimensiones | Formatos 02 (2.1) ampliado con necesidades, matriz de características, matriz de dimensiones y exclusiones (contenido mínimo de la Matriz) | S02, S08 |
+| E03 | Selección y aplicación del modelo | Formatos 02 (2.2–2.5): McCall, Boehm, FURPS y 25010:2023 | S03, S09 |
 | E04 | Normas y estándares | Formatos 03 | S04, S05, S07 |
 | E05 | Matriz de evaluación ISO/IEC 25010 | Formatos 04 (requisitos y criterios) + Formatos 06 (6.2–6.5: método y escala) | S09 + SQuaRE |
 | E06 | Plan de gestión y aseguramiento | Formatos 05 + Formatos 06 (6.6: cronograma) | S06, S07, S11 |
@@ -365,9 +365,9 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 | Referencia | Tipo | Aplicación |
 |---|---|---|
 | ISO/IEC 25010:2023 | Norma (modelo) | Modelo de evaluación |
-| ISO/IEC 25019, 25023, 25030, 25040 | Normas SQuaRE | Calidad en uso, medidas, requisitos y proceso de evaluación |
+| ISO/IEC 25000:2014, 25019:2023, 25023:2016, 25030:2019, 25040:2024 | Normas SQuaRE | Calidad en uso, medidas, requisitos y proceso de evaluación |
 | ISO/IEC 27001 | Norma (SGSI) | Referencia para controles (acceso, registro). **No se certifica** |
-| ISO 9001 | Norma (gestión) | Referencia de proceso y mejora continua |
+| ISO 9001:2026 (reemplaza a la 2015) | Norma (gestión) | Referencia de proceso y mejora continua |
 | **Ley 29733 y su Reglamento** | **Ley (obligatoria)** | Consentimiento, finalidad, derechos ARCO, flujo transfronterizo (Supabase en São Paulo) |
 | OWASP Top 10 / ASVS | Estándar de facto (comunidad) | Pruebas de seguridad y ZAP |
 | W3C (HTML, WCAG) | Estándar web | Interfaz y accesibilidad básica |
@@ -432,3 +432,11 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 5. **Prueba de concepto del día 1 (local):** un PDF llega a JSON contra Supabase dev (con el extractor simulado y, si ya hay saldo, también con OpenAI).
 6. Dominio y puntaje con pruebas, en orden TDD.
 7. Vercel + Supabase prod a más tardar el 24/11.
+
+---
+
+## 18. Expediente: dónde vive cada entregable
+
+- Carpeta `docs/expediente/`. Cada entregable tiene un **`.md` (fuente de verdad, se edita aquí)** y su **`.docx` generado** con el formato de la plantilla (Carta, Arial, títulos azules, encabezados de tabla `D9EAF7`).
+- Las notas que empiezan con `>` en el `.md` son guías internas y no pasan al `.docx`.
+- Borradores v0.1 de E01–E04 redactados el 18/11/2026; pendientes de revisión del equipo sobre el Word.
