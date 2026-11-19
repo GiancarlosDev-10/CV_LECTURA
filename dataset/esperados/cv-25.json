@@ -1,0 +1,30 @@
+{
+  "id": "cv-25",
+  "archivo": "cv-25-canva-minimal.pdf",
+  "estilo": "canva-minimal",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "César Delgado Cueva",
+    "email": "cesar.delgado67@example.com",
+    "telefono": "900 000 205",
+    "aniosExperiencia": 0.5,
+    "nivelEducativo": "tecnico",
+    "habilidades": [
+      "Reclutamiento",
+      "Entrevistas por competencias",
+      "Onboarding",
+      "Legislación laboral"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      }
+    ]
+  }
+}

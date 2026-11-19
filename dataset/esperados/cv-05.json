@@ -1,0 +1,35 @@
+{
+  "id": "cv-05",
+  "archivo": "cv-05-cambria-barras.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Bruno Tapia Paredes",
+    "email": "bruno.tapia56@example.com",
+    "telefono": "+51 900 000 123",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "HTML5",
+      "Next.js",
+      "TypeScript",
+      "SQL",
+      "Node",
+      "MongoDB",
+      "PostgreSQL",
+      "PHP",
+      "Java"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

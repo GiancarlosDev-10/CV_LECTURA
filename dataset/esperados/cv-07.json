@@ -1,0 +1,33 @@
+{
+  "id": "cv-07",
+  "archivo": "cv-07-cambria-barras.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "César Aguilar Tapia",
+    "email": "cesar.aguilar15@example.com",
+    "telefono": "(+51) 900-000-129",
+    "aniosExperiencia": 2.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Estadística",
+      "Looker Studio",
+      "SQL",
+      "Python",
+      "Google Sheets",
+      "Tableau",
+      "Machine Learning básico"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

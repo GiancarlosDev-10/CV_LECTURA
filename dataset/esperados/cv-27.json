@@ -1,0 +1,36 @@
+{
+  "id": "cv-27",
+  "archivo": "cv-27-dos-columnas.pdf",
+  "estilo": "dos-columnas",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Fiorella Tapia Huamán",
+    "email": "fiorella.tapia58@example.com",
+    "telefono": "900 000 215",
+    "aniosExperiencia": 5.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Node",
+      "JS",
+      "Docker",
+      "SQL",
+      "React.js",
+      "TypeScript",
+      "Laravel",
+      "Git",
+      "Next.js",
+      "Express"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      }
+    ]
+  }
+}

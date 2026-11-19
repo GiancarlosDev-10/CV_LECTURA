@@ -1,0 +1,42 @@
+{
+  "id": "cv-09",
+  "archivo": "cv-09-moderno-sans.pdf",
+  "estilo": "moderno-sans",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Diego Arroyo Palomino",
+    "email": "diego.arroyo48@example.com",
+    "telefono": "900 000 133",
+    "aniosExperiencia": 7,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "MongoDB",
+      "Docker",
+      "TypeScript",
+      "Git",
+      "SQL",
+      "Laravel",
+      "ReactJS",
+      "Tailwind CSS",
+      "Node",
+      "Express",
+      "JS",
+      "Scrum"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      },
+      {
+        "idioma": "Quechua",
+        "nivel": "nativo"
+      }
+    ]
+  }
+}

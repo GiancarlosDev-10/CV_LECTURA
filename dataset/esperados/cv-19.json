@@ -1,0 +1,39 @@
+{
+  "id": "cv-19",
+  "archivo": "cv-19-docs-azul-tabla.pdf",
+  "estilo": "docs-azul-tabla",
+  "lengua": "en",
+  "oferta": "Analista de Datos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "César Chávez Quispe",
+    "email": "cesar.chavez30@example.com",
+    "telefono": "+51 900 000 178",
+    "aniosExperiencia": 3,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Power Query",
+      "Power BI",
+      "NumPy",
+      "DAX",
+      "R",
+      "Looker Studio",
+      "Pandas",
+      "Basic Machine Learning",
+      "SQL"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Spanish",
+        "nivel": "nativo"
+      },
+      {
+        "idioma": "English",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

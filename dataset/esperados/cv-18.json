@@ -1,0 +1,37 @@
+{
+  "id": "cv-18",
+  "archivo": "cv-18-docs-azul-tabla.pdf",
+  "estilo": "docs-azul-tabla",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Diego Huamán Palomino",
+    "email": "diego.huaman59@example.com",
+    "telefono": "+51 900 000 174",
+    "aniosExperiencia": 0.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "TypeScript",
+      "Express",
+      "Scrum",
+      "CSS3",
+      "Git",
+      "PostgreSQL",
+      "Next.js"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

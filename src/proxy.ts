@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const RUTAS_PUBLICAS = ["/", "/ingresar", "/registro"];
+const RUTAS_PUBLICAS = ["/", "/ingresar", "/registro", "/api/salud"];
 
 /**
  * Refresca la sesión de Supabase en cada petición y hace una verificación optimista:

@@ -1,0 +1,34 @@
+{
+  "id": "cv-21",
+  "archivo": "cv-21-canva-elegante.pdf",
+  "estilo": "canva-elegante",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Iván Mendoza Cárdenas",
+    "email": "ivan.mendoza62@example.com",
+    "telefono": "(+51) 900-000-187",
+    "aniosExperiencia": 3,
+    "nivelEducativo": "tecnico",
+    "habilidades": [
+      "Gestión de planillas",
+      "Legislación laboral",
+      "Comunicación efectiva",
+      "Excel",
+      "Gestión documental",
+      "Clima laboral",
+      "PLAME",
+      "Onboarding"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      }
+    ]
+  }
+}

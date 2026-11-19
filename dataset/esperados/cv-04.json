@@ -1,0 +1,39 @@
+{
+  "id": "cv-04",
+  "archivo": "cv-04-times-centrado.pdf",
+  "estilo": "times-centrado",
+  "lengua": "en",
+  "oferta": "Analista de Datos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Milagros Paredes Ríos",
+    "email": "milagros.paredes20@example.com",
+    "telefono": "900 000 116",
+    "aniosExperiencia": 5.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "ETL",
+      "SQL",
+      "Google Sheets",
+      "Power BI",
+      "NumPy",
+      "Statistics",
+      "Python",
+      "MS Excel",
+      "Pandas"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Spanish",
+        "nivel": "nativo"
+      },
+      {
+        "idioma": "English",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "cv-29",
+  "archivo": "cv-29-dos-columnas.pdf",
+  "estilo": "dos-columnas",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Bruno Ccori Palomino",
+    "email": "bruno.ccori89@example.com",
+    "telefono": "(+51) 900-000-228",
+    "aniosExperiencia": 2,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Bienestar social",
+      "Clima laboral",
+      "Comunicación efectiva",
+      "PLAME",
+      "SAP",
+      "Gestión de planillas"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

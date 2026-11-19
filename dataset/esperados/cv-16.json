@@ -1,0 +1,36 @@
+{
+  "id": "cv-16",
+  "archivo": "cv-16-docs-azul-tabla.pdf",
+  "estilo": "docs-azul-tabla",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Sofía Cueva Chávez",
+    "email": "sofia.cueva41@example.com",
+    "telefono": "900 000 164",
+    "aniosExperiencia": 6.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Power Query",
+      "Pandas",
+      "MS Excel",
+      "Machine Learning básico",
+      "Estadística",
+      "Power BI",
+      "Google Sheets",
+      "DAX",
+      "SQL",
+      "Python"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

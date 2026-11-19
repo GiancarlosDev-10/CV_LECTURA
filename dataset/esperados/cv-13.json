@@ -1,0 +1,26 @@
+{
+  "id": "cv-13",
+  "archivo": "cv-13-clasico-numerado.pdf",
+  "estilo": "clasico-numerado",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Pamela Chávez Mendoza",
+    "email": "pamela.chavez41@example.com",
+    "telefono": "(+51) 900-000-152",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "Orden y organización",
+      "Ventas",
+      "Gestión de expedientes",
+      "Trabajo en equipo",
+      "Redacción legal"
+    ],
+    "idiomas": []
+  }
+}

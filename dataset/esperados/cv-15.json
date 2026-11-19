@@ -1,0 +1,26 @@
+{
+  "id": "cv-15",
+  "archivo": "cv-15-clasico-numerado.pdf",
+  "estilo": "clasico-numerado",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Milagros Huamán Mendoza",
+    "email": "milagros.huaman82@example.com",
+    "telefono": "900 000 163",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Trabajo en equipo",
+      "Limpieza y desinfección",
+      "Gestión de expedientes",
+      "Redacción legal",
+      "Microsoft Office"
+    ],
+    "idiomas": []
+  }
+}

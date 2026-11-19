@@ -1,0 +1,14 @@
+{
+  "id": "cv-35",
+  "archivo": "cv-35-escaneado.pdf",
+  "estilo": "clasico-numerado",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "medio",
+  "basadoEn": "cv-14",
+  "resultadoEsperado": {
+    "tipo": "pendiente_revision_manual",
+    "motivo": "PDF_SIN_TEXTO"
+  },
+  "esperado": null
+}

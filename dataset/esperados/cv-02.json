@@ -1,0 +1,30 @@
+{
+  "id": "cv-02",
+  "archivo": "cv-02-times-centrado.pdf",
+  "estilo": "times-centrado",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Jorge Gutiérrez Huamán",
+    "email": "jorge.gutierrez79@example.com",
+    "telefono": "900 000 113",
+    "aniosExperiencia": 6.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Docker",
+      "SQL",
+      "PostgreSQL",
+      "ReactJS",
+      "TypeScript",
+      "Scrum",
+      "CSS3",
+      "JavaScript",
+      "Node"
+    ],
+    "idiomas": []
+  }
+}

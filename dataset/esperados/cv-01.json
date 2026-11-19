@@ -1,0 +1,34 @@
+{
+  "id": "cv-01",
+  "archivo": "cv-01-times-centrado.pdf",
+  "estilo": "times-centrado",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Rosa Paredes Espinoza",
+    "email": "rosa.paredes83@example.com",
+    "telefono": "(+51) 900-000-106",
+    "aniosExperiencia": 2,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Excel",
+      "Legislación laboral",
+      "Entrevistas por competencias",
+      "Clima laboral",
+      "Gestión documental",
+      "Bienestar social",
+      "SAP",
+      "Gestión de planillas"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      }
+    ]
+  }
+}

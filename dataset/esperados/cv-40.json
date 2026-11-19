@@ -1,0 +1,14 @@
+{
+  "id": "cv-40",
+  "archivo": "cv-40-mas-de-5mb.pdf",
+  "estilo": "moderno-sans",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "alto",
+  "basadoEn": "cv-10",
+  "resultadoEsperado": {
+    "tipo": "rechazo_tamano",
+    "detalle": "Supera 5 MB: lo rechaza el formulario y el bucket de Storage"
+  },
+  "esperado": null
+}

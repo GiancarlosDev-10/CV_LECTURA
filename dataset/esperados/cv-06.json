@@ -1,0 +1,41 @@
+{
+  "id": "cv-06",
+  "archivo": "cv-06-cambria-barras.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Milagros Ríos Lozano",
+    "email": "milagros.rios98@example.com",
+    "telefono": "(+51) 900-000-124",
+    "aniosExperiencia": 7.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Microsoft Office",
+      "SAP",
+      "Bienestar social",
+      "Clima laboral",
+      "Gestión de planillas",
+      "MS Excel",
+      "Entrevistas por competencias",
+      "Reclutamiento",
+      "PLAME",
+      "Comunicación efectiva",
+      "Legislación laboral"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      },
+      {
+        "idioma": "Quechua",
+        "nivel": "nativo"
+      }
+    ]
+  }
+}

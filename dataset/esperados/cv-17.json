@@ -1,0 +1,34 @@
+{
+  "id": "cv-17",
+  "archivo": "cv-17-docs-azul-tabla.pdf",
+  "estilo": "docs-azul-tabla",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Valeria Mendoza Chávez",
+    "email": "valeria.mendoza69@example.com",
+    "telefono": "(+51) 900-000-171",
+    "aniosExperiencia": 6,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Gestión de planillas",
+      "Onboarding",
+      "Clima laboral",
+      "MS Excel",
+      "Comunicación efectiva",
+      "Reclutamiento",
+      "Legislación laboral",
+      "SAP"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

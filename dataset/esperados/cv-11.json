@@ -1,0 +1,37 @@
+{
+  "id": "cv-11",
+  "archivo": "cv-11-moderno-sans.pdf",
+  "estilo": "moderno-sans",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Renato Arroyo Rojas",
+    "email": "renato.arroyo76@example.com",
+    "telefono": "900 000 138",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "Bienestar social",
+      "Legislación laboral",
+      "Excel",
+      "Microsoft Office",
+      "Entrevistas por competencias",
+      "Clima laboral",
+      "PLAME"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

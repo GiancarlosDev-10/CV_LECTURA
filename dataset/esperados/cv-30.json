@@ -1,0 +1,34 @@
+{
+  "id": "cv-30",
+  "archivo": "cv-30-dos-columnas.pdf",
+  "estilo": "dos-columnas",
+  "lengua": "en",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Katherine Zevallos Cárdenas",
+    "email": "katherine.zevallos59@example.com",
+    "telefono": "+51 900 000 231",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "tecnico",
+    "habilidades": [
+      "Power Query",
+      "NumPy",
+      "Python",
+      "Tableau"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Spanish",
+        "nivel": "nativo"
+      },
+      {
+        "idioma": "English",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

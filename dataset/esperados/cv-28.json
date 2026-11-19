@@ -1,0 +1,36 @@
+{
+  "id": "cv-28",
+  "archivo": "cv-28-dos-columnas.pdf",
+  "estilo": "dos-columnas",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Martín Arroyo Huamán",
+    "email": "martin.arroyo1@example.com",
+    "telefono": "900 000 221",
+    "aniosExperiencia": 4,
+    "nivelEducativo": "maestria",
+    "habilidades": [
+      "Python",
+      "Tableau",
+      "Looker Studio",
+      "Pandas",
+      "Estadística",
+      "NumPy",
+      "Power BI",
+      "DAX",
+      "MS Excel",
+      "SQL"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "id": "cv-10",
+  "archivo": "cv-10-moderno-sans.pdf",
+  "estilo": "moderno-sans",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Elena Ccori Rojas",
+    "email": "elena.ccori10@example.com",
+    "telefono": "(+51) 900-000-136",
+    "aniosExperiencia": 7.5,
+    "nivelEducativo": "maestria",
+    "habilidades": [
+      "Excel",
+      "Python",
+      "Google Sheets",
+      "Estadística",
+      "SQL",
+      "Power BI",
+      "DAX",
+      "ETL",
+      "Power Query",
+      "Pandas",
+      "Tableau"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

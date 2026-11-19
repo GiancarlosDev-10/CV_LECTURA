@@ -1,0 +1,14 @@
+{
+  "id": "cv-36",
+  "archivo": "cv-36-escaneado.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "alto",
+  "basadoEn": "cv-06",
+  "resultadoEsperado": {
+    "tipo": "pendiente_revision_manual",
+    "motivo": "PDF_SIN_TEXTO"
+  },
+  "esperado": null
+}

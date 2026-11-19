@@ -1,0 +1,37 @@
+{
+  "id": "cv-03",
+  "archivo": "cv-03-times-centrado.pdf",
+  "estilo": "times-centrado",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Kevin Lozano Quispe",
+    "email": "kevin.lozano86@example.com",
+    "telefono": "(+51) 900-000-115",
+    "aniosExperiencia": 0.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "Machine Learning básico",
+      "Python",
+      "DAX",
+      "Google Sheets",
+      "Looker Studio",
+      "ETL",
+      "Power Query"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

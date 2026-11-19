@@ -47,3 +47,9 @@ next-env.d.ts
 # reportes generados localmente
 /playwright-report/
 /test-results/
+
+# CVs reales (datos personales): nunca al repo público
+/docs/cvs/
+
+# Dataset: el CV de más de 5 MB se regenera con npm run dataset
+/dataset/pdf/cv-40-mas-de-5mb.pdf

@@ -1,0 +1,38 @@
+{
+  "id": "cv-08",
+  "archivo": "cv-08-cambria-barras.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "en",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Jimena Quispe Benavides",
+    "email": "jimena.quispe64@example.com",
+    "telefono": "(+51) 900-000-130",
+    "aniosExperiencia": 2.5,
+    "nivelEducativo": "tecnico",
+    "habilidades": [
+      "Express",
+      "REST APIs",
+      "PHP",
+      "Scrum",
+      "React",
+      "Laravel",
+      "TypeScript",
+      "NodeJS"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Spanish",
+        "nivel": "nativo"
+      },
+      {
+        "idioma": "English",
+        "nivel": "C1"
+      }
+    ]
+  }
+}

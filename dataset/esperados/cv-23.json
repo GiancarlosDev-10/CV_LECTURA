@@ -1,0 +1,35 @@
+{
+  "id": "cv-23",
+  "archivo": "cv-23-canva-elegante.pdf",
+  "estilo": "canva-elegante",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Álvaro Villanueva Rojas",
+    "email": "alvaro.villanueva79@example.com",
+    "telefono": "(+51) 900-000-198",
+    "aniosExperiencia": 3,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "REST APIs",
+      "Express",
+      "CSS3",
+      "Git",
+      "NodeJS",
+      "Next.js",
+      "SQL",
+      "JavaScript",
+      "Laravel"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

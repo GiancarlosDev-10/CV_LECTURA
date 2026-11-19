@@ -1,0 +1,30 @@
+{
+  "id": "cv-22",
+  "archivo": "cv-22-canva-elegante.pdf",
+  "estilo": "canva-elegante",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Andrea Huamán Chávez",
+    "email": "andrea.huaman25@example.com",
+    "telefono": "+51 900 000 191",
+    "aniosExperiencia": 2.5,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Power BI",
+      "Machine Learning básico",
+      "Estadística",
+      "R",
+      "NumPy",
+      "DAX",
+      "Tableau",
+      "SQL",
+      "ETL"
+    ],
+    "idiomas": []
+  }
+}

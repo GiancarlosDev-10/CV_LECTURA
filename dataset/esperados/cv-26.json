@@ -1,0 +1,31 @@
+{
+  "id": "cv-26",
+  "archivo": "cv-26-canva-minimal.pdf",
+  "estilo": "canva-minimal",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Yesenia Gutiérrez Quispe",
+    "email": "yesenia.gutierrez87@example.com",
+    "telefono": "900 000 211",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "JavaScript",
+      "REST APIs",
+      "PHP",
+      "MongoDB",
+      "Express"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

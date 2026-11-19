@@ -1,0 +1,38 @@
+{
+  "id": "cv-14",
+  "archivo": "cv-14-clasico-numerado.pdf",
+  "estilo": "clasico-numerado",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Valeria Paredes Aguilar",
+    "email": "valeria.paredes7@example.com",
+    "telefono": "(+51) 900-000-156",
+    "aniosExperiencia": 3.5,
+    "nivelEducativo": "tecnico",
+    "habilidades": [
+      "Bienestar social",
+      "Comunicación efectiva",
+      "Gestión de planillas",
+      "PLAME",
+      "Gestión documental",
+      "Entrevistas por competencias",
+      "Onboarding",
+      "SAP"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      },
+      {
+        "idioma": "Quechua",
+        "nivel": "nativo"
+      }
+    ]
+  }
+}

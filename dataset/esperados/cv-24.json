@@ -1,0 +1,25 @@
+{
+  "id": "cv-24",
+  "archivo": "cv-24-canva-minimal.pdf",
+  "estilo": "canva-minimal",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Fiorella Ríos Tapia",
+    "email": "fiorella.rios44@example.com",
+    "telefono": "(+51) 900-000-204",
+    "aniosExperiencia": null,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Orden y organización",
+      "Limpieza y desinfección",
+      "Gestión de expedientes",
+      "Ventas"
+    ],
+    "idiomas": []
+  }
+}

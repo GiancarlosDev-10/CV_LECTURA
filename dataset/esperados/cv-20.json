@@ -1,0 +1,24 @@
+{
+  "id": "cv-20",
+  "archivo": "cv-20-canva-elegante.pdf",
+  "estilo": "canva-elegante",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Diego Espinoza Paredes",
+    "email": "diego.espinoza59@example.com",
+    "telefono": "+51 900 000 180",
+    "aniosExperiencia": 0.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "Redacción legal",
+      "Ventas",
+      "Gestión de expedientes"
+    ],
+    "idiomas": []
+  }
+}

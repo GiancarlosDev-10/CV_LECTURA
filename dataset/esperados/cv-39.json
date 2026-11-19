@@ -1,0 +1,13 @@
+{
+  "id": "cv-39",
+  "archivo": "cv-39-ejecutable-renombrado.pdf",
+  "estilo": null,
+  "lengua": null,
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": null,
+  "resultadoEsperado": {
+    "tipo": "rechazo_postulacion",
+    "error": "ARCHIVO_NO_ES_PDF"
+  },
+  "esperado": null
+}
