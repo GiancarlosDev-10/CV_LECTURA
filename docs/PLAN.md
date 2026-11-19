@@ -77,7 +77,7 @@ Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 ### 3.2 Roles
 | Rol | Alta | Puede |
 |---|---|---|
-| Reclutador | Por *seed* (script) | Crear, editar y cerrar **sus** ofertas; ver ranking, desglose y CV **solo de sus ofertas** |
+| Reclutador | Por *seed* (script) | Crear, editar (solo mientras no tenga postulaciones) y cerrar **sus** ofertas; ver ranking, desglose y CV **solo de sus ofertas** |
 | Postulante | Registro propio | Ver ofertas abiertas, postular con consentimiento, ver sus postulaciones, **eliminar sus datos (ARCO)** |
 
 **Administrador: fuera de alcance.** Su función (alta de reclutadores) se resuelve con el *seed*, y los derechos ARCO los ejerce el propio postulante. Se justifica en E01.
@@ -440,3 +440,4 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 - Carpeta `docs/expediente/`. Cada entregable tiene un **`.md` (fuente de verdad, se edita aquí)** y su **`.docx` generado** con el formato de la plantilla (Carta, Arial, títulos azules, encabezados de tabla `D9EAF7`).
 - Las notas que empiezan con `>` en el `.md` son guías internas y no pasan al `.docx`.
 - Borradores v0.1 de E01–E04 redactados el 18/11/2026; pendientes de revisión del equipo sobre el Word.
+- Borradores v0.1 de E05–E08 redactados el 18/11/2026. E05 fija las reglas de comparación de la extracción (5.5) y la escala de valoración (5.6); E08 tiene 52 CP (26 automatizados y 26 manuales, ya asignados a cada integrante).

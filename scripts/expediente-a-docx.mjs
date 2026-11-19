@@ -32,7 +32,8 @@ function anchos(filas, n) {
   const largo = Array(n).fill(0);
   for (const f of filas) f.forEach((c, i) => (largo[i] += Math.min(c.length, 220) + 12));
   const total = largo.reduce((a, b) => a + b, 0);
-  const w = largo.map((l) => Math.max(1300, Math.round((l / total) * ANCHO)));
+  const minimo = Math.min(1300, Math.round((ANCHO / n) * 0.6)); // tablas anchas (8–9 columnas) no caben con 1300
+  const w = largo.map((l) => Math.max(minimo, Math.round((l / total) * ANCHO)));
   const exceso = w.reduce((a, b) => a + b, 0) - ANCHO;
   const iMax = w.indexOf(Math.max(...w));
   w[iMax] -= exceso;

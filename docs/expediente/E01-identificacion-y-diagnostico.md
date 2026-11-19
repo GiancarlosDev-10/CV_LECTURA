@@ -35,7 +35,7 @@ Reducir el tiempo que un reclutador dedica a revisar CVs, mediante la extracció
 **Alcance funcional (módulos y procesos incluidos):**
 
 - **M1. Autenticación y roles:** ingreso de reclutadores; registro e ingreso de postulantes; control de acceso por rol.
-- **M2. Ofertas:** crear, editar y cerrar ofertas con requisitos y pesos que suman 100.
+- **M2. Ofertas:** crear, editar y cerrar ofertas con requisitos y pesos que suman 100. Una oferta solo se edita mientras no tenga postulaciones, porque sus puntajes se calculan con esos requisitos.
 - **M3. Postulación:** subida de un CV en PDF (máximo 5 MB, validación del tipo real del archivo) con consentimiento obligatorio y versionado.
 - **M4. Extracción con IA:** PDF → texto → OpenAI con salida estructurada → validación del formato → estado de la postulación.
 - **M5. Puntaje y ranking:** fórmula determinista, ranking con desglose por criterio, advertencia de que el puntaje es apoyo y no decisión, y registro de la decisión del reclutador.
@@ -77,7 +77,7 @@ Reducir el tiempo que un reclutador dedica a revisar CVs, mediante la extracció
 |---|---|---|---|---|
 | F01 | M1 Autenticación | Registro e ingreso | El postulante se registra; ambos roles ingresan con correo y contraseña | Alta |
 | F02 | M1 Autenticación | Control por rol | Cada rol solo ve sus pantallas; las políticas RLS impiden leer datos ajenos aunque se manipule la URL | Crítica |
-| F03 | M2 Ofertas | Gestión de ofertas | Crear, editar y cerrar ofertas con requisitos y pesos que suman 100 | Alta |
+| F03 | M2 Ofertas | Gestión de ofertas | Crear, editar (solo sin postulaciones) y cerrar ofertas con requisitos y pesos que suman 100 | Alta |
 | F04 | M3 Postulación | Subir CV con consentimiento | PDF de hasta 5 MB, verificación de la firma real del archivo y consentimiento versionado obligatorio | Crítica |
 | F05 | M4 Extracción | Extraer datos del CV | PDF → texto → IA → validación; si falla, la postulación queda en "pendiente de revisión manual" | Crítica |
 | F06 | M5 Puntaje | Calcular puntaje | Fórmula determinista con tabla de alias; la IA no puntúa | Crítica |
