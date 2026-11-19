@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
+import { Logo } from "@/app/_componentes/Encabezado";
 import { obtenerSesion, rutaInicio } from "@/app/_lib/sesion";
 import { FormularioRegistro } from "./FormularioRegistro";
 
@@ -11,8 +12,8 @@ export default async function PaginaRegistro() {
 
   return (
     <main className="mx-auto grid w-full max-w-sm flex-1 content-center gap-6 px-6 py-16">
-      <Link href="/" className="text-xl font-extrabold tracking-tight text-primario">
-        CV<span className="font-semibold text-texto"> Lectura</span>
+      <Link href="/" aria-label="CV Lectura — inicio">
+        <Logo />
       </Link>
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Crear cuenta de postulante</h1>

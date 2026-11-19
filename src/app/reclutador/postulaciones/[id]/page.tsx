@@ -1,18 +1,14 @@
+import { AlertTriangle, ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AdvertenciaPuntaje, EstadoPostulacion, Puntaje, Tarjeta, TituloPagina, formatoFecha } from "@/app/_componentes/ui";
+import { AdvertenciaPuntaje, EstadoPostulacion, Puntaje, Tarjeta, formatoFecha } from "@/app/_componentes/ui";
+import { BarraDesglose, CRITERIOS_DESGLOSE, ChipHabilidad, InsigniaDecision } from "@/app/_componentes/visual";
 import { requerirRol } from "@/app/_lib/sesion";
+import { MOTIVOS_REVISION, NIVEL_EDUCATIVO, textoAnios } from "@/app/_lib/textos";
 import type { CvExtraido } from "@/dominio/entidades/cvExtraido";
 import type { EstadoPostulacion as Estado } from "@/dominio/entidades/postulacion";
 import type { ResultadoPuntaje } from "@/dominio/puntaje/calcularPuntaje";
-
-const CRITERIOS: { clave: keyof ResultadoPuntaje["desglose"]; texto: string }[] = [
-  { clave: "obligatorias", texto: "Habilidades obligatorias" },
-  { clave: "deseables", texto: "Habilidades deseables" },
-  { clave: "experiencia", texto: "Experiencia" },
-  { clave: "educacion", texto: "Educación" },
-  { clave: "idiomas", texto: "Idiomas" },
-];
+import { FormularioDecision } from "./FormularioDecision";
 
 export default async function PaginaPostulacion({ params }: PageProps<"/reclutador/postulaciones/[id]">) {
   const { id } = await params;
@@ -21,7 +17,7 @@ export default async function PaginaPostulacion({ params }: PageProps<"/reclutad
   // La RLS solo devuelve la postulación si la oferta es de este reclutador
   const { data: p } = await db
     .from("postulaciones")
-    .select("id, estado, puntaje, desglose, cv_extraido, motivo_revision, modelo_ia, subido_en, inicio_procesamiento, fin_procesamiento, ofertas(id, titulo)")
+    .select("id, estado, puntaje, desglose, cv_extraido, motivo_revision, modelo_ia, subido_en, fin_procesamiento, decision, decision_nota, decision_en, ofertas(id, titulo)")
     .eq("id", id)
     .maybeSingle();
   if (!p) notFound();
@@ -32,95 +28,122 @@ export default async function PaginaPostulacion({ params }: PageProps<"/reclutad
   const oferta = Array.isArray(p.ofertas) ? p.ofertas[0] : p.ofertas;
   const cv = p.cv_extraido as CvExtraido | null;
   const desglose = p.desglose as ResultadoPuntaje["desglose"] | null;
-  const segundos =
-    p.inicio_procesamiento && p.fin_procesamiento
-      ? (new Date(p.fin_procesamiento).getTime() - new Date(p.subido_en).getTime()) / 1000
-      : null;
+  const segundos = p.fin_procesamiento ? (new Date(p.fin_procesamiento).getTime() - new Date(p.subido_en).getTime()) / 1000 : null;
+  const urlPdf = `/reclutador/postulaciones/${p.id}/cv`;
 
   return (
     <>
-      <p className="text-sm">
-        <Link href={`/reclutador/ofertas/${oferta?.id}`} className="text-primario hover:underline">
-          ← {oferta?.titulo}
-        </Link>
-      </p>
-      <TituloPagina
-        titulo={cv?.nombre ?? `Postulación ${p.id.slice(0, 8)}`}
-        subtitulo={`Recibida el ${formatoFecha(p.subido_en)}${segundos !== null ? ` · procesada en ${segundos.toFixed(1)} s` : ""}${p.modelo_ia ? ` · modelo: ${p.modelo_ia}` : ""}`}
-        acciones={
-          <a href={`/reclutador/postulaciones/${p.id}/cv`} target="_blank" rel="noopener" className="inline-flex items-center rounded-lg border border-primario px-4 py-2.5 text-sm font-semibold text-primario hover:bg-primario-suave">
-            Ver CV original (PDF)
-          </a>
-        }
-      />
+      <Link href={`/reclutador/ofertas/${oferta?.id}`} className="inline-flex items-center gap-1 text-sm text-primario hover:underline">
+        <ArrowLeft aria-hidden className="size-4" /> {oferta?.titulo}
+      </Link>
 
-      <div className="flex flex-wrap items-center gap-3">
-        <EstadoPostulacion estado={p.estado as Estado} />
-        {p.puntaje !== null && <Puntaje valor={Number(p.puntaje)} />}
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div className="grid gap-2">
+          <h1 className="text-2xl font-bold tracking-tight">{cv?.nombre ?? `Postulación ${p.id.slice(0, 8)}`}</h1>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-texto-2">
+            <EstadoPostulacion estado={p.estado as Estado} />
+            <InsigniaDecision decision={p.decision} />
+            <span>Recibida el {formatoFecha(p.subido_en)}</span>
+            {segundos !== null && <span>· procesada en {segundos.toFixed(1)} s</span>}
+            {p.modelo_ia && <span>· modelo: {p.modelo_ia}</span>}
+          </div>
+        </div>
+        {p.puntaje !== null && (
+          <div className="text-right">
+            <p className="text-xs font-medium text-texto-2">Puntaje</p>
+            <Puntaje valor={Number(p.puntaje)} />
+          </div>
+        )}
       </div>
 
-      {p.estado === "pendiente_revision_manual" && (
-        <Tarjeta className="border-aviso/40 bg-aviso/5 text-sm">
-          <strong className="text-aviso">Revisión manual necesaria.</strong> El sistema no pudo procesar este CV (motivo: {p.motivo_revision}). Abre el PDF original y evalúalo directamente: no tiene puntaje para no perjudicar al postulante.
+      {/* Vista dividida: el PDF original junto a lo que extrajo el sistema, para verificar de un vistazo */}
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
+        <Tarjeta className="grid gap-3 p-3 lg:sticky lg:top-20 lg:self-start">
+          <div className="flex items-center justify-between px-1">
+            <h2 className="text-sm font-semibold">CV original</h2>
+            <a href={urlPdf} target="_blank" rel="noopener" className="inline-flex items-center gap-1 text-xs font-semibold text-primario hover:underline">
+              Abrir en otra pestaña <ExternalLink aria-hidden className="size-3.5" />
+            </a>
+          </div>
+          <iframe src={urlPdf} title={`CV original de ${cv?.nombre ?? "el postulante"}`} className="h-[75vh] w-full rounded-lg border border-borde bg-slate-50" />
         </Tarjeta>
-      )}
 
-      {desglose && (
-        <>
-          <AdvertenciaPuntaje />
-          <Tarjeta className="p-0">
-            <table className="w-full text-sm">
-              <caption className="px-6 pt-5 text-left text-base font-semibold">Desglose del puntaje</caption>
-              <thead>
-                <tr className="border-b border-borde text-left text-xs uppercase tracking-wide text-texto-2">
-                  <th scope="col" className="px-6 py-3 font-semibold">Criterio</th>
-                  <th scope="col" className="px-6 py-3 font-semibold">Puntos / peso</th>
-                  <th scope="col" className="px-6 py-3 font-semibold">Detalle</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-borde">
-                {CRITERIOS.map(({ clave, texto }) => {
+        <div className="grid content-start gap-6">
+          {p.estado === "pendiente_revision_manual" && (
+            <Tarjeta className="flex gap-3 border-aviso/40 bg-aviso/5 text-sm">
+              <AlertTriangle aria-hidden className="size-5 shrink-0 text-aviso" />
+              <p>
+                <strong className="block text-aviso">Revisión manual necesaria</strong>
+                {MOTIVOS_REVISION[p.motivo_revision ?? ""] ?? "El sistema no pudo procesar este CV"}. Evalúa el PDF directamente: no tiene puntaje para no perjudicar al postulante.
+              </p>
+            </Tarjeta>
+          )}
+
+          <Tarjeta className="grid gap-4">
+            <h2 className="text-base font-semibold">Tu decisión</h2>
+            <FormularioDecision postulacionId={p.id} decisionActual={p.decision} notaActual={p.decision_nota ?? ""} />
+            {p.decision_en && <p className="text-xs text-texto-2">Última decisión: {formatoFecha(p.decision_en)}</p>}
+          </Tarjeta>
+
+          {desglose && (
+            <Tarjeta className="grid gap-4">
+              <h2 className="text-base font-semibold">Desglose del puntaje</h2>
+              <BarraDesglose desglose={desglose} />
+              <ul className="grid gap-3 text-sm">
+                {CRITERIOS_DESGLOSE.map(({ clave, texto, color }) => {
                   const c = desglose[clave];
                   const listas = "cumplidas" in c ? c : null;
                   return (
-                    <tr key={clave}>
-                      <th scope="row" className="px-6 py-3 text-left font-medium">{texto}</th>
-                      <td className="px-6 py-3 tabular-nums">
-                        {c.puntos.toFixed(2).replace(".", ",")} / {c.peso}
-                      </td>
-                      <td className="px-6 py-3 text-texto-2">
-                        {listas && listas.cumplidas.length > 0 && <span className="text-exito">✓ {listas.cumplidas.join(", ")}</span>}
-                        {listas && listas.faltantes.length > 0 && <span className="ml-2">✗ falta: {listas.faltantes.join(", ")}</span>}
-                      </td>
-                    </tr>
+                    <li key={clave} className="grid gap-1.5">
+                      <div className="flex items-center justify-between">
+                        <span className="flex items-center gap-2 font-medium">
+                          <span aria-hidden className="size-2.5 rounded-sm" style={{ backgroundColor: color }} />
+                          {texto}
+                        </span>
+                        <span className="tabular-nums text-texto-2">
+                          {c.puntos.toFixed(2).replace(".", ",")} / {c.peso}
+                        </span>
+                      </div>
+                      {listas && (listas.cumplidas.length > 0 || listas.faltantes.length > 0) && (
+                        <div className="flex flex-wrap gap-1">
+                          {listas.cumplidas.map((h) => <ChipHabilidad key={h} nombre={h} cumple />)}
+                          {listas.faltantes.map((h) => <ChipHabilidad key={h} nombre={h} cumple={false} />)}
+                        </div>
+                      )}
+                    </li>
                   );
                 })}
-              </tbody>
-            </table>
-          </Tarjeta>
-        </>
-      )}
+              </ul>
+              <AdvertenciaPuntaje />
+            </Tarjeta>
+          )}
 
-      {cv && (
-        <Tarjeta className="grid gap-3 text-sm">
-          <h2 className="text-base font-semibold">Datos extraídos del CV</h2>
-          <dl className="grid gap-2 sm:grid-cols-[180px_1fr]">
-            <dt className="font-medium text-texto-2">Correo</dt>
-            <dd>{cv.email ?? "—"}</dd>
-            <dt className="font-medium text-texto-2">Teléfono</dt>
-            <dd>{cv.telefono ?? "—"}</dd>
-            <dt className="font-medium text-texto-2">Experiencia</dt>
-            <dd>{cv.aniosExperiencia ?? "—"} años</dd>
-            <dt className="font-medium text-texto-2">Nivel educativo</dt>
-            <dd>{cv.nivelEducativo ?? "—"}</dd>
-            <dt className="font-medium text-texto-2">Habilidades</dt>
-            <dd>{cv.habilidades.join(", ") || "—"}</dd>
-            <dt className="font-medium text-texto-2">Idiomas</dt>
-            <dd>{cv.idiomas.map((i) => `${i.idioma} ${i.nivel}`).join(", ") || "—"}</dd>
-          </dl>
-          <p className="text-xs text-texto-2">Verifica estos datos contra el PDF original: la extracción automática puede contener errores.</p>
-        </Tarjeta>
-      )}
+          {cv && (
+            <Tarjeta className="grid gap-3 text-sm">
+              <h2 className="text-base font-semibold">Datos extraídos del CV</h2>
+              <dl className="grid gap-x-4 gap-y-2 sm:grid-cols-[140px_1fr]">
+                <dt className="font-medium text-texto-2">Correo</dt>
+                <dd className="break-all">{cv.email ?? "—"}</dd>
+                <dt className="font-medium text-texto-2">Teléfono</dt>
+                <dd>{cv.telefono ?? "—"}</dd>
+                <dt className="font-medium text-texto-2">Experiencia</dt>
+                <dd>{textoAnios(cv.aniosExperiencia)}</dd>
+                <dt className="font-medium text-texto-2">Nivel educativo</dt>
+                <dd>{cv.nivelEducativo ? NIVEL_EDUCATIVO[cv.nivelEducativo] : "—"}</dd>
+                <dt className="font-medium text-texto-2">Habilidades</dt>
+                <dd className="flex flex-wrap gap-1">
+                  {cv.habilidades.length ? cv.habilidades.map((h) => <span key={h} className="rounded-md bg-slate-100 px-1.5 py-0.5 text-xs">{h}</span>) : "—"}
+                </dd>
+                <dt className="font-medium text-texto-2">Idiomas</dt>
+                <dd>{cv.idiomas.map((i) => `${i.idioma} ${i.nivel}`).join(", ") || "—"}</dd>
+              </dl>
+              <p className="flex items-center gap-1.5 text-xs text-texto-2">
+                <AlertTriangle aria-hidden className="size-3.5" /> Verifica estos datos contra el PDF: la extracción automática puede contener errores.
+              </p>
+            </Tarjeta>
+          )}
+        </div>
+      </div>
     </>
   );
 }
