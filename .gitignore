@@ -53,3 +53,6 @@ next-env.d.ts
 
 # Dataset: el CV de más de 5 MB se regenera con npm run dataset
 /dataset/pdf/cv-40-mas-de-5mb.pdf
+
+# Corridas de preparación (no son evidencia oficial)
+/dataset/corridas/local-*

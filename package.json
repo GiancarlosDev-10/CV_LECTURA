@@ -14,7 +14,9 @@
     "seed": "tsx scripts/seed.ts",
     "test:integracion": "vitest run --config vitest.integracion.config.mts",
     "expediente": "node scripts/expediente-a-docx.mjs",
-    "dataset": "tsx scripts/generar-dataset.ts"
+    "dataset": "tsx scripts/generar-dataset.ts",
+    "corrida:local": "tsx scripts/corrida-local.ts",
+    "comparar": "tsx scripts/comparar-extraccion.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
