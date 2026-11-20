@@ -70,7 +70,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | Navegadores | Chromium, Firefox, WebKit (de Playwright) y perfil móvil | — |
 | Cuentas de prueba | 2 reclutadores y 3 postulantes creados por el *seed* (`@example.com`) | En producción la contraseña es privada, no la publicada para dev |
 | Ofertas | 3 ofertas del *seed*: Desarrollador Full Stack Junior, Analista de Datos, Asistente de Recursos Humanos | — |
-| Dataset | 40 CVs ficticios (`dataset/`): 30 generados en 8 estilos, 4 hechos por el equipo, 2 escaneados, 2 con inyección, 1 ejecutable renombrado y 1 de más de 5 MB | Respuesta esperada en `dataset/esperados/`; ningún dato personal real |
+| Dataset | 40 CVs ficticios (`dataset/`): 30 generados en 8 estilos, 4 con el formato del CV de cada integrante, 2 escaneados, 2 con inyección, 1 ejecutable renombrado y 1 de más de 5 MB | Respuesta esperada en `dataset/esperados/`; ningún dato personal real |
 | Postulantes para medir | Un script de medición crea postulantes ficticios y sube los CVs del dataset (una postulación por postulante y oferta, como exige la BD) | **Por construir** antes del 27/11 |
 
 ## 7.5 Criterios de entrada y salida
@@ -94,8 +94,8 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 |---|---|---|---|---|
 | Pruebas unitarias y de integración | Giancarlos Ormeño | 14/11 – 27/11/2026 | Vitest, Supabase dev | En proceso (65 unitarias y 24 de integración escritas) |
 | Pruebas E2E con Playwright | Giancarlos Ormeño | 20/11 – 27/11/2026 | Playwright | Pendiente |
-| Script comparador y script de medición | Giancarlos Ormeño | 20/11 – 27/11/2026 | Node.js, dataset | Pendiente |
-| CVs hechos a mano (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul | 20/11 – 26/11/2026 | Word o Canva | Pendiente |
+| Script comparador y script de medición | Giancarlos Ormeño | 20/11 – 27/11/2026 | Node.js, dataset | En proceso (comparador listo; falta el ejecutor de corridas en producción) |
+| CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (aportan su CV como modelo) | 19/11/2026 | Generador del dataset | Hecho |
 | Congelamiento de umbrales | Equipo | 27/11/2026 | E05 | Pendiente |
 | 3 corridas de extracción y tiempo por CV | Giancarlos Ormeño | 27/11 – 02/12/2026 | OpenAI, producción | Pendiente |
 | CP manuales de M1 y M2 (7 casos) | Raquel Montes | 28/11 – 03/12/2026 | Fichas E08, producción | Pendiente |

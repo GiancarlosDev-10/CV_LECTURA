@@ -50,7 +50,7 @@ export interface IdiomaEscrito {
 }
 
 export interface Perfil {
-  id: string; // cv-01 … cv-30
+  id: string; // cv-01 … cv-34
   estilo: Estilo;
   lengua: Lengua;
   oferta: string; // título de la oferta del seed a la que postula
@@ -320,6 +320,12 @@ const PLANES: Plan[] = [
   ["dos-columnas", "es", "datos", "alto", 2],
   ["dos-columnas", "es", "rrhh", "medio", 3],
   ["dos-columnas", "en", "datos", "bajo", 2],
+  // cv-31…34: uno por integrante, con el formato de su propio CV (datos ficticios). Van al final
+  // para no alterar la secuencia del azar de cv-01…30.
+  ["docs-azul-tabla", "es", "rrhh", "alto", 4], // Raquel
+  ["cambria-barras", "es", "web", "bajo", 2], // Hermy
+  ["canva-minimal", "es", "otros", "bajo", 0], // Nancy
+  ["times-centrado", "es", "datos", "medio", 2], // Paul (sin CV propio: formato genérico de Word)
 ];
 
 const meses = (d: Mes, h: Mes) => (h.a - d.a) * 12 + (h.m - d.m);

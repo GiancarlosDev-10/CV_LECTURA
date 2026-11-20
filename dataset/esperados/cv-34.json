@@ -1,0 +1,39 @@
+{
+  "id": "cv-34",
+  "archivo": "cv-34-times-centrado.pdf",
+  "estilo": "times-centrado",
+  "lengua": "es",
+  "oferta": "Analista de Datos",
+  "ajuste": "medio",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Ricardo Chávez Lozano",
+    "email": "ricardo.chavez23@example.com",
+    "telefono": "900 000 246",
+    "aniosExperiencia": 2,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Power Query",
+      "R",
+      "Looker Studio",
+      "ETL",
+      "Estadística",
+      "Python",
+      "Machine Learning básico",
+      "NumPy",
+      "Pandas"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "C1"
+      },
+      {
+        "idioma": "Portugués",
+        "nivel": "A2"
+      }
+    ]
+  }
+}

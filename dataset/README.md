@@ -20,7 +20,7 @@ npm run dataset        # escribe dataset/pdf/ y dataset/esperados/
 | CV | Cantidad | Qué prueba | Resultado esperado |
 |---|---|---|---|
 | cv-01 … cv-30 | 30 | Exactitud y tiempo de la extracción en 8 estilos (ver abajo), 25 en español y 5 en inglés | `procesada` con los datos de `esperado` |
-| cv-31 … cv-34 | 4 | Hechos a mano por Raquel, Hermy, Nancy y Paul (realismo y participación) | **Pendientes** (ver abajo) |
+| cv-31 … cv-34 | 4 | Uno por integrante (Raquel, Hermy, Nancy y Paul) con el formato de su propio CV y datos ficticios (realismo y participación) | `procesada` con los datos de `esperado` |
 | cv-35, cv-36 | 2 | PDF escaneado: solo imagen, sin texto (basados en cv-14 y cv-06) | `pendiente_revision_manual` con motivo `PDF_SIN_TEXTO` |
 | cv-37, cv-38 | 2 | Inyección de instrucciones en texto blanco de 1 pt (copias de cv-02 y cv-29) | `procesada` con datos **idénticos** a su CV limpio (RQ-SEG-06) |
 | cv-39 | 1 | Archivo con cabecera de ejecutable de Windows (`MZ`) renombrado a `.pdf` (no es un programa real) | Rechazo `ARCHIVO_NO_ES_PDF` |
@@ -55,15 +55,27 @@ Son las mismas instrucciones que recibe la IA (`INSTRUCCIONES_EXTRACCION`):
 - **Años de experiencia:** suma de la duración de los trabajos listados (los trabajos actuales cuentan hasta noviembre de 2026), en bloques de 6 meses. Si el CV no tiene experiencia, el valor es `null`.
 - **Nivel educativo:** el más alto **terminado**; un estudio "en curso" no cuenta (por ejemplo, una maestría en curso con bachiller terminado = `universitario`).
 
-### Reglas de comparación que hay que fijar en E05 (antes del 27/11)
+## Comparador de la extracción (RQ-FUN-01 y RQ-FUN-02)
 
-El script comparador todavía no existe. Estas decisiones cambian el resultado de RQ-FUN-01 y RQ-FUN-02 y deben congelarse con los umbrales:
+Aplica las reglas de comparación de **E05, sección 5.5** (nombre sin mayúsculas ni tildes, teléfono solo dígitos sin +51, años ± 0,5, habilidades e idiomas normalizados con la tabla de alias del sistema). Un CV en revisión manual o sin resultado cuenta con todos sus campos incorrectos. El alcance es cv-01 a cv-34 (E05 5.3).
 
-1. **Años de experiencia:** ¿coincidencia exacta o con tolerancia (propuesta: ± 0,5 años)?
-2. **Teléfono:** ¿se comparan solo los dígitos? (propuesta: sí, ignorando espacios, guiones, paréntesis y `+51`).
-3. **Nombre:** ¿se ignoran mayúsculas y tildes? (propuesta: sí).
-4. **Habilidades e idiomas:** se comparan después de normalizar con la misma tabla de alias del sistema (`normalizacion.ts`).
+```bash
+npm run corrida:local -- prueba1     # corrida de PREPARACIÓN con procesarCv, sin BD (extractor según EXTRACTOR_IA)
+npm run comparar -- dataset/corridas/local-prueba1.json
+npm run comparar -- dataset/corridas/corrida-1.json dataset/corridas/corrida-2.json dataset/corridas/corrida-3.json
+```
 
-## CVs pendientes del equipo (cv-31 … cv-34)
+- Cada corrida es un archivo `dataset/corridas/<nombre>.json` con `corrida`, `entorno` (`local`, `dev` o `prod`), `modelo`, `commit`, `fecha` y `resultados` (`{ id, estado: "procesada", cvExtraido }` o `{ id, estado: "pendiente_revision_manual", motivo }`).
+- El comparador escribe `<nombre>.reporte.md` (resultado, aciertos por campo y diferencias por CV) y, con varias corridas, el promedio y la desviación estándar muestral.
+- Las corridas `local-*` son de preparación y no se suben al repositorio. **La medición oficial se hace en producción** (E05 5.7).
 
-Cada integrante (Raquel, Hermy, Nancy y Paul) hace **un CV con datos inventados** en Word o Canva, lo exporta a PDF y anota en un archivo su respuesta esperada con el formato de arriba. Reglas: nombre inventado, correo `@example.com`, teléfono `900 000 2xx`, ningún dato real (ni DNI, ni dirección, ni foto real).
+## CVs con el formato del equipo (cv-31 … cv-34)
+
+Se generan igual que cv-01…30 (misma semilla, agregados al final para no alterar los anteriores). Cada uno usa la plantilla que imita el CV de un integrante; los datos son ficticios.
+
+| CV | Integrante | Estilo |
+|---|---|---|
+| cv-31 | Raquel | `docs-azul-tabla` |
+| cv-32 | Hermy | `cambria-barras` |
+| cv-33 | Nancy | `canva-minimal` |
+| cv-34 | Paul | `times-centrado` (no tiene CV propio: se usa un formato genérico de Word) |

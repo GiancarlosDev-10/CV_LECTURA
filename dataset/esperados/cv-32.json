@@ -1,0 +1,34 @@
+{
+  "id": "cv-32",
+  "archivo": "cv-32-cambria-barras.pdf",
+  "estilo": "cambria-barras",
+  "lengua": "es",
+  "oferta": "Desarrollador Full Stack Junior",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Martín Gutiérrez Mendoza",
+    "email": "martin.gutierrez26@example.com",
+    "telefono": "900 000 241",
+    "aniosExperiencia": 1.5,
+    "nivelEducativo": "secundaria",
+    "habilidades": [
+      "Node",
+      "CSS3",
+      "Next.js",
+      "Express"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Español",
+        "nivel": "nativo"
+      },
+      {
+        "idioma": "Inglés",
+        "nivel": "B2"
+      }
+    ]
+  }
+}

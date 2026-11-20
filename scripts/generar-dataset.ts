@@ -3,7 +3,7 @@
  *   pdf/cv-NN-<estilo>.pdf   el CV
  *   esperados/cv-NN.json     la respuesta esperada (se escribe ANTES de dibujar el PDF, con los mismos datos)
  *
- * 30 normales (cv-01…30) · 4 hechos a mano por el equipo (cv-31…34, se agregan aparte)
+ * 30 normales (cv-01…30) · 4 con el formato del CV de cada integrante (cv-31…34)
  * 2 escaneados (cv-35, 36) · 2 con inyección de instrucciones (cv-37, 38)
  * 1 ejecutable renombrado a .pdf (cv-39) · 1 de más de 5 MB (cv-40)
  *
@@ -52,7 +52,7 @@ async function main() {
   const navegador = await chromium.launch();
   const pagina = await navegador.newPage();
 
-  // 1) 30 CVs normales
+  // 1) 34 CVs normales (cv-31…34 con el formato del CV de cada integrante)
   for (const p of PERFILES) {
     const archivo = `${p.id}-${p.estilo}.pdf`;
     guardarEsperado(p.id, archivo, meta(p), { tipo: "procesada" }, respuestaEsperada(p));

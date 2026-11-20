@@ -30,7 +30,7 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Desarrollo y pruebas automatizadas | Giancarlos Ormeño | — | Historial de Git, ejecuciones del CI, reportes de Vitest y Playwright |
 | Revisión de código antes de integrar a `main` | Giancarlos Ormeño (autorrevisión con lista de verificación) | — | Lista de verificación en el mensaje del commit o del *pull request* |
 | Ejecución de casos de prueba manuales | Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero | Giancarlos Ormeño (soporte) | Fichas de CP con capturas propias (E09) |
-| CVs hechos a mano para el dataset (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (uno cada uno) | — | PDF y respuesta esperada en JSON |
+| Formato de CV para el dataset (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (uno cada uno) | — | Su CV como modelo de diseño; el PDF ficticio y su respuesta esperada se generan |
 | Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) | Los 4 integrantes + 2 o 3 personas externas | Hojas de observación, cuestionarios y hoja de tiempos |
 | Mediciones oficiales (extracción, tiempos, k6, ZAP, disponibilidad) | Giancarlos Ormeño | — | Reportes exportados en `evidencias/` |
 | Registro y seguimiento de defectos | Giancarlos Ormeño | Quien detecta el defecto lo reporta | Registro de defectos (E10) |
@@ -115,8 +115,8 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Núcleo (dominio, puntaje, casos de uso) con pruebas | Giancarlos Ormeño | 14/11/2026 | 16/11/2026 | Hecho |
 | Supabase prod y despliegue en Vercel | Giancarlos Ormeño | 15/11/2026 | 24/11/2026 | Hecho (15/11) |
 | Pantallas de reclutador y postulante (M1–M6) | Giancarlos Ormeño | 16/11/2026 | 24/11/2026 | En proceso |
-| Dataset de prueba (36 generados) | Giancarlos Ormeño | 17/11/2026 | 18/11/2026 | Hecho |
-| CVs hechos a mano (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul | 20/11/2026 | 26/11/2026 | Pendiente |
+| Dataset de prueba (40 CVs) | Giancarlos Ormeño | 17/11/2026 | 18/11/2026 | Hecho |
+| CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul | 19/11/2026 | 19/11/2026 | Hecho |
 | Monitor de disponibilidad | Giancarlos Ormeño | 18/11/2026 | 24/11/2026 | Pendiente |
 | Borradores E01–E04 | Giancarlos Ormeño | 18/11/2026 | 20/11/2026 | Hecho (v0.1) |
 | Borradores E05–E08 | Giancarlos Ormeño | 18/11/2026 | 27/11/2026 | En proceso |

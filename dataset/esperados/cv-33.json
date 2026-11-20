@@ -1,0 +1,24 @@
+{
+  "id": "cv-33",
+  "archivo": "cv-33-canva-minimal.pdf",
+  "estilo": "canva-minimal",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "bajo",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Fiorella Rojas Ríos",
+    "email": "fiorella.rojas6@example.com",
+    "telefono": "900 000 245",
+    "aniosExperiencia": null,
+    "nivelEducativo": "universitario",
+    "habilidades": [
+      "Microsoft Office",
+      "Gestión de expedientes",
+      "Ventas"
+    ],
+    "idiomas": []
+  }
+}

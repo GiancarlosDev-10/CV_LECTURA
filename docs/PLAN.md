@@ -51,7 +51,7 @@ Los nombres figuran en el encabezado de cada entregable.
 | Integrante | Rol en el proyecto | Participación verificable |
 |---|---|---|
 | Integrante 1: Giancarlos Ormeño | Desarrollador, responsable de calidad y analista de pruebas | Todo el desarrollo, pruebas automatizadas, mediciones y redacción |
-| Integrantes 2–5: Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero | Ejecutores de pruebas manuales y usuarios de prueba | Cada uno: **4–6 CP manuales con sus propias capturas**, **1 CV hecho a mano** con su respuesta esperada, **prueba de tareas + SUS** y **revisión manual cronometrada** (RQ-VAL-01) |
+| Integrantes 2–5: Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero | Ejecutores de pruebas manuales y usuarios de prueba | Cada uno: **4–6 CP manuales con sus propias capturas**, **el formato de su CV como modelo** de un CV ficticio del dataset, **prueba de tareas + SUS** y **revisión manual cronometrada** (RQ-VAL-01) |
 
 Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 
@@ -303,7 +303,7 @@ Fórmulas principales:
 | Grupo | Cantidad | Propósito |
 |---|---|---|
 | Normales, generados desde JSON con plantillas variadas (una columna, dos columnas, con tablas, en español y en inglés) | 30 | Exactitud y tiempo |
-| Hechos a mano por los integrantes 2–5 (Word o Canva) | 4 | Realismo y participación |
+| Con el formato del CV de cada integrante 2–5, datos ficticios (cv-31 a cv-34) | 4 | Realismo y participación |
 | Escaneados (imagen sin texto) | 2 | Rechazo controlado |
 | Con inyección de instrucciones oculta | 2 | RQ-SEG-06 |
 | Corrupto, o un ejecutable renombrado a `.pdf` | 1 | Validación del tipo real |

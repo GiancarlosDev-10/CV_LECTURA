@@ -1,0 +1,41 @@
+{
+  "id": "cv-31",
+  "archivo": "cv-31-docs-azul-tabla.pdf",
+  "estilo": "docs-azul-tabla",
+  "lengua": "es",
+  "oferta": "Asistente de Recursos Humanos",
+  "ajuste": "alto",
+  "resultadoEsperado": {
+    "tipo": "procesada"
+  },
+  "esperado": {
+    "nombre": "Jorge Paredes Zevallos",
+    "email": "jorge.paredes97@example.com",
+    "telefono": "(+51) 900-000-238",
+    "aniosExperiencia": 6.5,
+    "nivelEducativo": "maestria",
+    "habilidades": [
+      "Gestión de planillas",
+      "Onboarding",
+      "Legislación laboral",
+      "PLAME",
+      "Microsoft Office",
+      "Entrevistas por competencias",
+      "Comunicación efectiva",
+      "Bienestar social",
+      "Reclutamiento",
+      "SAP",
+      "MS Excel"
+    ],
+    "idiomas": [
+      {
+        "idioma": "Inglés",
+        "nivel": "B1"
+      },
+      {
+        "idioma": "Quechua",
+        "nivel": "nativo"
+      }
+    ]
+  }
+}

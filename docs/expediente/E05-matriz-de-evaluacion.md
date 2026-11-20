@@ -54,7 +54,7 @@ Prioridad: **A** (alta) = responde directamente al enunciado (datos extraídos, 
 
 | ID | Criterio medible de aceptación | Condiciones de medición | Evidencia requerida | Aceptado (Sí/No) |
 |---|---|---|---|---|
-| RQ-FUN-01 | Promedio de 3 corridas ≥ 90 % | Producción; dataset cv-01 a cv-34 (los 30 generados + 4 hechos por el equipo); modelo de IA fijado y temperatura 0; reglas de 5.5 | 3 reportes del comparador + versión del modelo | Pendiente |
+| RQ-FUN-01 | Promedio de 3 corridas ≥ 90 % | Producción; dataset cv-01 a cv-34 (30 generados + 4 con el formato del CV de cada integrante); modelo de IA fijado y temperatura 0; reglas de 5.5 | 3 reportes del comparador + versión del modelo | Pendiente |
 | RQ-FUN-02 | F1 promedio ≥ 0,85 | Igual que RQ-FUN-01 | 3 reportes del comparador | Pendiente |
 | RQ-FUN-03 | 100 % de los casos de la fórmula aprobados | Suite unitaria de `calcularPuntaje` en el CI | Reporte de Vitest | Pendiente |
 | RQ-FUN-04 | 100 % de los CP funcionales aprobados (E2E y manuales) | Producción; cuentas de prueba del *seed* | Reporte de Playwright y fichas E09 | Pendiente |
