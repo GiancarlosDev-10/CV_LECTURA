@@ -485,7 +485,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Tipo / prioridad | Funcional / seguridad · Alta |
 | Responsable | Paul Carretero |
 | Objetivo | Comprobar que el postulante elimina su postulación con el PDF, el texto y los datos extraídos |
-| Precondiciones | Cuenta de postulante propia con una postulación procesada; el responsable de calidad anota el id de la postulación y la ruta del PDF antes de empezar |
+| Precondiciones | Cuenta de postulante propia con una postulación procesada. El ejecutor anota la hora exacta del borrado; la verificación en BD y Storage la hace después el responsable de calidad (no hace falta coordinar antes) |
 | Resultado esperado final | La postulación desaparece para el postulante y para el reclutador; en la BD y Storage no queda la fila ni el archivo |
 | Criterio de aprobación | Todos los pasos dan el resultado esperado y la verificación en BD y Storage no encuentra nada |
 | Evidencia prevista | Capturas de los pasos 2 a 4 y consulta antes/después |
@@ -495,7 +495,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | 1 | Abrir "Mis postulaciones" y elegir eliminar la postulación | — | Pide confirmar: "¿Eliminar esta postulación, tu CV y los datos extraídos? No se puede deshacer." |
 | 2 | Confirmar | — | La postulación desaparece de la lista |
 | 3 | Como reclutador dueño, abrir el ranking de esa oferta y la URL del detalle anotada | — | El candidato ya no aparece; el detalle da "no encontrado" |
-| 4 | El responsable de calidad consulta la BD y Storage | Id y ruta anotados | 0 filas y 0 archivos |
+| 4 | El responsable de calidad consulta después la BD y Storage | Correo de la cuenta y hora del borrado | 0 postulaciones de esa cuenta y 0 archivos en su carpeta |
 
 ## CP-046. Eliminar mi cuenta
 
@@ -506,7 +506,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Tipo / prioridad | Funcional / seguridad · Alta |
 | Responsable | Paul Carretero |
 | Objetivo | Comprobar que el postulante elimina su cuenta con todas sus postulaciones y CVs |
-| Precondiciones | Cuenta de postulante creada para este caso, con 2 postulaciones; el responsable de calidad anota sus ids y rutas |
+| Precondiciones | Cuenta de postulante creada para este caso, con 2 postulaciones. El ejecutor anota la hora exacta del borrado |
 | Resultado esperado final | La cuenta ya no permite ingresar; no queda ninguna postulación ni PDF |
 | Criterio de aprobación | Todos los pasos dan el resultado esperado y la verificación no encuentra nada |
 | Evidencia prevista | Capturas de los pasos 1 a 3 y consulta antes/después |
@@ -516,7 +516,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | 1 | En "Mis postulaciones", elegir eliminar la cuenta y confirmar | — | Pide confirmación; luego cierra la sesión |
 | 2 | Intentar ingresar con la misma cuenta | Correo y contraseña de la cuenta | No ingresa |
 | 3 | Como reclutador, revisar los rankings de las 2 ofertas | — | Las postulaciones ya no aparecen |
-| 4 | El responsable de calidad consulta la BD y Storage | Ids y rutas anotados | 0 filas y 0 archivos |
+| 4 | El responsable de calidad consulta después la BD y Storage | Correo de la cuenta y hora del borrado | La cuenta no existe y no queda ninguna carpeta de CVs sin dueño en Storage |
 
 ## CP-047. CV con inyección de instrucciones
 
@@ -546,19 +546,19 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Módulo / funcionalidad | M1–M5 — Aprendizaje y operabilidad |
 | Requisito relacionado | RQ-INT-01 |
 | Tipo / prioridad | Usabilidad · Media |
-| Responsable | Giancarlos Ormeño (facilitador); participantes: los 4 integrantes y 2 o 3 personas externas |
+| Responsable | Cada participante, sin supervisión (prueba autoadministrada); participantes: los 4 integrantes y 2 o 3 personas externas. Giancarlos Ormeño prepara la prueba y verifica los resultados |
 | Objetivo | Medir si una persona que no conoce el sistema completa las tareas principales sin ayuda |
-| Precondiciones | Producción disponible; cuenta de reclutador preparada; hoja de observación; el participante no ha usado el sistema antes (los integrantes hacen la prueba **antes** de ejecutar sus CP) |
+| Precondiciones | Producción disponible; cuenta `reclutador.usabilidad@example.com` con la oferta "Asistente de Recursos Humanos — Sede Norte" (5 CVs procesados, cerrada a nuevas postulaciones), preparada con `npm run usabilidad:preparar`; documento `01-prueba-de-usabilidad`; el participante no ha usado el sistema antes (los integrantes hacen la prueba **antes** de ejecutar sus CP) |
 | Resultado esperado final | El participante completa las 3 tareas sin ayuda |
 | Criterio de aprobación | ≥ 90 % de los participantes completan las 3 tareas |
-| Evidencia prevista | Hoja de observación por participante (completó sí/no, tiempo, dudas) |
+| Evidencia prevista | Hoja de autorregistro por participante (completó sí/no, horas de inicio y fin, dudas marcadas) con una captura al final de cada tarea. Las horas se contrastan con los registros del sistema (creación de la cuenta, `subido_en` de la postulación y `accesos_cv` del reclutador) |
 
 | N.° | Acción | Datos de entrada | Resultado esperado |
 |---|---|---|---|
-| 1 | Tarea 1 (postulante): "Crea tu cuenta y postula a la oferta Analista de Datos con este CV" | `cv-12-moderno-sans.pdf` | Postulación enviada sin ayuda |
+| 1 | Tarea 1 (postulante): "Crea tu cuenta y postula a la oferta Desarrollador Full Stack Junior con este CV" | `cv-12-moderno-sans.pdf` | Postulación enviada sin ayuda |
 | 2 | Tarea 2 (postulante): "Averigua en qué estado está tu postulación" | — | Encuentra el estado sin ayuda |
-| 3 | Tarea 3 (reclutador): "Encuentra al mejor candidato de la oferta Analista de Datos y explica por qué está primero" | Cuenta de reclutador | Identifica al primero y lee su desglose |
-| 4 | El facilitador anota el resultado de cada tarea sin intervenir | — | Hoja completa |
+| 3 | Tarea 3 (reclutador): "Encuentra al mejor candidato de la oferta Asistente de Recursos Humanos — Sede Norte y explica por qué está primero" | Cuenta del reclutador de usabilidad | Identifica al primero y explica su desglose |
+| 4 | El participante anota sus horas, el resultado y sus dudas en la hoja de autorregistro | — | Hoja completa y 3 capturas |
 
 ## CP-049. Cuestionario SUS
 
@@ -567,7 +567,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Módulo / funcionalidad | M1–M5 — Satisfacción |
 | Requisito relacionado | RQ-INT-02 |
 | Tipo / prioridad | Usabilidad · Media |
-| Responsable | Giancarlos Ormeño (facilitador); participantes de CP-048 |
+| Responsable | Cada participante de CP-048 (autoadministrado); Giancarlos Ormeño calcula el puntaje |
 | Objetivo | Medir la usabilidad percibida con un cuestionario estándar |
 | Precondiciones | CP-048 terminado por el participante; cuestionario SUS de 10 ítems en español, escala de 1 a 5 |
 | Resultado esperado final | Cada participante entrega su cuestionario completo |
@@ -576,7 +576,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 
 | N.° | Acción | Datos de entrada | Resultado esperado |
 |---|---|---|---|
-| 1 | Entregar el cuestionario justo después de las tareas | — | El participante responde los 10 ítems sin ayuda del facilitador |
+| 1 | Responder el cuestionario justo después de las tareas (está en el mismo documento) | — | El participante responde los 10 ítems sin ayuda |
 | 2 | Calcular el puntaje de cada participante | Ítems impares: respuesta − 1; pares: 5 − respuesta; suma × 2,5 | Puntaje de 0 a 100 por participante |
 | 3 | Calcular el promedio | — | SUS promedio del grupo |
 
@@ -587,12 +587,12 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Módulo / funcionalidad | M5 — Propuesta de valor |
 | Requisito relacionado | RQ-VAL-01 |
 | Tipo / prioridad | Calidad en uso · Alta |
-| Responsable | Giancarlos Ormeño (facilitador); participantes: Raquel, Hermy, Nancy y Paul |
+| Responsable | Cada participante, con su cronómetro (autoadministrado); participantes: Raquel, Hermy, Nancy y Paul. Giancarlos Ormeño calcula la reducción |
 | Objetivo | Medir cuánto tiempo ahorra el sistema frente a revisar CVs a mano |
-| Precondiciones | 10 CVs del dataset ya procesados en una oferta (con el script de medición); los mismos 10 PDFs impresos o en una carpeta; cronómetro; hoja de tiempos. La mitad empieza a mano y la otra mitad con el sistema |
+| Precondiciones | Oferta "Analista de Datos — Sede Sur" del reclutador de usabilidad con exactamente 10 CVs procesados (cv-03, 04, 07, 10, 13, 16, 22, 24, 28 y 34), cerrada a nuevas postulaciones y distinta de la oferta de CP-048 para no sesgar la revisión a mano; los mismos 10 PDFs en una carpeta; cronómetro del celular. Raquel y Hermy empiezan a mano; Nancy y Paul, con el sistema |
 | Resultado esperado final | Tiempo a mano y con el sistema registrado por participante |
 | Criterio de aprobación | Reducción promedio ≥ 50 % = (t_manual − t_sistema) / t_manual × 100 |
-| Evidencia prevista | Hoja de tiempos firmada por cada participante |
+| Evidencia prevista | Tabla de tiempos y de los 3 elegidos en el documento `01-prueba-de-usabilidad` de cada participante |
 
 | N.° | Acción | Datos de entrada | Resultado esperado |
 |---|---|---|---|

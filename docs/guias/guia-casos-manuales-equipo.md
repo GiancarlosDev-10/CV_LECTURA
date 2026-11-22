@@ -1,6 +1,6 @@
 # Guía para ejecutar los casos de prueba manuales
 
-> Documento de trabajo para el equipo. Los pasos son los mismos de E08; aquí están ordenados por integrante, con los datos listos para usar.
+**Versión reemplazada:** para el equipo vale el paquete `paquete-equipo-CV-Lectura.zip` (un LÉEME común, una prueba de usabilidad autoadministrada y una guía por integrante, sin supervisión). Este documento queda como referencia; la fuente de los casos es E08.
 
 | Campo | Valor |
 |---|---|

@@ -17,7 +17,8 @@
     "dataset": "tsx scripts/generar-dataset.ts",
     "corrida:local": "tsx scripts/corrida-local.ts",
     "comparar": "tsx scripts/comparar-extraccion.ts",
-    "medicion": "tsx scripts/medicion-prod.ts"
+    "medicion": "tsx scripts/medicion-prod.ts",
+    "usabilidad:preparar": "tsx scripts/preparar-usabilidad.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

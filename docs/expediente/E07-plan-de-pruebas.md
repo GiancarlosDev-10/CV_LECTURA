@@ -102,7 +102,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | CP manuales de M3 | Hermy Salcedo | 24/11 – 27/11/2026 | Fichas E08, dataset | Pendiente |
 | CP manuales de M4 y M5 | Nancy Vilcas | 24/11 – 27/11/2026 | Fichas E08, dataset | Pendiente |
 | CP manuales de seguridad y privacidad | Paul Carretero | 24/11 – 27/11/2026 | Fichas E08, dos navegadores | Pendiente |
-| Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) + equipo y 2 o 3 externos | 23/11 – 24/11/2026 | Cronómetro, cuestionario | Pendiente |
+| Prueba de tareas, SUS y revisión cronometrada | Autoadministrada por el equipo y 2 o 3 externos (Giancarlos Ormeño prepara y verifica) | 23/11 – 24/11/2026 | Cronómetro, cuestionario | Pendiente |
 | ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | Hecho el 22/11/2026 (ZAP, k6 y SonarQube Cloud) |
 | Repetición de pruebas tras las mejoras (segunda medición) | Giancarlos Ormeño | 04/12 – 09/12/2026 | Todas | Hecho para los automatizados (22/11/2026) |
 
