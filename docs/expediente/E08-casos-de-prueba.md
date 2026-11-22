@@ -124,7 +124,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 |---|---|---|---|
 | 1 | Abrir la página de inicio y elegir "Registrarse" | — | Se muestra el formulario de registro |
 | 2 | Completar el formulario y enviarlo | Nombre inventado, `raquel.prueba@example.com`, contraseña de 8 o más caracteres | Se crea la cuenta y se muestra la lista de ofertas abiertas |
-| 3 | Cerrar sesión | — | Vuelve a la página de inicio |
+| 3 | Cerrar sesión | — | Vuelve a la pantalla de ingreso |
 | 4 | Ingresar con una contraseña incorrecta | Correo del paso 2, contraseña errada | Mensaje de error claro; no ingresa |
 | 5 | Ingresar con los datos correctos | Correo y contraseña del paso 2 | Entra a "Ofertas abiertas" |
 | 6 | Revisar el encabezado | — | Muestra el nombre del postulante y las opciones de postulante |
@@ -147,7 +147,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 |---|---|---|---|
 | 1 | Ingresar como reclutador | `reclutador1@example.com` | Se muestra el panel con sus ofertas |
 | 2 | Revisar las ofertas listadas | — | Solo aparecen las ofertas de este reclutador |
-| 3 | Cerrar sesión | — | Vuelve a la página de inicio |
+| 3 | Cerrar sesión | — | Vuelve a la pantalla de ingreso |
 | 4 | Escribir en la barra de direcciones la URL del panel | `https://cv-lectura.vercel.app/reclutador` | Redirige a la pantalla de ingreso; no muestra datos |
 
 ## CP-029. Crear oferta con requisitos y pesos
@@ -412,7 +412,7 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 |---|---|---|---|
 | 1 | Abrir el detalle de 2 postulaciones distintas y anotar la hora | — | Se muestra el detalle |
 | 2 | Descargar el PDF de una de ellas y anotar la hora | — | El PDF se abre |
-| 3 | Entregar la hoja al responsable de calidad | — | Se compara con `accesos_cv`: 2 filas "ver_detalle" y 1 "descargar_pdf" |
+| 3 | Entregar la hoja al responsable de calidad | — | Se compara con `accesos_cv`: 2 filas "ver_detalle" y 3 "descargar_pdf" (el visor del detalle carga el PDF y cuenta como acceso: 2; más la pestaña del paso 2: 1) |
 
 ## CP-042. Otro reclutador abre una postulación por URL
 
