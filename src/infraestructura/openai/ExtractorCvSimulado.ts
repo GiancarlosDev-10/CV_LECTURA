@@ -40,7 +40,7 @@ function extraccionBasica(texto: string): CvExtraido {
   const anios = texto.match(/(\d{1,2})\s+años de experiencia/i);
   return {
     nombre: primeraLinea ? primeraLinea.slice(0, 80) : null,
-    email: texto.match(/[\w.+-]+@[\w-]+\.[\w.]+/)?.[0] ?? null,
+    email: texto.match(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/)?.[0] ?? null,
     telefono: texto.match(/\+?\d[\d\s-]{7,}\d/)?.[0] ?? null,
     aniosExperiencia: anios ? Number(anios[1]) : null,
     nivelEducativo: null,

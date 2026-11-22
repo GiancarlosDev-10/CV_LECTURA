@@ -89,8 +89,8 @@ export function compararCampos(esperado: CvExtraido, obtenido: CvExtraido): Reco
 function contarConjuntos(esperados: string[], extraidos: string[]): ConteoLista {
   const e = new Set(esperados);
   const o = new Set(extraidos);
-  const faltantes = [...e].filter((x) => !o.has(x)).sort();
-  const inventados = [...o].filter((x) => !e.has(x)).sort();
+  const faltantes = [...e].filter((x) => !o.has(x)).sort((a, b) => a.localeCompare(b));
+  const inventados = [...o].filter((x) => !e.has(x)).sort((a, b) => a.localeCompare(b));
   return { aciertos: e.size - faltantes.length, extraidos: o.size, esperados: e.size, faltantes, inventados };
 }
 

@@ -21,4 +21,7 @@ process.loadEnvFile?.(".env.prod.local");
   writeFileSync("pruebas/carga/.cookies.json", JSON.stringify(cookies));
   console.log(`Sesión guardada (${cookies.length} cookies)`);
   await navegador.close();
-})();
+})().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});

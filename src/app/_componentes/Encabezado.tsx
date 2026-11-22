@@ -50,7 +50,7 @@ export function Encabezado({ sesion }: { sesion: Sesion }) {
             <span className="rounded bg-slate-100 px-1.5 py-0.5 font-medium capitalize">{sesion.rol}</span>
           </span>
           <form action={salir}>
-            <button className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm text-texto-2 hover:bg-error/5 hover:text-error">
+            <button type="submit" className="inline-flex items-center gap-1.5 rounded-lg px-2.5 py-2 text-sm text-texto-2 hover:bg-error/5 hover:text-error">
               <LogOut aria-hidden className="size-4" />
               Salir
             </button>
