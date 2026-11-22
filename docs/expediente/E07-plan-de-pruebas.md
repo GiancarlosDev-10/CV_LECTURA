@@ -98,11 +98,11 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (aportan su CV como modelo) | 19/11/2026 | Generador del dataset | Hecho |
 | Congelamiento de umbrales | Equipo | 22/11/2026 | E05 | Hecho |
 | 3 corridas de extracción y tiempo por CV | Giancarlos Ormeño | 27/11 – 02/12/2026 | OpenAI, producción | Hecho, adelantado al 22/11/2026 (6 corridas: 2 mediciones) |
-| CP manuales de M1 y M2 (7 casos) | Raquel Montes | 28/11 – 03/12/2026 | Fichas E08, producción | Pendiente |
-| CP manuales de M3 | Hermy Salcedo | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |
-| CP manuales de M4 y M5 | Nancy Vilcas | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |
-| CP manuales de seguridad y privacidad | Paul Carretero | 28/11 – 03/12/2026 | Fichas E08, dos navegadores | Pendiente |
-| Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) + equipo y 2 o 3 externos | 28/11 – 03/12/2026 | Cronómetro, cuestionario | Pendiente |
+| CP manuales de M1 y M2 (7 casos) | Raquel Montes | 24/11 – 27/11/2026 | Fichas E08, producción | Pendiente |
+| CP manuales de M3 | Hermy Salcedo | 24/11 – 27/11/2026 | Fichas E08, dataset | Pendiente |
+| CP manuales de M4 y M5 | Nancy Vilcas | 24/11 – 27/11/2026 | Fichas E08, dataset | Pendiente |
+| CP manuales de seguridad y privacidad | Paul Carretero | 24/11 – 27/11/2026 | Fichas E08, dos navegadores | Pendiente |
+| Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) + equipo y 2 o 3 externos | 23/11 – 24/11/2026 | Cronómetro, cuestionario | Pendiente |
 | ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | Hecho el 22/11/2026 (ZAP, k6 y SonarQube Cloud) |
 | Repetición de pruebas tras las mejoras (segunda medición) | Giancarlos Ormeño | 04/12 – 09/12/2026 | Todas | Hecho para los automatizados (22/11/2026) |
 

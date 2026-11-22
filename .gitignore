@@ -57,3 +57,7 @@ next-env.d.ts
 # Corridas de preparación (no son evidencia oficial)
 /dataset/corridas/local-*
 /pruebas/carga/.cookies.json
+
+# Guías personales del equipo: contienen contraseñas de prueba (no subir)
+/docs/guias/equipo/
+/docs/guias/paquete-equipo*.zip

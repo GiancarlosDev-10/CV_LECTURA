@@ -123,8 +123,8 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Congelamiento de umbrales (E05 v1.0, `umbrales-v1.0`) | Equipo | 22/11/2026 | 22/11/2026 | Hecho |
 | Pruebas E2E, script comparador y script de medición | Giancarlos Ormeño | 20/11/2026 | 27/11/2026 | Hecho (22/11/2026) |
 | Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Hecho (22/11/2026), adelantado |
-| Ejecución de CP manuales | Raquel, Hermy, Nancy y Paul | 28/11/2026 | 03/12/2026 | Pendiente |
-| Prueba de tareas, SUS y revisión cronometrada | Equipo + externos | 28/11/2026 | 03/12/2026 | Pendiente |
+| Ejecución de CP manuales | Raquel, Hermy, Nancy y Paul | 24/11/2026 | 27/11/2026 (adelantado) | Pendiente |
+| Prueba de tareas, SUS y revisión cronometrada | Equipo + externos | 23/11/2026 | 24/11/2026 (adelantado) | Pendiente |
 | E09, E10 y E11 (primera medición) | Giancarlos Ormeño | 30/11/2026 | 04/12/2026 | Borrador v0.1 (22/11/2026), con los automatizados |
 | Acciones de mejora y segunda medición | Giancarlos Ormeño | 04/12/2026 | 09/12/2026 | Hecho para DEF-001, DEF-002 y DEF-004 (22/11/2026) |
 | Fin del periodo de monitoreo de disponibilidad | Giancarlos Ormeño | — | 08/12/2026 | En curso |

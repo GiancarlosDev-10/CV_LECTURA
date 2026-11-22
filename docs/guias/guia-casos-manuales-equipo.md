@@ -8,7 +8,7 @@
 | Sistema | https://cv-lectura.vercel.app (producción) |
 | Para | Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero |
 | Coordina | Giancarlos Ormeño (responsable de calidad) |
-| Plazo | Del 28/11/2026 al 03/12/2026 |
+| Plazo | Del 23/11/2026 al viernes 27/11/2026 |
 
 ## 1. Qué vas a hacer y por qué importa
 
@@ -312,7 +312,7 @@ Responde estas preguntas con tus palabras. No hay respuestas correctas: sirven p
 
 ## 9. Qué entregar
 
-Envía todo a Giancarlos (carpeta compartida o mensaje) **hasta el 03/12/2026**:
+Envía todo a Giancarlos (carpeta compartida o mensaje) **hasta el viernes 27/11/2026**:
 
 - [ ] Una hoja de resultado por cada caso (sección 3.2).
 - [ ] Las capturas, con el nombre en el formato indicado.
