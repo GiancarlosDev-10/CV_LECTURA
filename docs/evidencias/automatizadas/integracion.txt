@@ -1,0 +1,46 @@
+
+> cv-lectura@0.1.0 test:integracion
+> vitest run --config vitest.integracion.config.mts --reporter=verbose
+
+
+ RUN  v5.1.0 D:/PROYECTOS/CV_LECTURA
+
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > usuario sin sesión (anon) > no puede leer ofertas ni postulaciones 265ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > usuario sin sesión (anon) > no puede descargar un CV aunque conozca la ruta 361ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > perfiles y roles > cada usuario ve solo su propio perfil 119ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > perfiles y roles > un postulante no puede ascenderse a reclutador 277ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > ofertas > un postulante no puede crear ofertas 128ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > ofertas > un reclutador no puede crear ofertas a nombre de otro 137ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > ofertas > un reclutador no puede modificar la oferta de otro 264ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > edición de ofertas (RQ-FUN-03: los requisitos no cambian con postulaciones) > con postulaciones, el dueño no puede cambiar requisitos ni título 366ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > edición de ofertas (RQ-FUN-03: los requisitos no cambian con postulaciones) > con postulaciones, el dueño sí puede cerrar y reabrir la oferta 245ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > edición de ofertas (RQ-FUN-03: los requisitos no cambian con postulaciones) > sin postulaciones, el dueño edita su oferta 714ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > postulaciones (confidencialidad entre reclutadores y postulantes) > el reclutador dueño de la oferta ve la postulación 119ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > postulaciones (confidencialidad entre reclutadores y postulantes) > otro reclutador NO ve la postulación 119ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > postulaciones (confidencialidad entre reclutadores y postulantes) > otro postulante NO ve la postulación 118ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > postulaciones (confidencialidad entre reclutadores y postulantes) > un postulante no puede asignarse puntaje al postular 109ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > postulaciones (confidencialidad entre reclutadores y postulantes) > un postulante no puede modificar el estado ni el puntaje de su postulación 230ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > decisión del reclutador (permisos por columna) > el reclutador dueño registra su decisión con autor 236ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > decisión del reclutador (permisos por columna) > el reclutador NO puede cambiar el puntaje ni el estado 133ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > decisión del reclutador (permisos por columna) > no puede firmar la decisión a nombre de otro reclutador 433ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > decisión del reclutador (permisos por columna) > otro reclutador y el postulante NO pueden registrar decisiones 314ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > archivos de CV (bucket privado) > el reclutador dueño de la oferta puede descargar el CV 586ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > archivos de CV (bucket privado) > otro reclutador NO puede descargar el CV 160ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > archivos de CV (bucket privado) > un postulante no puede subir archivos en la carpeta de otro 252ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > archivos de CV (bucket privado) > el bucket rechaza archivos que no son PDF 137ms
+ ✓ src/infraestructura/supabase/seguridad.integracion.test.ts > derecho de cancelación (ARCO) > el postulante elimina su postulación y su CV; nadie más puede verlos 1840ms
+stderr | src/infraestructura/supabase/procesamiento.integracion.test.ts > procesamiento de un CV de punta a punta (Supabase DEV) > un PDF con texto queda 'procesada' con puntaje, desglose y marcas de tiempo
+Warning: Indexing all PDF objects
+
+ ✓ src/infraestructura/supabase/procesamiento.integracion.test.ts > procesamiento de un CV de punta a punta (Supabase DEV) > un PDF con texto queda 'procesada' con puntaje, desglose y marcas de tiempo 2362ms
+ ✓ src/infraestructura/supabase/procesamiento.integracion.test.ts > procesamiento de un CV de punta a punta (Supabase DEV) > un PDF sin texto queda en revisión manual y SIN puntaje (falla segura) 1772ms
+stderr | src/infraestructura/supabase/procesamiento.integracion.test.ts > procesamiento de un CV de punta a punta (Supabase DEV) > si la IA devuelve un JSON inválido, queda en revisión manual con el motivo
+Warning: Indexing all PDF objects
+
+ ✓ src/infraestructura/supabase/procesamiento.integracion.test.ts > procesamiento de un CV de punta a punta (Supabase DEV) > si la IA devuelve un JSON inválido, queda en revisión manual con el motivo 2508ms
+
+ Test Files  2 passed (2)
+      Tests  27 passed (27)
+   Start at  16:48:24
+   Duration  20.93s (tests 97%, import 2%, transform 1%)
+

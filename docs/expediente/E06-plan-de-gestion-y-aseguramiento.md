@@ -117,17 +117,17 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Pantallas de reclutador y postulante (M1–M6) | Giancarlos Ormeño | 16/11/2026 | 24/11/2026 | En proceso |
 | Dataset de prueba (40 CVs) | Giancarlos Ormeño | 17/11/2026 | 18/11/2026 | Hecho |
 | CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul | 19/11/2026 | 19/11/2026 | Hecho |
-| Monitor de disponibilidad | Giancarlos Ormeño | 18/11/2026 | 24/11/2026 | Pendiente |
+| Monitor de disponibilidad | Giancarlos Ormeño | 18/11/2026 | 24/11/2026 | Hecho (22/11/2026 15:24) |
 | Borradores E01–E04 | Giancarlos Ormeño | 18/11/2026 | 20/11/2026 | Hecho (v0.1) |
 | Borradores E05–E08 | Giancarlos Ormeño | 18/11/2026 | 27/11/2026 | En proceso |
 | Congelamiento de umbrales (E05 v1.0, `umbrales-v1.0`) | Equipo | 22/11/2026 | 22/11/2026 | Hecho |
-| Pruebas E2E, script comparador y script de medición | Giancarlos Ormeño | 20/11/2026 | 27/11/2026 | Pendiente |
-| Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Pendiente |
+| Pruebas E2E, script comparador y script de medición | Giancarlos Ormeño | 20/11/2026 | 27/11/2026 | Hecho (22/11/2026) |
+| Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Hecho (22/11/2026), adelantado; falta SonarQube |
 | Ejecución de CP manuales | Raquel, Hermy, Nancy y Paul | 28/11/2026 | 03/12/2026 | Pendiente |
 | Prueba de tareas, SUS y revisión cronometrada | Equipo + externos | 28/11/2026 | 03/12/2026 | Pendiente |
-| E09, E10 y E11 (primera medición) | Giancarlos Ormeño | 30/11/2026 | 04/12/2026 | Pendiente |
-| Acciones de mejora y segunda medición | Giancarlos Ormeño | 04/12/2026 | 09/12/2026 | Pendiente |
-| Fin del periodo de monitoreo de disponibilidad | Giancarlos Ormeño | — | 08/12/2026 | Pendiente |
+| E09, E10 y E11 (primera medición) | Giancarlos Ormeño | 30/11/2026 | 04/12/2026 | Borrador v0.1 (22/11/2026), con los automatizados |
+| Acciones de mejora y segunda medición | Giancarlos Ormeño | 04/12/2026 | 09/12/2026 | Hecho para DEF-001, DEF-002 y DEF-004 (22/11/2026) |
+| Fin del periodo de monitoreo de disponibilidad | Giancarlos Ormeño | — | 08/12/2026 | En curso |
 | E12 y E13 (antes y después) | Giancarlos Ormeño | 04/12/2026 | 09/12/2026 | Pendiente |
 | Congelamiento del código, E14 y anexos | Equipo | 09/12/2026 | 11/12/2026 | Pendiente |
 | **Entrega del expediente** | Equipo | — | 11/12/2026 | Pendiente |

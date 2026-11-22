@@ -1,0 +1,33 @@
+
+> cv-lectura@0.1.0 test:coverage
+> vitest run --coverage
+
+
+ RUN  v5.1.0 D:/PROYECTOS/CV_LECTURA
+      Coverage enabled with v8
+
+
+ Test Files  9 passed (9)
+      Tests  92 passed (92)
+   Start at  16:48:21
+   Duration  1.41s (import 59%, tests 22%, worker 11%, transform 7%)
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   98.06 |    94.28 |     100 |   97.69 |                   
+ aplicacion        |     100 |    92.85 |     100 |     100 |                   
+  procesarCv.ts    |     100 |       85 |     100 |     100 | 62,65,86          
+ dominio/entidades |   86.66 |      100 |     100 |   86.66 |                   
+  postulacion.ts   |       0 |      100 |     100 |       0 | 6-15              
+ dominio/puntaje   |   98.24 |    96.15 |     100 |   97.77 |                   
+  ...larPuntaje.ts |      98 |    95.45 |     100 |   97.36 | 83                
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 98.06% ( 152/155 )
+Branches     : 94.28% ( 66/70 )
+Functions    : 100% ( 38/38 )
+Lines        : 97.69% ( 127/130 )
+================================================================================

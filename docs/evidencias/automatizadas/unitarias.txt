@@ -1,0 +1,104 @@
+
+ RUN  v5.1.0 D:/PROYECTOS/CV_LECTURA
+
+ ✓ src/aplicacion/eliminarMisDatos.test.ts > eliminarPostulacion (derecho de cancelación) > borra primero el PDF y luego la postulación 5ms
+ ✓ src/aplicacion/eliminarMisDatos.test.ts > eliminarPostulacion (derecho de cancelación) > si la postulación no existe o no es suya → NO_ENCONTRADA 1ms
+ ✓ src/aplicacion/eliminarMisDatos.test.ts > eliminarPostulacion (derecho de cancelación) > si falla el borrado del PDF, no borra la fila (evita archivos huérfanos sin rastro) 2ms
+ ✓ src/aplicacion/eliminarMisDatos.test.ts > eliminarMiCuenta > borra todos los PDF y luego la cuenta (las postulaciones caen en cascada) 1ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'JavaScript' se normaliza como 'javascript' 3ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'JS' se normaliza como 'javascript' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > '  Node.JS ' se normaliza como 'node.js' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'NodeJS' se normaliza como 'node.js' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'Postgres' se normaliza como 'postgresql' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'React.js' se normaliza como 'react' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'TS' se normaliza como 'typescript' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'C Sharp' se normaliza como 'c#' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'Golang' se normaliza como 'go' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > 'K8s' se normaliza como 'kubernetes' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > ignora tildes, mayúsculas y espacios repetidos 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarHabilidad > deja igual una habilidad sin alias 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarIdioma > 'Inglés' se normaliza como 'ingles' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarIdioma > 'English' se normaliza como 'ingles' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarIdioma > 'Español' se normaliza como 'espanol' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarIdioma > 'Castellano' se normaliza como 'espanol' 0ms
+ ✓ src/dominio/puntaje/normalizacion.test.ts > normalizarIdioma > 'Portuguese' se normaliza como 'portugues' 0ms
+ ✓ src/aplicacion/generarRanking.test.ts > generarRanking > ordena las procesadas por puntaje descendente y les asigna posición 16ms
+ ✓ src/aplicacion/generarRanking.test.ts > generarRanking > ante empate de puntaje, va primero quien postuló antes 0ms
+ ✓ src/aplicacion/generarRanking.test.ts > generarRanking > los CVs sin puntaje no reciben posición ni se mezclan con el ranking 1ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > un CV idéntico tiene los 5 campos correctos 4ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > nombre: ignora mayúsculas, tildes y espacios repetidos 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > email: coincidencia exacta en minúsculas 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > teléfono: solo dígitos, sin el prefijo +51 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > teléfono: un 51 que es parte del número de 9 dígitos no se quita 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > años de experiencia: tolerancia de ± 0,5 años 1ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > años de experiencia: si el esperado es null, solo null es correcto 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > nivel educativo: coincidencia exacta 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCampos (E05 5.5, RQ-FUN-01) > un campo de texto ausente (null) solo es correcto si el esperado también es null 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararListas (E05 5.5, RQ-FUN-02) > habilidades: se comparan como conjuntos después de la tabla de alias 1ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararListas (E05 5.5, RQ-FUN-02) > habilidades: cuenta las faltantes y las inventadas 1ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararListas (E05 5.5, RQ-FUN-02) > idiomas: deben coincidir el idioma normalizado y el nivel MCER 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCorrida > calcula el % de campos correctos y el F1 de toda la corrida 1ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCorrida > un CV en revisión manual cuenta con todos sus campos incorrectos (no se excluye) 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCorrida > un CV sin resultado en la corrida cuenta como incorrecto y queda señalado 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCorrida > F1 es 0 cuando no hay ningún acierto 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > compararCorrida > ignora resultados de CVs que no están en el alcance 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > resumirCorridas > promedia y calcula la desviación estándar muestral 0ms
+ ✓ scripts/comparador/compararExtraccion.test.ts > resumirCorridas > con una sola corrida la desviación es 0 0ms
+ ✓ src/infraestructura/pdf/LectorPdfUnpdf.test.ts > LectorPdfUnpdf > extrae el texto de un PDF con capa de texto 91ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > crea la postulación con el consentimiento vigente y su fecha 4ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > sin consentimiento → rechaza y borra el archivo subido 2ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > con una versión de consentimiento desactualizada → rechaza 0ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > archivo que no es PDF aunque tenga extensión .pdf → rechaza y lo borra 0ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > archivo inexistente → ARCHIVO_NO_ENCONTRADO 0ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > identificador de postulación inválido (posible manipulación de ruta) → rechaza sin tocar archivos 0ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > si la base responde 'duplicada' → YA_POSTULO y borra el archivo 0ms
+ ✓ src/aplicacion/postularAOferta.test.ts > postularAOferta > si la base responde 'oferta_no_disponible' → OFERTA_NO_DISPONIBLE y borra el archivo 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > calcularPuntaje — candidato que cumple todo > obtiene 100 puntos 5ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > calcularPuntaje — candidato que cumple todo > reconoce habilidades escritas con alias 1ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > habilidades obligatorias (peso 40) > 3 de 4 cumplidas → 30 puntos 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > habilidades obligatorias (peso 40) > ninguna cumplida → 0 puntos 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > habilidades obligatorias (peso 40) > si la oferta no exige habilidades obligatorias, otorga el peso completo 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > habilidades deseables (peso 20) > 1 de 2 cumplidas → 10 puntos 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > experiencia (peso 20) > 2 de 4 años pedidos → 10 puntos 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > experiencia (peso 20) > más años de los pedidos no supera el peso 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > experiencia (peso 20) > experiencia no encontrada en el CV → 0 puntos 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > experiencia (peso 20) > si la oferta pide 0 años, otorga el peso completo 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > alcanza el nivel pedido → 10 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > supera el nivel pedido → 10 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > le falta un nivel → 5 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > le faltan dos o más niveles → 0 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > nivel no encontrado en el CV → 0 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > educación (peso 10) > si la oferta no exige nivel, otorga el peso completo 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > idiomas (peso 10) > nivel inferior al pedido → 0 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > idiomas (peso 10) > 'nativo' equivale a C2 y cumple cualquier nivel 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > idiomas (peso 10) > 1 de 2 idiomas cumplidos → 5 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > pesos personalizados y redondeo > aplica los pesos de la oferta 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > pesos personalizados y redondeo > redondea a 2 decimales y el total es la suma exacta del desglose 0ms
+ ✓ src/dominio/puntaje/calcularPuntaje.test.ts > pesos personalizados y redondeo > rechaza pesos que no suman 100 1ms
+ ✓ src/infraestructura/pdf/LectorPdfUnpdf.test.ts > LectorPdfUnpdf > quita los caracteres de control que PostgreSQL no acepta (DEF-001, cv-05 del dataset) 58ms
+ ✓ src/infraestructura/pdf/LectorPdfUnpdf.test.ts > LectorPdfUnpdf > descarta el texto de menos de 4 pt, ilegible para una persona (DEF-002, cv-37 del dataset) 78ms
+stderr | src/infraestructura/pdf/LectorPdfUnpdf.test.ts > LectorPdfUnpdf > lanza ErrorPdfIlegible si el archivo no es un PDF válido
+Warning: Indexing all PDF objects
+
+ ✓ src/infraestructura/pdf/LectorPdfUnpdf.test.ts > LectorPdfUnpdf > lanza ErrorPdfIlegible si el archivo no es un PDF válido 3ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — camino feliz > guarda los datos extraídos y el puntaje calculado 9ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > cuando la IA devuelve un JSON que no cumple el contrato → { modo: 'json_invalido' } 2ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > cuando la IA responde con error → { modo: 'error' } 0ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > cuando la IA no responde dentro del tiempo límite → { modo: 'demora', demoraMs: 500 } 54ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > PDF escaneado (sin texto suficiente) → PDF_SIN_TEXTO, sin llamar a la IA 0ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > PDF corrupto → PDF_ILEGIBLE 0ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — falla segura: todo error termina en revisión manual, nunca con puntaje > error inesperado de infraestructura → ERROR_INESPERADO 1ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — clasificación de errores posteriores a la IA > si falla el guardado tras una extracción válida → ERROR_INESPERADO, no IA_ERROR 1ms
+ ✓ src/aplicacion/procesarCv.test.ts > procesarCv — postulación inexistente > lanza un error y no registra nada 1ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > suma los meses de todos los trabajos (fin − inicio) 2ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > cuenta un trabajo actual hasta el mes de hoy 0ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > sin mes toma enero 0ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > redondea a un decimal 0ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > ignora trabajos sin fechas y no resta si el fin es anterior al inicio 0ms
+ ✓ src/infraestructura/openai/ExtractorCvOpenAi.test.ts > aniosDeExperiencia > devuelve null si no hay trabajos con fechas 0ms
+
+ Test Files  9 passed (9)
+      Tests  92 passed (92)
+   Start at  16:48:17
+   Duration  1.77s (import 71%, tests 15%, transform 11%, worker 3%)
+

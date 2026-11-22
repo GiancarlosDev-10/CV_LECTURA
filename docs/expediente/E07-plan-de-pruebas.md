@@ -1,7 +1,7 @@
 # E07. Plan de pruebas de software
 
 > **Plantilla:** Formatos 07 · **Estado:** borrador v0.1 (18/11/2026) · **Fuente de verdad:** este archivo.
-> Versiones de k6, OWASP ZAP y SonarQube: se anotan al instalarlas (antes del 27/11).
+> Versiones instaladas el 22/11/2026: k6 v2.4.0 y OWASP ZAP 2.17.0 (con Java 21). SonarQube: pendiente.
 
 | Campo | Valor |
 |---|---|
@@ -65,13 +65,13 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | Desarrollo | `npm run dev` en la PC + Supabase `cv-lectura-dev` | Solo para desarrollo y pruebas automatizadas |
 | Aplicación | Next.js 16.4.6, React 19.3, TypeScript 5, Zod 4, unpdf 2 | Ver `package.json` |
 | IA | OpenAI, modelo *mini* con versión exacta fijada y temperatura 0 | La versión se registra en cada postulación (`modelo_ia`) |
-| Herramientas de prueba | Vitest 5.1, Playwright 1.65, k6, OWASP ZAP, SonarQube Community | Versiones de k6, ZAP y SonarQube: se anotan al instalarlas |
+| Herramientas de prueba | Vitest 5.1, Playwright 1.65, k6 v2.4.0, OWASP ZAP 2.17.0, SonarQube (pendiente) | k6 y ZAP instalados el 22/11/2026 |
 | CI | GitHub Actions, Ubuntu, Node.js 24 | `.github/workflows/ci.yml` |
 | Navegadores | Chromium, Firefox, WebKit (de Playwright) y perfil móvil | — |
 | Cuentas de prueba | 2 reclutadores y 3 postulantes creados por el *seed* (`@example.com`) | En producción la contraseña es privada, no la publicada para dev |
 | Ofertas | 3 ofertas del *seed*: Desarrollador Full Stack Junior, Analista de Datos, Asistente de Recursos Humanos | — |
 | Dataset | 40 CVs ficticios (`dataset/`): 30 generados en 8 estilos, 4 con el formato del CV de cada integrante, 2 escaneados, 2 con inyección, 1 ejecutable renombrado y 1 de más de 5 MB | Respuesta esperada en `dataset/esperados/`; ningún dato personal real |
-| Postulantes para medir | Un script de medición crea postulantes ficticios y sube los CVs del dataset (una postulación por postulante y oferta, como exige la BD) | **Por construir** antes del 27/11 |
+| Postulantes para medir | Un script de medición crea postulantes ficticios y sube los CVs del dataset (una postulación por postulante y oferta, como exige la BD) | Listo: `npm run medicion -- <N>` (`scripts/medicion-prod.ts`), postula desde un navegador real con Playwright |
 
 ## 7.5 Criterios de entrada y salida
 
@@ -92,19 +92,19 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 
 | Actividad | Responsable | Fecha prevista | Recursos | Estado |
 |---|---|---|---|---|
-| Pruebas unitarias y de integración | Giancarlos Ormeño | 14/11 – 27/11/2026 | Vitest, Supabase dev | En proceso (65 unitarias y 24 de integración escritas) |
-| Pruebas E2E con Playwright | Giancarlos Ormeño | 20/11 – 27/11/2026 | Playwright | Pendiente |
-| Script comparador y script de medición | Giancarlos Ormeño | 20/11 – 27/11/2026 | Node.js, dataset | En proceso (comparador listo; falta el ejecutor de corridas en producción) |
+| Pruebas unitarias y de integración | Giancarlos Ormeño | 14/11 – 27/11/2026 | Vitest, Supabase dev | Hecho: 92 unitarias y 27 de integración (22/11/2026) |
+| Pruebas E2E con Playwright | Giancarlos Ormeño | 20/11 – 27/11/2026 | Playwright | Hecho: 5 pruebas en 4 perfiles (22/11/2026) |
+| Script comparador y script de medición | Giancarlos Ormeño | 20/11 – 27/11/2026 | Node.js, dataset | Hecho (22/11/2026) |
 | CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (aportan su CV como modelo) | 19/11/2026 | Generador del dataset | Hecho |
 | Congelamiento de umbrales | Equipo | 22/11/2026 | E05 | Hecho |
-| 3 corridas de extracción y tiempo por CV | Giancarlos Ormeño | 27/11 – 02/12/2026 | OpenAI, producción | Pendiente |
+| 3 corridas de extracción y tiempo por CV | Giancarlos Ormeño | 27/11 – 02/12/2026 | OpenAI, producción | Hecho, adelantado al 22/11/2026 (6 corridas: 2 mediciones) |
 | CP manuales de M1 y M2 (7 casos) | Raquel Montes | 28/11 – 03/12/2026 | Fichas E08, producción | Pendiente |
 | CP manuales de M3 | Hermy Salcedo | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |
 | CP manuales de M4 y M5 | Nancy Vilcas | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |
 | CP manuales de seguridad y privacidad | Paul Carretero | 28/11 – 03/12/2026 | Fichas E08, dos navegadores | Pendiente |
 | Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) + equipo y 2 o 3 externos | 28/11 – 03/12/2026 | Cronómetro, cuestionario | Pendiente |
-| ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | Pendiente |
-| Repetición de pruebas tras las mejoras (segunda medición) | Giancarlos Ormeño | 04/12 – 09/12/2026 | Todas | Pendiente |
+| ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | ZAP y k6 hechos el 22/11/2026; SonarQube pendiente |
+| Repetición de pruebas tras las mejoras (segunda medición) | Giancarlos Ormeño | 04/12 – 09/12/2026 | Todas | Hecho para los automatizados (22/11/2026) |
 
 ## 7.7 Riesgos y contingencias
 
