@@ -52,7 +52,7 @@ Son las mismas instrucciones que recibe la IA (`INSTRUCCIONES_EXTRACCION`):
 
 - **Habilidades e idiomas:** tal como están escritos en el CV (por ejemplo "JS", "ReactJS" o "MS Excel" para probar la tabla de alias).
 - **Nivel de idioma:** "Intermedio" = B1, "Avanzado" = C1, "Básico" = A2, "Nativo" = `nativo`.
-- **Años de experiencia:** suma de la duración de los trabajos listados (los trabajos actuales cuentan hasta noviembre de 2026), en bloques de 6 meses. Si el CV no tiene experiencia, el valor es `null`.
+- **Años de experiencia:** suma de la duración de los trabajos listados (los trabajos actuales cuentan hasta noviembre de 2026), en bloques de 6 meses. Si el CV no tiene experiencia, el valor es `null`. La IA solo devuelve las fechas de cada trabajo; la suma la hace el código (`aniosDeExperiencia`).
 - **Nivel educativo:** el más alto **terminado**; un estudio "en curso" no cuenta (por ejemplo, una maestría en curso con bachiller terminado = `universitario`).
 
 ## Comparador de la extracción (RQ-FUN-01 y RQ-FUN-02)

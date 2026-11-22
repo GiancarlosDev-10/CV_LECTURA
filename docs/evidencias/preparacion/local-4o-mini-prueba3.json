@@ -1,0 +1,1012 @@
+{
+  "corrida": "local-4o-mini-prueba3",
+  "entorno": "local",
+  "modelo": "gpt-4o-mini-2024-07-18",
+  "commit": "ff56bb0",
+  "fecha": "2026-11-22T20:08:29.401Z",
+  "resultados": [
+    {
+      "id": "cv-01",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Rosa Paredes Espinoza",
+        "email": "rosa.paredes83@example.com",
+        "telefono": "+51 900-000-106",
+        "aniosExperiencia": 2,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Excel",
+          "Legislación laboral",
+          "Entrevistas por competencias",
+          "Clima laboral",
+          "Gestión documental",
+          "Bienestar social",
+          "SAP",
+          "Gestión de planillas"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-02",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Jorge Gutiérrez Huamán",
+        "email": "jorge.gutierrez79@example.com",
+        "telefono": "900 000 113",
+        "aniosExperiencia": 6.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Docker",
+          "SQL",
+          "PostgreSQL",
+          "ReactJS",
+          "TypeScript",
+          "Scrum",
+          "CSS3",
+          "JavaScript",
+          "Node"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-03",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Kevin Lozano Quispe",
+        "email": "kevin.lozano86@example.com",
+        "telefono": "+51 900-000-115",
+        "aniosExperiencia": 0.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "Machine Learning básico",
+          "Python",
+          "DAX",
+          "Google Sheets",
+          "Looker Studio",
+          "ETL",
+          "Power Query"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-04",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Milagros Paredes Ríos",
+        "email": "milagros.paredes20@example.com",
+        "telefono": "900 000 116",
+        "aniosExperiencia": 6.2,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "ETL",
+          "SQL",
+          "Google Sheets",
+          "Power BI",
+          "NumPy",
+          "Statistics",
+          "Python",
+          "MS Excel",
+          "Pandas"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Spanish",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "English",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-05",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Bruno Tapia Paredes",
+        "email": "bruno.tapia56@example.com",
+        "telefono": "+51 900 000 123",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "HTML5",
+          "Next.js",
+          "TypeScript",
+          "SQL",
+          "Node",
+          "MongoDB",
+          "PostgreSQL",
+          "PHP",
+          "Java"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-06",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Milagros Ríos Lozano",
+        "email": "milagros.rios98@example.com",
+        "telefono": "(+51) 900-000-124",
+        "aniosExperiencia": 7.7,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Microsoft Office",
+          "SAP",
+          "Bienestar social",
+          "Clima laboral",
+          "Gestión de planillas",
+          "MS Excel",
+          "Entrevistas por competencias",
+          "Reclutamiento",
+          "PLAME",
+          "Comunicación efectiva",
+          "Legislación laboral"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          },
+          {
+            "idioma": "Quechua",
+            "nivel": "nativo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-07",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "César Aguilar Tapia",
+        "email": "cesar.aguilar15@example.com",
+        "telefono": "(+51) 900-000-129",
+        "aniosExperiencia": 2.9,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Estadı́stica",
+          "Looker Studio",
+          "SQL",
+          "Python",
+          "Google Sheets",
+          "Tableau",
+          "Machine Learning básico"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-08",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Jimena Quispe Benavides",
+        "email": "jimena.quispe64@example.com",
+        "telefono": "(+51) 900-000-130",
+        "aniosExperiencia": 2.9,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Express",
+          "REST APIs",
+          "PHP",
+          "Scrum",
+          "React",
+          "Laravel",
+          "TypeScript",
+          "NodeJS"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Spanish",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "English",
+            "nivel": "C1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-09",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "DIEGO ARROYO PALOMINO",
+        "email": "diego.arroyo48@example.com",
+        "telefono": "900 000 133",
+        "aniosExperiencia": 7,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Desarrollador Full Stack",
+          "Desarrollo Web",
+          "SQL",
+          "Docker",
+          "TypeScript",
+          "Git",
+          "Laravel",
+          "ReactJS",
+          "Tailwind CSS",
+          "Node",
+          "Express",
+          "JS",
+          "Scrum"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          },
+          {
+            "idioma": "Quechua",
+            "nivel": "nativo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-10",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "ELENA CCORI ROJAS",
+        "email": "elena.ccori10@example.com",
+        "telefono": "+51 900-000-136",
+        "aniosExperiencia": 7.5,
+        "nivelEducativo": "maestria",
+        "habilidades": [
+          "Excel",
+          "Python",
+          "Google Sheets",
+          "Estadística",
+          "SQL",
+          "Power BI",
+          "DAX",
+          "ETL",
+          "Power Query",
+          "Pandas",
+          "Tableau"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-11",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "RENATO ARROYO ROJAS",
+        "email": "renato.arroyo76@example.com",
+        "telefono": "900 000 138",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "Bienestar social",
+          "Legislación laboral",
+          "Excel",
+          "Microsoft Office",
+          "Entrevistas por competencias",
+          "Clima laboral",
+          "PLAME"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-12",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "FIORELLA TAPIA PAREDES",
+        "email": "fiorella.tapia49@example.com",
+        "telefono": "900 000 145",
+        "aniosExperiencia": 3,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "React",
+          "REST APIs",
+          "Tailwind CSS",
+          "HTML5",
+          "Docker",
+          "Node",
+          "JavaScript",
+          "Express",
+          "Git",
+          "TypeScript",
+          "SQL"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Spanish",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "English",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-13",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "PAMELA CHÁVEZ MENDOZA",
+        "email": "pamela.chavez41@example.com",
+        "telefono": "(+51) 900-000-152",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "Orden y organización",
+          "Ventas",
+          "Gestión de expedientes",
+          "Trabajo en equipo",
+          "Redacción legal"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-14",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "VALERIA PAREDES AGUILAR",
+        "email": "valeria.paredes7@example.com",
+        "telefono": "(+51) 900-000-156",
+        "aniosExperiencia": 3.5,
+        "nivelEducativo": "tecnico",
+        "habilidades": [
+          "Bienestar social",
+          "Comunicación efectiva",
+          "Gestión de planillas",
+          "PLAME",
+          "Gestión documental",
+          "Entrevistas por competencias",
+          "Onboarding",
+          "SAP"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          },
+          {
+            "idioma": "Quechua",
+            "nivel": "nativo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-15",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "MILAGROS HUAMÁN MENDOZA",
+        "email": "milagros.huaman82@example.com",
+        "telefono": "900 000 163",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Trabajo en equipo",
+          "Limpieza y desinfección",
+          "Gestión de expedientes",
+          "Redacción legal",
+          "Microsoft Office"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-16",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "SOFÍA CUEVA CHÁVEZ",
+        "email": "sofia.cueva41@example.com",
+        "telefono": "900 000 164",
+        "aniosExperiencia": 6.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Power Query",
+          "Pandas",
+          "MS Excel",
+          "Machine Learning básico",
+          "Estadística",
+          "Power BI",
+          "Google Sheets",
+          "DAX",
+          "SQL",
+          "Python"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-17",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "VALERIA MENDOZA CHÁVEZ",
+        "email": "valeria.mendoza69@example.com",
+        "telefono": "+51 900-000-171",
+        "aniosExperiencia": 6,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Gestión de planillas",
+          "Onboarding",
+          "Clima laboral",
+          "MS Excel",
+          "Comunicación efectiva",
+          "Reclutamiento",
+          "Legislación laboral",
+          "SAP"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-18",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "DIEGO HUAMÁN PALOMINO",
+        "email": "diego.huaman59@example.com",
+        "telefono": "+51 900 000 174",
+        "aniosExperiencia": 0.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "TypeScript",
+          "Express",
+          "Scrum",
+          "CSS3",
+          "Git",
+          "PostgreSQL",
+          "Next.js"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-19",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "CÉSAR CHÁVEZ QUISPE",
+        "email": "cesar.chavez30@example.com",
+        "telefono": "+51 900 000 178",
+        "aniosExperiencia": 3,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Power Query",
+          "Power BI",
+          "NumPy",
+          "DAX",
+          "R Tools",
+          "Looker Studio",
+          "Pandas",
+          "Basic Machine Learning",
+          "SQL"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Spanish",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "English",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-20",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "DIEGO ESPINOZA PAREDES",
+        "email": "diego.espinoza59@example.com",
+        "telefono": "+51 900 000 180",
+        "aniosExperiencia": 0.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "Redacción legal",
+          "Ventas",
+          "Gestión de expedientes"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-21",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "IVÁN MENDOZA CÁRDENAS",
+        "email": "ivan.mendoza62@example.com",
+        "telefono": "(+51) 900-000-187",
+        "aniosExperiencia": 3,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Gestión de planillas",
+          "Legislación laboral",
+          "Comunicación efectiva",
+          "Excel",
+          "Gestión documental",
+          "Clima laboral",
+          "PLAME",
+          "Onboarding"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-22",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "ANDREA HUAMÁN CHÁVEZ",
+        "email": "andrea.huaman25@example.com",
+        "telefono": "+51 900 000 191",
+        "aniosExperiencia": 2.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Power BI",
+          "Machine Learning básico",
+          "Estadística",
+          "R",
+          "NumPy",
+          "DAX",
+          "Tableau",
+          "SQL",
+          "ETL"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-23",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "ÁLVARO VILLANUEVA ROJAS",
+        "email": "alvaro.villanueva79@example.com",
+        "telefono": "(+51) 900-000-198",
+        "aniosExperiencia": 3,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "REST APIs",
+          "Express",
+          "CSS3",
+          "Git",
+          "NodeJS",
+          "Next.js",
+          "SQL",
+          "JavaScript",
+          "Laravel"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-24",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "FIORELLA RÍOS TAPIA",
+        "email": "fiorella.rios44@example.com",
+        "telefono": "(+51) 900-000-204",
+        "aniosExperiencia": null,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Orden y organización",
+          "Limpieza y desinfección",
+          "Gestión de expedientes",
+          "Ventas"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-25",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "CÉSAR DELGADO CUEVA",
+        "email": "cesar.delgado67@example.com",
+        "telefono": "900 000 205",
+        "aniosExperiencia": 0.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Reclutamiento",
+          "Entrevistas por competencias",
+          "Onboarding",
+          "Legislación laboral"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-26",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "YESENIA GUTIÉRREZ QUISPE",
+        "email": "yesenia.gutierrez87@example.com",
+        "telefono": "900 000 211",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "JavaScript",
+          "REST APIs",
+          "PHP",
+          "MongoDB",
+          "Express"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-27",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Fiorella Tapia Huamán",
+        "email": "fiorella.tapia58@example.com",
+        "telefono": "900 000 215",
+        "aniosExperiencia": 5.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Node",
+          "JS",
+          "Docker",
+          "SQL",
+          "React.js",
+          "TypeScript",
+          "Laravel",
+          "Git",
+          "Next.js",
+          "Express"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-28",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Martín Arroyo Huamán",
+        "email": "martin.arroyo1@example.com",
+        "telefono": "900 000 221",
+        "aniosExperiencia": 4,
+        "nivelEducativo": "maestria",
+        "habilidades": [
+          "Python",
+          "Tableau",
+          "Looker Studio",
+          "Pandas",
+          "Estadística",
+          "NumPy",
+          "Power BI",
+          "DAX",
+          "MS Excel",
+          "SQL"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-29",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Bruno Ccori Palomino",
+        "email": "bruno.ccori89@example.com",
+        "telefono": "(+51) 900-000-228",
+        "aniosExperiencia": 2,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Bienestar social",
+          "Clima laboral",
+          "Comunicación efectiva",
+          "PLAME",
+          "SAP",
+          "Gestión de planillas"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-30",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Katherine Zevallos Cárdenas",
+        "email": "katherine.zevallos59@example.com",
+        "telefono": "+51 900 000 231",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "tecnico",
+        "habilidades": [
+          "Power Query",
+          "NumPy",
+          "Python",
+          "Tableau"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Spanish",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "English",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-31",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "JORGE PAREDES ZEVALLOS",
+        "email": "jorge.paredes97@example.com",
+        "telefono": "(+51) 900-000-238",
+        "aniosExperiencia": 6.5,
+        "nivelEducativo": "maestria",
+        "habilidades": [
+          "Gestión de planillas",
+          "Onboarding",
+          "Legislación laboral",
+          "PLAME",
+          "Microsoft Office",
+          "Entrevistas por competencias",
+          "Comunicación efectiva",
+          "Bienestar social",
+          "Reclutamiento",
+          "SAP",
+          "MS Excel"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "B1"
+          },
+          {
+            "idioma": "Quechua",
+            "nivel": "nativo"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-32",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Martín Gutiérrez Mendoza",
+        "email": "martin.gutierrez26@example.com",
+        "telefono": "900 000 241",
+        "aniosExperiencia": 1.5,
+        "nivelEducativo": "secundaria",
+        "habilidades": [
+          "Node",
+          "CSS3",
+          "Next.js",
+          "Express"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Español",
+            "nivel": "nativo"
+          },
+          {
+            "idioma": "Inglés",
+            "nivel": "B2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-33",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "FIORELLA ROJAS RÍOS",
+        "email": "fiorella.rojas6@example.com",
+        "telefono": "900 000 245",
+        "aniosExperiencia": null,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Microsoft Office",
+          "Gestión de expedientes",
+          "Ventas"
+        ],
+        "idiomas": []
+      }
+    },
+    {
+      "id": "cv-34",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Ricardo Chávez Lozano",
+        "email": "ricardo.chavez23@example.com",
+        "telefono": "900 000 246",
+        "aniosExperiencia": 2,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Power Query",
+          "R",
+          "Looker Studio",
+          "ETL",
+          "Estadística",
+          "Python",
+          "Machine Learning básico",
+          "NumPy",
+          "Pandas"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-35",
+      "estado": "pendiente_revision_manual",
+      "motivo": "PDF_SIN_TEXTO"
+    },
+    {
+      "id": "cv-36",
+      "estado": "pendiente_revision_manual",
+      "motivo": "PDF_SIN_TEXTO"
+    },
+    {
+      "id": "cv-37",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Jorge Gutiérrez Huamán",
+        "email": "jorge.gutierrez79@example.com",
+        "telefono": "900 000 113",
+        "aniosExperiencia": 6.5,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Docker",
+          "SQL",
+          "PostgreSQL",
+          "ReactJS",
+          "TypeScript",
+          "Scrum",
+          "CSS3",
+          "JavaScript",
+          "Node"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cv-38",
+      "estado": "procesada",
+      "cvExtraido": {
+        "nombre": "Bruno Ccori Palomino",
+        "email": "bruno.ccori89@example.com",
+        "telefono": "(+51) 900-000-228",
+        "aniosExperiencia": 2,
+        "nivelEducativo": "universitario",
+        "habilidades": [
+          "Bienestar social",
+          "Clima laboral",
+          "Comunicación efectiva",
+          "PLAME",
+          "SAP",
+          "Gestión de planillas"
+        ],
+        "idiomas": [
+          {
+            "idioma": "Inglés",
+            "nivel": "C1"
+          },
+          {
+            "idioma": "Portugués",
+            "nivel": "A2"
+          }
+        ]
+      }
+    }
+  ]
+}
