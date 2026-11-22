@@ -1,0 +1,6 @@
+prod-corrida-1 (prod): campos 85.9 % · F1 0.932 → dataset/corridas/prod-corrida-1.reporte.md
+prod-corrida-2 (prod): campos 85.3 % · F1 0.932 → dataset/corridas/prod-corrida-2.reporte.md
+prod-corrida-3 (prod): campos 85.9 % · F1 0.894 → dataset/corridas/prod-corrida-3.reporte.md
+Promedio de 3 corridas (desviación estándar muestral):
+  RQ-FUN-01: 85.7 % ± 0.3 → No cumple
+  RQ-FUN-02: 0.919 ± 0.022 → Cumple
