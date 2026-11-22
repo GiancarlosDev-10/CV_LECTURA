@@ -546,12 +546,12 @@ Preparado por Giancarlos Ormeño el 18/11/2026. Para las suites existentes, el p
 | Módulo / funcionalidad | M1–M5 — Aprendizaje y operabilidad |
 | Requisito relacionado | RQ-INT-01 |
 | Tipo / prioridad | Usabilidad · Media |
-| Responsable | Cada participante, sin supervisión (prueba autoadministrada); participantes: los 4 integrantes y 2 o 3 personas externas. Giancarlos Ormeño prepara la prueba y verifica los resultados |
+| Responsable | Cada participante, sin supervisión (prueba autoadministrada); participantes: los 4 integrantes (obligatorios) y, de forma opcional, personas externas. Giancarlos Ormeño prepara la prueba y verifica los resultados |
 | Objetivo | Medir si una persona que no conoce el sistema completa las tareas principales sin ayuda |
 | Precondiciones | Producción disponible; cuenta `reclutador.usabilidad@example.com` con la oferta "Asistente de Recursos Humanos — Sede Norte" (5 CVs procesados, cerrada a nuevas postulaciones), preparada con `npm run usabilidad:preparar`; documento `01-prueba-de-usabilidad`; el participante no ha usado el sistema antes (los integrantes hacen la prueba **antes** de ejecutar sus CP) |
 | Resultado esperado final | El participante completa las 3 tareas sin ayuda |
 | Criterio de aprobación | ≥ 90 % de los participantes completan las 3 tareas |
-| Evidencia prevista | Hoja de autorregistro por participante (completó sí/no, horas de inicio y fin, dudas marcadas) con una captura al final de cada tarea. Las horas se contrastan con los registros del sistema (creación de la cuenta, `subido_en` de la postulación y `accesos_cv` del reclutador) |
+| Evidencia prevista | Hoja de autorregistro por participante (completó sí/no, horas de inicio y fin, dudas marcadas) con una captura al final de cada tarea (opción A). Opcionalmente, grabación de pantalla subida a Google Drive u OneDrive, con su enlace en la hoja (opción B). Las horas se contrastan con los registros del sistema (creación de la cuenta, `subido_en` de la postulación y `accesos_cv` del reclutador) |
 
 | N.° | Acción | Datos de entrada | Resultado esperado |
 |---|---|---|---|

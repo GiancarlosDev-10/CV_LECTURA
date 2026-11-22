@@ -57,7 +57,7 @@
 | Análisis estático | ESLint, cobertura de Vitest, SonarQube Cloud (análisis automático) | Regla de capas, cobertura del núcleo, issues graves | Todo el código (5 988 líneas) |
 | Consultas a la BD | Supabase (clave de servicio, solo lectura) | Consentimiento, estados, motivos, puntajes | 228 postulaciones de producción |
 | Monitoreo | UptimeRobot (cada 5 min a `/api/salud`) | Disponibilidad | 22/11/2026 15:24 – 08/12/2026 |
-| Pruebas manuales y de usabilidad | Fichas de E08, SUS, cronómetro | Funciones, seguridad, usabilidad y ahorro de tiempo | 26 casos y 6–7 participantes (pendiente) |
+| Pruebas manuales y de usabilidad | Fichas de E08, SUS, cronómetro | Funciones, seguridad, usabilidad y ahorro de tiempo | 26 casos; usabilidad con los 4 integrantes y externos opcionales, autoadministrada (pendiente) |
 
 Cada requisito se decide **solo con la medición oficial en producción** y su evidencia (E05 5.7). Las corridas locales de preparación sirvieron para ajustar el extractor antes de congelar los umbrales, no para decidir.
 
@@ -127,6 +127,6 @@ No se calcula una nota ni un porcentaje de calidad total (E05 5.7, S09). La conc
 - **Tiempo:** las dos mediciones se hicieron el mismo día; no hay datos de comportamiento durante semanas, salvo la disponibilidad.
 - **Seguridad:** el escaneo de ZAP es pasivo y sin sesión; no reemplaza una prueba de penetración. Las pruebas de RLS se ejecutan contra el entorno de desarrollo, con las mismas migraciones que producción.
 - **Carga:** 10 usuarios virtuales navegando, sin subida de CVs simultánea.
-- **Usabilidad:** la muestra prevista es de 6 a 7 personas, suficiente para detectar problemas, pero no para generalizar.
+- **Usabilidad:** la muestra son los 4 integrantes (y externos, si se consiguen). Basta para detectar problemas, pero no para generalizar: con 4 participantes cada uno pesa 25 % en M18. Además, los integrantes conocen el propósito del proyecto, aunque no usaron el sistema antes de la prueba. La prueba es autoadministrada: sin observador, las dificultades se conocen por el autorregistro y, si el participante lo eligió, por la grabación de pantalla; las horas se contrastan con los registros del sistema.
 - **Independencia:** el desarrollador también diseñó y ejecutó las pruebas automatizadas. Para reducir el sesgo, las metas se congelaron antes de medir y los casos manuales los ejecutan otros integrantes.
 - **Plataforma:** Vercel y Supabase son servicios gestionados, sin acceso a métricas de infraestructura (E05 5.4).
