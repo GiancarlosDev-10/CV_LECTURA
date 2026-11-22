@@ -96,8 +96,11 @@ async function main() {
       await pagina.press("#clave", "Enter");
       await pagina.waitForURL((url) => !url.pathname.startsWith("/ingresar"));
 
+      // Esperar a que React se hidrate: si se elige el archivo antes, el formulario no lo registra
       await pagina.goto(`${BASE}/ofertas/${ofertaId}`);
+      await pagina.waitForLoadState("networkidle");
       await pagina.setInputFiles('input[type="file"]', join("dataset/pdf", caso.archivo));
+      await pagina.getByText(caso.archivo).waitFor({ timeout: 10_000 });
       await pagina.getByRole("checkbox").check();
       await pagina.getByRole("button", { name: "Enviar postulación" }).click();
       await pagina.waitForURL(/\/mis-postulaciones/, { timeout: 60_000 });
