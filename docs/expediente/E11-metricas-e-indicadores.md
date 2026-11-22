@@ -1,7 +1,7 @@
 # E11. Informe de medición mediante métricas e indicadores
 
 > **Plantilla:** Formatos 11 · **Estado:** borrador v0.1 (22/11/2026) · **Fuente de verdad:** este archivo.
-> Contiene la primera medición oficial y la segunda (después de las acciones de mejora de E13), ambas del 22/11/2026. Las métricas que dependen de los casos manuales del equipo, de la prueba de usabilidad, de SonarQube o del cierre del periodo de disponibilidad (08/12/2026) quedan como "Pendiente" y se completan cuando haya datos. Ninguna cifra de este informe se estimó: todas salen de una evidencia de E09.
+> Contiene la primera medición oficial y la segunda (después de las acciones de mejora de E13), ambas del 22/11/2026. Las métricas que dependen de los casos manuales del equipo, de la prueba de usabilidad o del cierre del periodo de disponibilidad (08/12/2026) quedan como "Pendiente" y se completan cuando haya datos. Ninguna cifra de este informe se estimó: todas salen de una evidencia de E09.
 
 | Campo | Valor |
 |---|---|
@@ -259,11 +259,11 @@
 | Propósito | Detectar defectos probables y código difícil de mantener |
 | Definición y fórmula | número de issues de severidad bloqueante o crítica |
 | Unidad de medida | Número de issues |
-| Fuente de datos | SonarQube (CP-022) |
-| Muestra / número de mediciones | Todo el código del commit evaluado |
+| Fuente de datos | SonarQube Cloud, análisis automático (EV-16) |
+| Muestra / número de mediciones | Todo el código del repositorio (aplicación, pruebas y scripts); 2 análisis |
 | Meta o umbral | 0 |
-| Resultado calculado | **Pendiente** (SonarQube por configurar) |
-| Interpretación y limitaciones | — |
+| Resultado calculado | 1.ª (commit `2a202e0`): **2 críticos**, en la herramienta de medición (DEF-007). 2.ª (commit `0dec3a2`): **0 bloqueantes y 0 críticos**; 5 988 líneas, 0 % de duplicación, fiabilidad A |
+| Interpretación y limitaciones | Cumple en la 2.ª medición. Los 10 issues mayores y menores que quedan se analizan en E10 10.3. Se excluyeron del análisis los archivos que no son código (INC-005). El análisis automático no calcula la cobertura, que mide M15 |
 
 ### INDICADOR M17 — Regla de dependencias entre capas
 
@@ -366,7 +366,7 @@
 | M13 Fallas controladas | 100 % / 0 caídas | 100 % / 0 | Sí | — | EV-01 |
 | M14 Disponibilidad | Pendiente (al 08/12) | ≥ 99 % | — | En curso | EV-14 |
 | M15 Cobertura | 97,69 % | ≥ 80 % | Sí | — | EV-03 |
-| M16 SonarQube | Pendiente | 0 | — | Por configurar | — |
+| M16 Issues graves (SonarQube) | 0 (2) | 0 | Sí (1.ª: No) | Cumple tras AM-08 | EV-16 |
 | M17 Regla de capas | 0 | 0 | Sí | — | EV-04 |
 | M18 Tareas sin ayuda | Pendiente | ≥ 90 % | — | CP-048 | — |
 | M19 SUS | Pendiente | ≥ 68 | — | CP-049 | — |
@@ -375,7 +375,7 @@
 | M22 Falla segura | 100 % (100 %) | 100 % | Sí | Funcionó ante un fallo real | EV-13 |
 | M23 Reducción de tiempo | Pendiente | ≥ 50 % | — | CP-050 | — |
 
-**Avance:** 14 de 23 métricas medidas; las 14 cumplen en la 2.ª medición. 2 no cumplían en la 1.ª (M01 y M12) y se corrigieron con acciones de mejora. 9 están pendientes de datos.
+**Avance:** 15 de 23 métricas medidas; las 15 cumplen en la 2.ª medición. 3 no cumplían en la 1.ª (M01, M12 y M16) y se corrigieron con acciones de mejora. 8 están pendientes de datos.
 
 ## 11.4 Conclusión de medición
 
@@ -383,4 +383,4 @@ Las mediciones muestran que **la función central del sistema, leer CVs con IA y
 
 La medición también cumplió su propósito de **encontrar problemas reales antes de entregar**: en la primera medición, un fallo con ciertos PDFs dejaba a 4 postulantes sin evaluar (DEF-001) y un CV con texto oculto lograba subir su puntaje de 90 a 100 (DEF-002). Ambos se corrigieron y la segunda medición lo confirma con la misma meta, que no se cambió. Aun en el peor momento, **la falla segura protegió a los postulantes**: ningún CV fallido recibió puntaje 0.
 
-Quedan por medir la usabilidad, la reducción real del tiempo de revisión, los casos manuales de seguridad y privacidad, SonarQube y la disponibilidad del periodo. Hasta tenerlos, no se puede concluir sobre las características Capacidad de interacción y Fiabilidad (disponibilidad), ni cerrar la valoración de Seguridad (E12).
+Quedan por medir la usabilidad, la reducción real del tiempo de revisión, los casos manuales de seguridad y privacidad y la disponibilidad del periodo. Hasta tenerlos, no se puede concluir sobre las características Capacidad de interacción y Fiabilidad (disponibilidad), ni cerrar la valoración de Seguridad (E12).

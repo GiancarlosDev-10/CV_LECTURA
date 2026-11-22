@@ -1,7 +1,7 @@
 # E10. Informe de defectos e incidencias
 
 > **Plantilla:** Formatos 10 · **Estado:** borrador v0.1 (22/11/2026) · **Fuente de verdad:** este archivo.
-> Registra los defectos hallados hasta el 22/11/2026 en la preparación y en la primera medición oficial. Los defectos que encuentre el equipo al ejecutar los casos manuales (CP-027 a CP-052) se agregan como DEF-007 en adelante. Las incidencias del proceso de prueba (INC-001 a INC-004) están en E09, sección 9.3.
+> Registra los defectos hallados hasta el 22/11/2026 en la preparación y en la primera medición oficial. Los defectos que encuentre el equipo al ejecutar los casos manuales (CP-027 a CP-052) se agregan como DEF-008 en adelante. Las incidencias del proceso de prueba (INC-001 a INC-005) están en E09, sección 9.3.
 
 | Campo | Valor |
 |---|---|
@@ -33,6 +33,7 @@ La **prioridad** combina el impacto con la urgencia (E06 6.7): Alta = corregir a
 | DEF-004 | Faltan cabeceras de seguridad HTTP y se expone la tecnología del servidor | Baja | Media | RQ-SEG-02 | Cerrado (parcial: ver ficha) |
 | DEF-005 | Nivel educativo técnico clasificado como universitario | Baja | Baja | RQ-FUN-01 | Abierto (aceptado) |
 | DEF-006 | Años de experiencia con desvío mayor a ± 0,5 en 3 CVs | Baja | Baja | RQ-FUN-01 | Abierto (aceptado) |
+| DEF-007 | 2 issues críticos de SonarQube en la herramienta de medición (no desplegada) | Baja | Media | RQ-MAN-02 | Cerrado |
 
 No hay defectos de severidad crítica. Los dos defectos de severidad alta se cerraron con la segunda medición.
 
@@ -206,3 +207,43 @@ No hay defectos de severidad crítica. Los dos defectos de severidad alta se cer
 | Causa probable | Lectura incorrecta de alguna fecha por parte de la IA; por confirmar comparando las fechas devueltas con las del CV |
 | Acción correctiva propuesta | Ninguna por ahora (RQ-FUN-01 cumple). Mejora futura: guardar las fechas devueltas por la IA para poder auditarlas |
 | Estado | **Abierto (aceptado)** |
+
+## FICHA DE DEFECTO DEF-007
+
+| Campo | Valor |
+|---|---|
+| Código del defecto | DEF-007 |
+| Fecha de detección | 22/11/2026 |
+| Detectado por | Giancarlos Ormeño (SonarQube Cloud, análisis automático) |
+| Módulo / componente | Herramienta de medición: `scripts/comparador/compararExtraccion.ts` (no forma parte del sistema desplegado) |
+| Caso de prueba relacionado | CP-022 (1.ª ejecución) |
+| Tipo / categoría | Mantenibilidad · fiabilidad del código (análisis estático) |
+| Severidad | Baja (según 10.1: no afecta al usuario). Para SonarQube, **crítica** |
+| Prioridad | Media (hace fallar RQ-MAN-02) |
+| Título breve del defecto | Orden de textos sin comparador explícito en el script comparador |
+
+**Descripción detallada.** SonarQube Cloud marcó 2 issues de severidad crítica en las líneas 92 y 93: las listas de habilidades e idiomas "faltantes" e "inventados" se ordenaban con `.sort()` sin función de comparación, así que el orden de los textos con tildes no es el alfabético. Esas listas solo se muestran en el reporte; los aciertos, M01 y M02 se calculan con conteos que no dependen del orden. **El código no está en producción**: Vercel despliega la aplicación (`src/`), no la carpeta `scripts/`. En el código del sistema, SonarQube no encontró issues críticos.
+
+**Pasos para reproducir.** Analizar el commit `2a202e0` con SonarQube Cloud y filtrar los issues por severidad crítica.
+
+| Campo | Valor |
+|---|---|
+| Resultado esperado | 0 issues bloqueantes o críticos (RQ-MAN-02) |
+| Resultado observado | 0 bloqueantes y 2 críticos |
+| Entorno donde ocurre | Repositorio, commit `2a202e0` |
+| Evidencia adjunta / código | EV-16 (`issues-1-2a202e0.json`) |
+| Causa probable | Uso de `.sort()` con su orden por defecto, que compara códigos de carácter |
+| Acción correctiva propuesta | Ordenar con `localeCompare` y comprobar que M01 y M02 no cambian al recalcular las 6 corridas. Ver AM-08 en E13 |
+| Estado | **Cerrado** el 22/11/2026 en el commit `0dec3a2`: 2.ª medición con 0 críticos (EV-16). Recalculadas las 6 corridas con el comparador corregido, M01 y M02 dan exactamente lo mismo (85,7 % / 0,919 y 96,7 % / 0,988) |
+
+## 10.3 Observaciones de SonarQube que no son defectos
+
+En la 2.ª medición quedan 10 issues de severidad mayor o menor (ninguno crítico). Se revisaron uno por uno:
+
+| Issue | Ubicación | Decisión |
+|---|---|---|
+| "Path Traversal via faulty LLM-supplied CLI arguments" (2) | `scripts/medicion-prod.ts`, `scripts/corrida-local.ts` | Falso positivo: el nombre que llega por la línea de comandos ya se valida con `/^\d+$/` y `/^[\w-]+$/`, que no aceptan barras ni puntos. Son scripts locales |
+| Uso de la variable PATH (4) | Mismos scripts (`git rev-parse`) | Aceptado: scripts que solo ejecuta el equipo en su PC |
+| "Use Math.trunc instead of \| 0" (2) | `scripts/dataset/datos.ts` | Intencional: es el generador pseudoaleatorio mulberry32, que necesita aritmética de 32 bits; cambiarlo alteraría el dataset |
+| "--ignore-scripts" en la instalación | `.github/workflows/ci.yml` | Recomendación de cadena de suministro; se evalúa como mejora (AM-09, E13) para no romper el CI antes de la entrega |
+| Expresión regular con posible retroceso | `src/infraestructura/openai/ExtractorCvSimulado.ts` | Riesgo bajo: el extractor simulado solo se usa en desarrollo y pruebas, nunca en producción. Se simplificó en `0dec3a2`, aunque SonarQube la sigue marcando |

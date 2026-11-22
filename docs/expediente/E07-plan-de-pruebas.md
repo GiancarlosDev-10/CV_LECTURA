@@ -1,7 +1,7 @@
 # E07. Plan de pruebas de software
 
 > **Plantilla:** Formatos 07 · **Estado:** borrador v0.1 (18/11/2026) · **Fuente de verdad:** este archivo.
-> Versiones instaladas el 22/11/2026: k6 v2.4.0 y OWASP ZAP 2.17.0 (con Java 21). SonarQube: pendiente.
+> Versiones instaladas el 22/11/2026: k6 v2.4.0 y OWASP ZAP 2.17.0 (con Java 21). SonarQube Cloud (análisis automático, sin instalación) desde el 22/11/2026.
 
 | Campo | Valor |
 |---|---|
@@ -65,7 +65,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | Desarrollo | `npm run dev` en la PC + Supabase `cv-lectura-dev` | Solo para desarrollo y pruebas automatizadas |
 | Aplicación | Next.js 16.4.6, React 19.3, TypeScript 5, Zod 4, unpdf 2 | Ver `package.json` |
 | IA | OpenAI, modelo *mini* con versión exacta fijada y temperatura 0 | La versión se registra en cada postulación (`modelo_ia`) |
-| Herramientas de prueba | Vitest 5.1, Playwright 1.65, k6 v2.4.0, OWASP ZAP 2.17.0, SonarQube (pendiente) | k6 y ZAP instalados el 22/11/2026 |
+| Herramientas de prueba | Vitest 5.1, Playwright 1.65, k6 v2.4.0, OWASP ZAP 2.17.0, SonarQube Cloud | k6 y ZAP instalados el 22/11/2026; SonarQube Cloud por web, sin instalación |
 | CI | GitHub Actions, Ubuntu, Node.js 24 | `.github/workflows/ci.yml` |
 | Navegadores | Chromium, Firefox, WebKit (de Playwright) y perfil móvil | — |
 | Cuentas de prueba | 2 reclutadores y 3 postulantes creados por el *seed* (`@example.com`) | En producción la contraseña es privada, no la publicada para dev |
@@ -103,7 +103,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | CP manuales de M4 y M5 | Nancy Vilcas | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |
 | CP manuales de seguridad y privacidad | Paul Carretero | 28/11 – 03/12/2026 | Fichas E08, dos navegadores | Pendiente |
 | Prueba de tareas, SUS y revisión cronometrada | Giancarlos Ormeño (facilitador) + equipo y 2 o 3 externos | 28/11 – 03/12/2026 | Cronómetro, cuestionario | Pendiente |
-| ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | ZAP y k6 hechos el 22/11/2026; SonarQube pendiente |
+| ZAP, k6 y SonarQube | Giancarlos Ormeño | 01/12 – 04/12/2026 | PC del equipo | Hecho el 22/11/2026 (ZAP, k6 y SonarQube Cloud) |
 | Repetición de pruebas tras las mejoras (segunda medición) | Giancarlos Ormeño | 04/12 – 09/12/2026 | Todas | Hecho para los automatizados (22/11/2026) |
 
 ## 7.7 Riesgos y contingencias

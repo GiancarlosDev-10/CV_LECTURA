@@ -2,7 +2,7 @@
 
 > **Plantilla:** Formatos 08 · **Estado:** borrador v0.1 (18/11/2026) · **Fuente de verdad:** este archivo.
 > Los casos automatizados (CP-001 a CP-026) se describen en una tabla porque sus pasos están en el código de la prueba. Los manuales (CP-027 a CP-052) tienen ficha completa: son los que ejecuta cada integrante, con sus propias capturas.
-> CP-016 a CP-019, CP-024 y CP-025 se ejecutaron el 22/11/2026 (E09). CP-022 (SonarQube) está pendiente, CP-023 (monitor) está en curso y CP-026 espera los CP manuales.
+> CP-016 a CP-022, CP-024 y CP-025 se ejecutaron el 22/11/2026 (E09). CP-023 (monitor) está en curso y CP-026 espera los CP manuales.
 
 | Campo | Valor |
 |---|---|

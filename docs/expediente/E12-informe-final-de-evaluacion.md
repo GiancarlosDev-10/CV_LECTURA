@@ -1,7 +1,7 @@
 # E12. Informe final de evaluación de calidad
 
 > **Plantilla:** Formatos 12 · **Estado:** borrador v0.1 (22/11/2026) · **Fuente de verdad:** este archivo.
-> Redactado con los resultados disponibles al 22/11/2026 (E09–E11). Las valoraciones marcadas como **provisionales** dependen de mediciones pendientes (casos manuales del equipo, usabilidad, SonarQube y disponibilidad al 08/12/2026) y se cierran antes de la entrega del 11/12/2026, sin cambiar las metas.
+> Redactado con los resultados disponibles al 22/11/2026 (E09–E11). Las valoraciones marcadas como **provisionales** dependen de mediciones pendientes (casos manuales del equipo, usabilidad y disponibilidad al 08/12/2026) y se cierran antes de la entrega del 11/12/2026, sin cambiar las metas.
 
 | Campo | Valor |
 |---|---|
@@ -18,7 +18,7 @@
 
 **Resultados principales.** Después de las acciones de mejora, el sistema extrae correctamente el **96,7 %** de los datos clave de los CVs (meta ≥ 90 %), procesa cada CV en **menos de 5 s** en el 95 % de los casos (meta ≤ 15 s), responde en **menos de 0,3 s** con 10 usuarios a la vez y no tiene vulnerabilidades de riesgo alto. La primera medición encontró dos defectos importantes que se corrigieron: 4 CVs que no se podían guardar (DEF-001) y un CV con texto oculto que subía su puntaje de 90 a 100 (DEF-002). Ningún CV fallido recibió puntaje 0.
 
-**Conclusión (provisional).** Las características medidas por completo (Eficiencia del desempeño, Flexibilidad, Compatibilidad y Seguridad operacional) son **satisfactorias**. Adecuación funcional, Seguridad, Fiabilidad, Mantenibilidad, Capacidad de interacción y Calidad en uso tienen todos sus requisitos medidos en "Cumple", pero les falta al menos una medición. La conclusión de aptitud para el uso previsto se emitirá cuando terminen esas mediciones (12.7).
+**Conclusión (provisional).** Las características medidas por completo (Eficiencia del desempeño, Mantenibilidad, Flexibilidad, Compatibilidad y Seguridad operacional) son **satisfactorias**. Adecuación funcional, Seguridad, Fiabilidad, Capacidad de interacción y Calidad en uso tienen todos sus requisitos medidos en "Cumple", pero les falta al menos una medición. La conclusión de aptitud para el uso previsto se emitirá cuando terminen esas mediciones (12.7).
 
 ## 12.2 Objetivos y alcance de evaluación
 
@@ -54,7 +54,7 @@
 | Pruebas de extremo a extremo | Playwright 1.65 | Flujos de M1–M6, consentimiento, eliminación, registro de vistas | 5 pruebas × 4 perfiles (Chromium, Firefox, WebKit, móvil) |
 | Prueba de carga | k6 v2.4.0 | Tiempo de respuesta y errores | 10 usuarios virtuales durante 2 min |
 | Escaneo de vulnerabilidades | OWASP ZAP 2.17.0 (escaneo base, pasivo) | Alertas por riesgo | 46 URLs |
-| Análisis estático | ESLint, cobertura de Vitest; SonarQube (pendiente) | Regla de capas, cobertura del núcleo | Todo el código |
+| Análisis estático | ESLint, cobertura de Vitest, SonarQube Cloud (análisis automático) | Regla de capas, cobertura del núcleo, issues graves | Todo el código (5 988 líneas) |
 | Consultas a la BD | Supabase (clave de servicio, solo lectura) | Consentimiento, estados, motivos, puntajes | 228 postulaciones de producción |
 | Monitoreo | UptimeRobot (cada 5 min a `/api/salud`) | Disponibilidad | 22/11/2026 15:24 – 08/12/2026 |
 | Pruebas manuales y de usabilidad | Fichas de E08, SUS, cronómetro | Funciones, seguridad, usabilidad y ahorro de tiempo | 26 casos y 6–7 participantes (pendiente) |
@@ -76,8 +76,8 @@ Valoración según E05 5.6: **Satisfactoria** si todos sus requisitos cumplen; *
 | → **Valoración** | | | **Provisional: pendiente de RQ-SEG-01, SEG-04 y SEG-05** | |
 | **Fiabilidad** / tolerancia a fallos y disponibilidad | RQ-FIA-01 (M), RQ-FIA-02 (M) | M13 100 % y 0 caídas; M14 en curso | FIA-01 cumple; FIA-02 pendiente | EV-01, EV-14 |
 | → **Valoración** | | | **Provisional: pendiente de RQ-FIA-02** | |
-| **Mantenibilidad** / capacidad de prueba, analizabilidad, modularidad | RQ-MAN-01 (M), MAN-02 (B), MAN-03 (M) | M15 97,69 %; M17 0 violaciones; M16 pendiente | Cumplen los medidos | EV-03, EV-04 |
-| → **Valoración** | | | **Provisional: pendiente de RQ-MAN-02** (sin requisitos A, no puede quedar "No satisfactoria") | |
+| **Mantenibilidad** / capacidad de prueba, analizabilidad, modularidad | RQ-MAN-01 (M), MAN-02 (B), MAN-03 (M) | M15 97,69 %; M16 0 críticos (2 en la 1.ª); M17 0 violaciones | Cumple (MAN-02 no cumplía en la 1.ª) | DEF-007 corregido · EV-03, EV-04, EV-16 |
+| → **Valoración** | | | **Satisfactoria** | |
 | **Capacidad de interacción** / aprendizaje, operabilidad, satisfacción | RQ-INT-01 (M), RQ-INT-02 (M) | M18 y M19 pendientes | Pendiente | CP-048, CP-049 |
 | → **Valoración** | | | **Provisional: pendiente** | |
 | **Flexibilidad** / adaptabilidad | RQ-FLE-01 (B) | M20 100 % en 4 perfiles | Cumple | EV-11, EV-12 |
@@ -103,6 +103,7 @@ Valoración según E05 5.6: **Satisfactoria** si todos sus requisitos cumplen; *
 | R-02 | Alerta media de ZAP "Cross-Domain Misconfiguration" | Solo en archivos estáticos públicos (`/_next/static/`: CSS, JS y fuentes), que no contienen datos personales | Baja / Baja | EV-10 |
 | R-03 | Alerta media de ZAP: no hay política de seguridad de contenido (CSP) | Menos defensa en profundidad frente a scripts inyectados; no se encontró ninguna vía de inyección de scripts | Media / Media | EV-10; acción AM-05 en E13 |
 | R-04 | Inyección con técnicas no cubiertas (texto blanco de tamaño normal, texto detrás de imágenes) | Podría volver a alterar la extracción | Media / Media | DEF-002; acción AM-06 en E13 |
+| DEF-007 | 2 issues críticos de SonarQube en la herramienta de medición | Ninguno para el usuario (código no desplegado) ni para M01 y M02 (recalculados sin cambios). **Cerrado** | Baja / Media | E10, EV-16 |
 | R-05 | Dependencia de servicios en plan gratuito (Vercel, Supabase, OpenAI) | Pausas o límites del proveedor fuera del control del equipo; se mide con M14 | Media / Baja | EV-14 |
 
 **No hay defectos de severidad crítica.**
@@ -111,9 +112,9 @@ Valoración según E05 5.6: **Satisfactoria** si todos sus requisitos cumplen; *
 
 No se calcula una nota ni un porcentaje de calidad total (E05 5.7, S09). La conclusión se basa en la valoración de cada característica (12.5):
 
-- **Con los datos al 22/11/2026, ningún requisito medido queda en "No cumple".** Los dos que fallaron en la primera medición (RQ-FUN-01 y RQ-SEG-06) se corrigieron con acciones de mejora y la segunda medición lo comprobó con la misma meta.
-- **Satisfactorias:** Eficiencia del desempeño, Flexibilidad, Compatibilidad y Seguridad operacional.
-- **Provisionales:** Adecuación funcional, Seguridad, Fiabilidad, Mantenibilidad, Capacidad de interacción y Calidad en uso, porque les falta al menos una medición.
+- **Con los datos al 22/11/2026, ningún requisito medido queda en "No cumple".** Los tres que fallaron en la primera medición (RQ-FUN-01, RQ-SEG-06 y RQ-MAN-02) se corrigieron con acciones de mejora y la segunda medición lo comprobó con la misma meta.
+- **Satisfactorias:** Eficiencia del desempeño, Mantenibilidad, Flexibilidad, Compatibilidad y Seguridad operacional.
+- **Provisionales:** Adecuación funcional, Seguridad, Fiabilidad, Capacidad de interacción y Calidad en uso, porque les falta al menos una medición.
 
 **Regla de decisión (E05 5.7).** El sistema se declarará **apto para el uso previsto** si Adecuación funcional, Eficiencia del desempeño y Seguridad no quedan "No satisfactorias" y no hay defectos críticos abiertos. Hoy se cumplen dos de esas tres condiciones con certeza (Eficiencia satisfactoria y ningún defecto crítico). Las otras dos dependen de RQ-FUN-04, RQ-SEG-01 y RQ-SEG-04, que se deciden con los casos manuales del equipo. Si esos casos aprueban, el sistema será apto para el uso previsto.
 

@@ -23,7 +23,7 @@
 2. Se definieron 24 requisitos de calidad con metas numéricas y se **congelaron antes de medir** con una etiqueta de Git (E05, 22/11/2026).
 3. Se planificaron la gestión de la calidad y las pruebas (E06, E07) y se diseñaron 52 casos de prueba (E08).
 4. Se midió en producción dos veces: antes y después de corregir lo encontrado (E09, E11), con 6 corridas de 38 CVs ficticios, pruebas automatizadas en 4 navegadores, carga y escaneo de seguridad.
-5. Se registraron 6 defectos (E10), se aplicaron 4 acciones de mejora con su verificación (E13) y se redactó el informe final (E12).
+5. Se registraron 7 defectos (E10), se aplicaron 5 acciones de mejora con su verificación (E13) y se redactó el informe final (E12).
 
 ## 14.2 Resultados que se comunicarán
 
@@ -72,6 +72,7 @@ El sistema **no se presenta en vivo**: la evaluación se centra en el expediente
 | Si la primera medición no cumplía, ¿por qué dicen que el sistema cumple? | Porque se siguió el ciclo de mejora: se registró el defecto, se corrigió su causa y se volvió a medir con la misma meta. Se informan ambos resultados | E10, E13 13.4 |
 | ¿Qué pasa si la IA falla o se equivoca? | Si falla, el CV va a revisión manual sin puntaje, nunca con 0 (100 % en producción). Si se equivoca, el reclutador ve el PDF junto a los datos y un aviso de que el puntaje es solo un apoyo | M22; RQ-SOP-02 |
 | ¿Por qué ISO/IEC 25010:2023 y no McCall o FURPS? | Es la edición vigente, incluye Seguridad y Seguridad operacional (clave en un sistema que afecta el acceso al empleo) y tiene medidas asociadas en ISO/IEC 25023 | E03 |
+| ¿Hubo errores críticos? | SonarQube encontró 2 issues críticos, pero en la herramienta de medición, que no se despliega; no afectaron al usuario ni a los resultados (se recalcularon y dieron igual). Se corrigieron y el segundo análisis dio 0 | DEF-007, EV-16 |
 | ¿Qué riesgos quedan? | Otras formas de ocultar texto, la falta de CSP y errores menores de la IA en 6 de 170 campos. Están registrados con su acción propuesta | E12 12.6, E13 13.5 |
 | ¿Cuánto costó usar OpenAI? | Alrededor de 1 centavo de dólar por corrida de 36 CVs, unos 6 a 10 centavos en total | Panel de uso de OpenAI (por adjuntar) |
 
@@ -98,10 +99,10 @@ Declaramos que los resultados, mediciones y evidencias incluidos en el expedient
 | E07 | Plan de pruebas | Sí | Pendiente | `docs/expediente/E07-*` | Borrador v0.1 |
 | E08 | Casos de prueba | Sí | Pendiente | `docs/expediente/E08-*` | 52 casos |
 | E09 | Ejecución y evidencias | Sí | Pendiente | `docs/expediente/E09-*` | Faltan los CP manuales |
-| E10 | Defectos e incidencias | Sí | Pendiente | `docs/expediente/E10-*` | 6 defectos |
-| E11 | Métricas e indicadores | Sí | Pendiente | `docs/expediente/E11-*` | 14 de 23 métricas medidas |
+| E10 | Defectos e incidencias | Sí | Pendiente | `docs/expediente/E10-*` | 7 defectos |
+| E11 | Métricas e indicadores | Sí | Pendiente | `docs/expediente/E11-*` | 15 de 23 métricas medidas |
 | E12 | Informe final de evaluación | Sí | Pendiente | `docs/expediente/E12-*` | Conclusión provisional |
-| E13 | Acciones correctivas y mejora | Sí | Pendiente | `docs/expediente/E13-*` | 4 acciones verificadas, 3 propuestas |
+| E13 | Acciones correctivas y mejora | Sí | Pendiente | `docs/expediente/E13-*` | 5 acciones verificadas, 4 propuestas |
 | E14 | Informe ejecutivo y sustentación | Sí | Pendiente | `docs/expediente/E14-*` | Este documento |
 
 ## ANEXO B. Índice de evidencias
@@ -123,8 +124,9 @@ Declaramos que los resultados, mediciones y evidencias incluidos en el expedient
 | EV-13 | `consultas-prod-2026-11-22.txt` | Consulta a la BD | E09–E13 | Consentimiento, estados, motivos y puntajes con inyección | `docs/evidencias/sql/` |
 | EV-14 | `2026-11-22-uptimerobot-panel.png`, `-detalle.png` | Capturas | E09, E11 | Inicio del monitor de disponibilidad | `docs/evidencias/disponibilidad/` |
 | EV-15 | `local-4o-mini-prueba1` a `-3` | Datos de preparación | E10, E13 | Corridas locales que detectaron y corrigieron DEF-003 | `docs/evidencias/preparacion/` |
+| EV-16 | `issues-*.json`, `medidas-*.json` | Análisis estático | E09–E13 | SonarQube Cloud, 1.ª y 2.ª medición | `docs/evidencias/sonarqube/` |
 
-Las evidencias de los casos manuales (capturas de cada integrante) se agregan como EV-16 en adelante.
+Las evidencias de los casos manuales (capturas de cada integrante) se agregan como EV-17 en adelante.
 
 ## ANEXO C. Referencias bibliográficas
 
@@ -147,6 +149,7 @@ Las evidencias de los casos manuales (capturas de cada integrante) se agregan co
 | IETF | RFC 9110 HTTP Semantics; RFC 8446 TLS 1.3 | 2022; 2018 | RFC Editor | https://www.rfc-editor.org/ | 18/11/2026 |
 | Vercel | Next.js Documentation — Data Security y Server Actions (protección CSRF) | 16.4 | nextjs.org | Guías `data-security` y `server-actions` incluidas en el paquete `next` 16.4.6 | 22/11/2026 |
 | ZAP (Checkmarx) | ZAP — Automation Framework | 2.17.0 | zaproxy.org | https://www.zaproxy.org/docs/automate/automation-framework/ | 22/11/2026 |
+| SonarSource | SonarQube Cloud Documentation — Automatic analysis | 2026 | sonarsource.com | https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/automatic-analysis/ | 22/11/2026 |
 | Grafana Labs | k6 Documentation | v2.4.0 | grafana.com | https://grafana.com/docs/k6/latest/ | 22/11/2026 |
 | Microsoft | Playwright Documentation | 1.65 | playwright.dev | https://playwright.dev/docs/intro | 22/11/2026 |
 | Cortez Camacho, J. R. | Material de clase S01–S11, Calidad de Software y Sistemas | 2026 | IESTP Gilda Liliana Ballivián Rosado | — | 18/11/2026 |

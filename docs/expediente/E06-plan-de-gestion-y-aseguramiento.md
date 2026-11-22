@@ -122,7 +122,7 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Borradores E05–E08 | Giancarlos Ormeño | 18/11/2026 | 27/11/2026 | En proceso |
 | Congelamiento de umbrales (E05 v1.0, `umbrales-v1.0`) | Equipo | 22/11/2026 | 22/11/2026 | Hecho |
 | Pruebas E2E, script comparador y script de medición | Giancarlos Ormeño | 20/11/2026 | 27/11/2026 | Hecho (22/11/2026) |
-| Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Hecho (22/11/2026), adelantado; falta SonarQube |
+| Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Hecho (22/11/2026), adelantado |
 | Ejecución de CP manuales | Raquel, Hermy, Nancy y Paul | 28/11/2026 | 03/12/2026 | Pendiente |
 | Prueba de tareas, SUS y revisión cronometrada | Equipo + externos | 28/11/2026 | 03/12/2026 | Pendiente |
 | E09, E10 y E11 (primera medición) | Giancarlos Ormeño | 30/11/2026 | 04/12/2026 | Borrador v0.1 (22/11/2026), con los automatizados |

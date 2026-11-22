@@ -1,7 +1,7 @@
 # E09. Ejecución de pruebas y evidencias
 
 > **Plantilla:** Formatos 09 · **Estado:** borrador v0.1 (22/11/2026) · **Fuente de verdad:** este archivo.
-> Este borrador registra la ejecución de los casos automatizados (CP-001 a CP-026). Los casos manuales del equipo (CP-027 a CP-052) se agregan a 9.2 cuando cada integrante los ejecute, con sus capturas. CP-022 (SonarQube) y CP-023 (disponibilidad, hasta el 08/12) siguen pendientes.
+> Este borrador registra la ejecución de los casos automatizados (CP-001 a CP-026). Los casos manuales del equipo (CP-027 a CP-052) se agregan a 9.2 cuando cada integrante los ejecute, con sus capturas. CP-023 (disponibilidad, hasta el 08/12) sigue en curso.
 
 | Campo | Valor |
 |---|---|
@@ -16,10 +16,10 @@
 
 | Casos planificados | Ejecutados | Aprobados | Fallidos | Bloqueados / pendientes | Porcentaje de aprobación |
 |---|---|---|---|---|---|
-| 52 | 23 | 23 | 0 | 29 (26 manuales, CP-022, CP-023 y CP-026) | 100 % de los ejecutados (95,7 % en la primera ejecución) |
+| 52 | 24 | 24 | 0 | 28 (26 manuales, CP-023 y CP-026) | 100 % de los ejecutados (91,7 % en la primera ejecución: 22 de 24) |
 
-- **Primera ejecución:** 22 de 23 aprobados. CP-016 falló porque RQ-FUN-01 dio 85,7 % frente a la meta de 90 % (causa: DEF-001); en esa misma ejecución se detectó DEF-002 (RQ-SEG-06).
-- **Re-ejecución después de las acciones de mejora:** CP-016 aprobado (96,7 %). Se repitieron también CP-017, CP-018, CP-019 y CP-024 sobre la versión corregida para comprobar que nada se rompió.
+- **Primera ejecución:** 22 de 24 aprobados. CP-016 falló porque RQ-FUN-01 dio 85,7 % frente a la meta de 90 % (causa: DEF-001); en esa misma ejecución se detectó DEF-002 (RQ-SEG-06). CP-022 falló con 2 issues críticos de SonarQube en la herramienta de medición (DEF-007).
+- **Re-ejecución después de las acciones de mejora:** CP-016 aprobado (96,7 %) y CP-022 aprobado (0 críticos). Se repitieron también CP-017, CP-018, CP-019 y CP-024 sobre la versión corregida para comprobar que nada se rompió.
 - El porcentaje de aprobación es un indicador del proceso (P03, E06), no una medida de la calidad del producto (E05 5.7).
 
 ## 9.2 Registro de ejecución
@@ -37,7 +37,8 @@
 | CP-019 (2.ª) | 22/11/2026 16:13 | Giancarlos Ormeño | Igual que la 1.ª | 0 altas; 3 tipos de alerta media, 0 baja y 3 informativas | Aprobado | EV-10 |
 | CP-020 | 22/11/2026 16:48 | Giancarlos Ormeño | Cobertura de líneas del núcleo ≥ 80 % | 97,69 % de líneas (98,06 % de sentencias) | Aprobado | EV-03 |
 | CP-021 | 22/11/2026 16:48 | Giancarlos Ormeño | 0 violaciones de la regla de capas | `npm run lint` sin errores ni advertencias | Aprobado | EV-04 |
-| CP-022 | — | Giancarlos Ormeño | 0 issues bloqueantes o críticos | Pendiente: SonarQube todavía no está configurado | Pendiente | — |
+| CP-022 (1.ª) | 22/11/2026 17:03 | Giancarlos Ormeño | 0 issues bloqueantes o críticos | 0 bloqueantes y **2 críticos** (`scripts/comparador/compararExtraccion.ts`, herramienta de medición; DEF-007). 19 issues en total, 23 435 líneas analizadas (incluía reportes HTML generados) | **Fallido** | EV-16 |
+| CP-022 (2.ª) | 22/11/2026 17:16 | Giancarlos Ormeño | Igual que la 1.ª | 0 bloqueantes y 0 críticos; 10 issues mayores o menores; 5 988 líneas de código; duplicación 0 % | Aprobado | EV-16 |
 | CP-023 | Desde 22/11/2026 15:24 | Giancarlos Ormeño | ≥ 99 % disponible al 08/12/2026 | Monitor en marcha (100 % al iniciar) | Pendiente (en curso) | EV-14 |
 | CP-024 (1.ª) | 22/11/2026 15:59 | Giancarlos Ormeño | 100 % de los flujos aprobados en los 4 perfiles | 20 de 20 aprobados (Chromium, Firefox, WebKit y móvil), después de corregir 2 pruebas mal escritas (INC-002) | Aprobado | EV-11 |
 | CP-024 (2.ª) | 22/11/2026 16:41 | Giancarlos Ormeño | Igual que la 1.ª | 20 de 20 aprobados | Aprobado | EV-12 |
@@ -53,6 +54,7 @@
 | INC-002 | CP-024 | 2 pruebas E2E fallaban en los 4 perfiles por errores de la prueba, no del sistema: un texto que aparece dos veces en la página y una verificación que se adelantaba al borrado | 8 de 20 pruebas fallidas en el primer intento | Se corrigieron los localizadores y la espera; 20 de 20 aprobadas | Cerrada |
 | INC-003 | CP-016 | Producción procesó la postulación de un usuario de ensayo creado para diagnosticar INC-001 | Ninguno: se eliminó antes de la corrida válida y no figura en los resultados | Se borraron el usuario, su postulación y su archivo; se verificó que no quedaran postulaciones recientes | Cerrada |
 | INC-004 | CP-019 | El primer intento de ZAP no arrancó (ZAP debe ejecutarse desde su carpeta de instalación) | Ninguno: no llegó a escanear | Se ejecutó desde su carpeta con Java 21 | Cerrada |
+| INC-005 | CP-022 | El primer análisis de SonarQube Cloud incluyó archivos que no son código: los reportes HTML generados por Playwright y ZAP, los documentos y el dataset (23 435 líneas, 19 % de duplicación, casi toda entre los dos reportes de Playwright) | Inflaba líneas, duplicación y fiabilidad; no cambiaba los 2 críticos, que están en código real | Se agregó `.sonarcloud.properties` con `sonar.exclusions=docs/**,dataset/**,coverage/**` (commit `0dec3a2`). La meta no cambió | Cerrada |
 
 ## 9.4 Análisis de resultados
 
@@ -61,7 +63,7 @@
 - **DEF-001:** algunos PDFs (estilo `cambria-barras`) traen caracteres nulos (U+0000) que PostgreSQL rechaza al guardar. Afectó a 4 de 34 CVs del alcance en las 3 corridas (cv-05, cv-07, cv-08 y cv-32), con el mismo resultado en las tres, así que es un defecto determinista y no una variación del modelo. La **falla segura funcionó**: esos CVs quedaron en revisión manual y sin puntaje (RQ-SOP-01), en lugar de recibir un 0.
 - **DEF-002:** el CV con instrucciones ocultas en texto blanco de 1 pt (cv-37) logró que el modelo agregara "Inglés C2", y el puntaje subió de 90 a 100. cv-38, el otro CV con inyección, no se alteró en ninguna corrida. El resultado muestra que las reglas del prompt no bastan para un modelo pequeño: protegen en un caso y no en el otro.
 
-**Módulos con mayor incidencia.** M4 concentra los defectos del producto. M1, M2, M3, M5 y M6 aprobaron sus pruebas automatizadas y E2E sin defectos. Las incidencias de proceso (INC-001 y INC-002) estuvieron en los scripts de prueba, no en el sistema.
+**Módulos con mayor incidencia.** M4 concentra los defectos del producto. M1, M2, M3, M5 y M6 aprobaron sus pruebas automatizadas y E2E sin defectos. Las incidencias de proceso (INC-001 y INC-002) estuvieron en los scripts de prueba, no en el sistema. El análisis estático (CP-022) solo encontró issues críticos en la herramienta de medición, que no se despliega (DEF-007); en el código del sistema no hubo ninguno.
 
 **Antes y después.** Con las acciones de mejora (E13), RQ-FUN-01 pasó de 85,7 % a 96,7 %, la diferencia de puntaje por inyección pasó de +10 a 0 y los tipos de alerta de ZAP bajaron de 9 a 6, sin empeorar el tiempo por CV (p95 de 4,7 a 4,9 s, muy por debajo de 15 s) ni la carga (p95 de 299 a 297 ms).
 
@@ -72,7 +74,8 @@
 - El escaneo de ZAP es pasivo y sin sesión: no prueba ataques activos ni las páginas que requieren ingresar.
 - La carga con k6 usa 10 usuarios virtuales con una sola sesión de postulante; no incluye subida de CVs.
 - Las pruebas de integración (CP-009 a CP-015) se ejecutan contra Supabase dev, que tiene las mismas migraciones que producción.
-- Al 22/11 faltan los casos manuales del equipo, la prueba de usabilidad, SonarQube y el cierre del periodo de disponibilidad.
+- SonarQube Cloud se usa con su análisis automático, que no calcula la cobertura (esta se mide con Vitest, CP-020).
+- Al 22/11 faltan los casos manuales del equipo, la prueba de usabilidad y el cierre del periodo de disponibilidad.
 
 ## 9.5 Evidencias
 
@@ -93,3 +96,4 @@
 | EV-13 | `consultas-prod-2026-11-22.txt` | Consentimiento, estados y motivos, respuestas válidas y puntaje con inyección | CP-016, CP-025 | `docs/evidencias/sql/` |
 | EV-14 | `2026-11-22-uptimerobot-panel.png`, `2026-11-22-uptimerobot-detalle.png` | Inicio del monitor de disponibilidad (cada 5 min a `/api/salud`) | CP-023 | `docs/evidencias/disponibilidad/` |
 | EV-15 | `local-4o-mini-prueba1` a `-3` | Corridas de preparación (no oficiales) que detectaron DEF-003 | — (preparación) | `docs/evidencias/preparacion/` |
+| EV-16 | `issues-1-2a202e0.json`, `medidas-1-2a202e0.json`, `issues-2-0dec3a2.json`, `medidas-2-0dec3a2.json` | SonarQube Cloud (análisis automático), 1.ª y 2.ª medición, descargadas de su API pública | CP-022 | `docs/evidencias/sonarqube/` y https://sonarcloud.io/project/overview?id=GiancarlosDev-10_CV_LECTURA |
