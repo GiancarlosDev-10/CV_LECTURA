@@ -56,3 +56,4 @@ next-env.d.ts
 
 # Corridas de preparación (no son evidencia oficial)
 /dataset/corridas/local-*
+/pruebas/carga/.cookies.json

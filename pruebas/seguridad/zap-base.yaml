@@ -1,0 +1,40 @@
+# CP-019 / RQ-SEG-02: escaneo BASE (pasivo) de OWASP ZAP contra producción.
+# Solo explora y observa respuestas; no lanza ataques (no hay job activeScan).
+#   "C:\Program Files\ZAP\Zed Attack Proxy\ZAP.exe" -cmd -autorun pruebas/seguridad/zap-base.yaml
+env:
+  contexts:
+    - name: cv-lectura
+      urls:
+        - https://cv-lectura.vercel.app
+      includePaths:
+        - https://cv-lectura.vercel.app.*
+  parameters:
+    failOnError: true
+    progressToStdout: true
+jobs:
+  - type: passiveScan-config
+    parameters:
+      maxAlertsPerRule: 10
+  - type: spider
+    parameters:
+      context: cv-lectura
+      maxDuration: 5
+  - type: spiderAjax
+    parameters:
+      context: cv-lectura
+      maxDuration: 5
+      browserId: firefox-headless
+  - type: passiveScan-wait
+    parameters:
+      maxDuration: 10
+  - type: report
+    parameters:
+      template: traditional-html
+      reportDir: D:/PROYECTOS/CV_LECTURA/docs/evidencias/seguridad
+      reportFile: zap-base-prod
+      reportTitle: "CV Lectura - Escaneo base de OWASP ZAP (producción)"
+  - type: report
+    parameters:
+      template: traditional-json
+      reportDir: D:/PROYECTOS/CV_LECTURA/docs/evidencias/seguridad
+      reportFile: zap-base-prod
