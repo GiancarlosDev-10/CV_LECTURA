@@ -1,0 +1,32 @@
+﻿Job passiveScan-config set maxAlertsPerRule = 10
+Job spider set context = cv-lectura
+Job spider set maxDuration = 5
+Job spiderAjax set context = cv-lectura
+Job spiderAjax set maxDuration = 5
+Job spiderAjax set browserId = firefox-headless
+Job passiveScan-wait set maxDuration = 10
+Job report set template = traditional-html
+Job report set reportDir = D:/PROYECTOS/CV_LECTURA/docs/evidencias/seguridad
+Job report set reportFile = zap-base-prod-2
+Job report set reportTitle = CV Lectura - Escaneo base de OWASP ZAP (producci�n)
+Job report set template = traditional-json
+Job report set reportDir = D:/PROYECTOS/CV_LECTURA/docs/evidencias/seguridad
+Job report set reportFile = zap-base-prod-2
+Job passiveScan-config started
+Job passiveScan-config finished, time taken: 00:00:00
+Job spider started
+Job spider requesting URL https://cv-lectura.vercel.app
+Job spider found 46 URLs
+Job spider finished, time taken: 00:00:02
+Job spiderAjax started
+Job spiderAjax found 0 URLs
+Job spiderAjax finished, time taken: 00:00:01
+Job passiveScan-wait started
+Job passiveScan-wait finished, time taken: 00:00:00
+Job report started
+Job report generated report D:\PROYECTOS\CV_LECTURA\docs\evidencias\seguridad\zap-base-prod-2.html
+Job report finished, time taken: 00:00:00
+Job report started
+Job report generated report D:\PROYECTOS\CV_LECTURA\docs\evidencias\seguridad\zap-base-prod-2.json
+Job report finished, time taken: 00:00:00
+Automation plan succeeded!
