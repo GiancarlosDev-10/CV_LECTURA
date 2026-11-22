@@ -18,7 +18,7 @@ export const options = {
   },
 };
 
-export default function () {
+export default function visitarPaginas() {
   const sinSesion = { redirects: 0 };
   const conSesion = { headers: { Cookie: cabeceraCookie }, redirects: 0 };
 
