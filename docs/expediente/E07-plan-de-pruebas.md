@@ -77,7 +77,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 
 | Tipo de criterio | Condición | Cómo se verificará |
 |---|---|---|
-| Entrada | Umbrales congelados | Existe la etiqueta Git `umbrales-v1.0` (27/11/2026) |
+| Entrada | Umbrales congelados | Existe la etiqueta Git `umbrales-v1.0` (22/11/2026) |
 | Entrada | Despliegue estable en producción | CI en verde sobre el commit desplegado y `/api/salud` responde |
 | Entrada | Dataset completo | 40 PDFs con su respuesta esperada (incluidos cv-31 a cv-34) |
 | Entrada | Herramientas listas | Script comparador, script de medición y E2E ejecutados una vez en dev sin errores |
@@ -96,7 +96,7 @@ Las pruebas siguen la arquitectura por capas: el dominio se prueba con unitarias
 | Pruebas E2E con Playwright | Giancarlos Ormeño | 20/11 – 27/11/2026 | Playwright | Pendiente |
 | Script comparador y script de medición | Giancarlos Ormeño | 20/11 – 27/11/2026 | Node.js, dataset | En proceso (comparador listo; falta el ejecutor de corridas en producción) |
 | CVs con el formato de cada integrante (cv-31 a cv-34) | Raquel, Hermy, Nancy y Paul (aportan su CV como modelo) | 19/11/2026 | Generador del dataset | Hecho |
-| Congelamiento de umbrales | Equipo | 27/11/2026 | E05 | Pendiente |
+| Congelamiento de umbrales | Equipo | 22/11/2026 | E05 | Hecho |
 | 3 corridas de extracción y tiempo por CV | Giancarlos Ormeño | 27/11 – 02/12/2026 | OpenAI, producción | Pendiente |
 | CP manuales de M1 y M2 (7 casos) | Raquel Montes | 28/11 – 03/12/2026 | Fichas E08, producción | Pendiente |
 | CP manuales de M3 | Hermy Salcedo | 28/11 – 03/12/2026 | Fichas E08, dataset | Pendiente |

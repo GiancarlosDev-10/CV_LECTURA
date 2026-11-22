@@ -59,7 +59,7 @@ Todos exponen en la sustentación: cada integrante explica lo que ejecutó.
 | Semana | Fechas | Desarrollo | Expediente |
 |---|---|---|---|
 | 1 | 13/11 – 20/11 | Repo, CI, Supabase dev. **Prueba de concepto día 1 en local** (un PDF llega a JSON contra Supabase dev). Dominio y puntaje con pruebas. M1 autenticación, M2 ofertas | E01, E02, E03, E04 (borradores) |
-| 2 | 20/11 – 27/11 | M3 postulación, M4 extracción, M5 ranking, M6 privacidad. **Despliegue a Vercel + Supabase prod a más tardar el 24/11**. Generación del dataset. Inicio del monitoreo de disponibilidad | E05 **(umbrales congelados el 27/11, etiqueta `umbrales-v1.0`)**, E06, E07, E08 |
+| 2 | 20/11 – 27/11 | M3 postulación, M4 extracción, M5 ranking, M6 privacidad. **Despliegue a Vercel + Supabase prod a más tardar el 24/11**. Generación del dataset. Inicio del monitoreo de disponibilidad | E05 **(umbrales congelados el 22/11, etiqueta `umbrales-v1.0`)**, E06, E07, E08 |
 | 3 | 27/11 – 04/12 | Ejecución: automatizadas, manuales del equipo, ZAP, k6, 3 corridas de extracción, prueba de usabilidad y revisión manual cronometrada | E09, E10, E11 (primera medición) |
 | 4 | 04/12 – 09/12 | Acciones de mejora (AM) y **segunda medición** | E12, E13 (antes y después) |
 | — | 09/12 – 11/12 | Congelamiento del código | E14, anexos A/B/C, revisión final, **entrega el 11/12** |
@@ -207,7 +207,7 @@ src/
 
 ---
 
-## 8. Requisitos de calidad (24 RQ) — umbrales a congelar el 27/11
+## 8. Requisitos de calidad (24 RQ) — umbrales congelados el 22/11
 
 Formato del docente (S09): característica → subcaracterística → criterio → indicador → meta → método.
 
@@ -336,7 +336,7 @@ RQ-xxx  →  CP-xxx  →  DEF-xxx  →  M-xx  →  AM-xx
 - **Control (detectivo):** las pruebas del §10.
 - **Documentación:** el expediente, `evidencias/` y el historial de Git.
 - **Mejora:** **PDCA** por cada AM (planificar → hacer → **volver a medir** → estandarizar).
-- **Congelamiento de umbrales:** E05 v1.0 aprobado el 27/11 con la etiqueta Git `umbrales-v1.0`. Todo cambio posterior pasa por **control de cambios** (sección 5.7 de la plantilla) y genera una nueva versión, sin editar en silencio.
+- **Congelamiento de umbrales:** E05 v1.0 aprobado el 22/11 con la etiqueta Git `umbrales-v1.0`. Todo cambio posterior pasa por **control de cambios** (sección 5.7 de la plantilla) y genera una nueva versión, sin editar en silencio.
 - **Herramientas:** GitHub, **GitHub Actions** (se configura y explica paso a paso en la semana 1) y **Trello** (tablero con una tarjeta por entregable y tarea, con fecha límite).
 - **Autoevaluación CMMI** del proceso del proyecto (S11), declarada en E06 o E12.
 

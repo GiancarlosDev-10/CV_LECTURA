@@ -52,8 +52,8 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 
 | Actividad preventiva | Procedimiento | Momento / frecuencia | Responsable | Evidencia |
 |---|---|---|---|---|
-| Revisión de requisitos | Cada RQ se revisa contra la cadena característica → criterio → indicador → meta → método y debe tener un CP asociado | Antes de congelar E05 (27/11) | Giancarlos Ormeño; equipo revisa el Word | E05 v1.0 y etiqueta `umbrales-v1.0` |
-| Congelamiento de umbrales | Las metas y las reglas de comparación se fijan antes de medir | 27/11/2026 | Giancarlos Ormeño | Etiqueta Git `umbrales-v1.0` |
+| Revisión de requisitos | Cada RQ se revisa contra la cadena característica → criterio → indicador → meta → método y debe tener un CP asociado | Antes de congelar E05 (22/11) | Giancarlos Ormeño; equipo revisa el Word | E05 v1.0 y etiqueta `umbrales-v1.0` |
+| Congelamiento de umbrales | Las metas y las reglas de comparación se fijan antes de medir | 22/11/2026 | Giancarlos Ormeño | Etiqueta Git `umbrales-v1.0` |
 | Arquitectura por capas | Dominio y aplicación sin dependencias de Next.js, Supabase u OpenAI; ESLint bloquea las importaciones prohibidas | En cada commit | Giancarlos Ormeño | Configuración de ESLint y registro del CI |
 | Desarrollo guiado por pruebas en el núcleo | La fórmula de puntaje y los casos de uso se escriben con su prueba primero | Durante el desarrollo | Giancarlos Ormeño | Historial de Git y suites de Vitest |
 | Mínimo privilegio en la base de datos | RLS en todas las tablas y en el bucket de CVs; permisos explícitos por rol; pruebas de seguridad antes de cada cambio de esquema | En cada migración | Giancarlos Ormeño | Migraciones en `supabase/migrations/` y pruebas de integración |
@@ -92,7 +92,7 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 
 ## 6.7 Gestión de cambios y no conformidades
 
-**Cambios en los requisitos o umbrales.** Después del 27/11/2026, E05 no se edita en silencio. Cada cambio se registra en una tabla de control de cambios al final de E05 con: fecha, requisito afectado, valor anterior, valor nuevo, motivo y quién lo aprueba (el equipo). El cambio genera una nueva versión (v1.1, v1.2…) y una nueva etiqueta Git. Un umbral **nunca** se cambia para que un requisito pase.
+**Cambios en los requisitos o umbrales.** Después del 22/11/2026, E05 no se edita en silencio. Cada cambio se registra en una tabla de control de cambios al final de E05 con: fecha, requisito afectado, valor anterior, valor nuevo, motivo y quién lo aprueba (el equipo). El cambio genera una nueva versión (v1.1, v1.2…) y una nueva etiqueta Git. Un umbral **nunca** se cambia para que un requisito pase.
 
 **Defectos.** Siguen el flujo de gestión de incidentes de ITIL visto en S07:
 
@@ -120,7 +120,7 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 | Monitor de disponibilidad | Giancarlos Ormeño | 18/11/2026 | 24/11/2026 | Pendiente |
 | Borradores E01–E04 | Giancarlos Ormeño | 18/11/2026 | 20/11/2026 | Hecho (v0.1) |
 | Borradores E05–E08 | Giancarlos Ormeño | 18/11/2026 | 27/11/2026 | En proceso |
-| Congelamiento de umbrales (E05 v1.0, `umbrales-v1.0`) | Equipo | 27/11/2026 | 27/11/2026 | Pendiente |
+| Congelamiento de umbrales (E05 v1.0, `umbrales-v1.0`) | Equipo | 22/11/2026 | 22/11/2026 | Hecho |
 | Pruebas E2E, script comparador y script de medición | Giancarlos Ormeño | 20/11/2026 | 27/11/2026 | Pendiente |
 | Ejecución: automatizadas, ZAP, k6, 3 corridas de extracción | Giancarlos Ormeño | 27/11/2026 | 04/12/2026 | Pendiente |
 | Ejecución de CP manuales | Raquel, Hermy, Nancy y Paul | 28/11/2026 | 03/12/2026 | Pendiente |
@@ -139,4 +139,4 @@ El plan sigue el proceso de evaluación de ISO/IEC 25040:2024 (definir, diseñar
 |---|---|
 | Elaborado por | Giancarlos Ormeño (responsable de calidad) |
 | Revisado por | Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero |
-| Fecha de aprobación | Pendiente (prevista: 27/11/2026, junto con E05 v1.0) |
+| Fecha de aprobación | 22/11/2026, junto con E05 v1.0 |

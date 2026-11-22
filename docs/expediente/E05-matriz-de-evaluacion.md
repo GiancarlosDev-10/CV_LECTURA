@@ -1,6 +1,6 @@
 # E05. Matriz de evaluación basada en ISO/IEC 25010
 
-> **Plantilla:** Formatos 04 (requisitos y criterios) + Formatos 06 (6.2–6.5: método y escala) · **Estado:** borrador v0.1 (18/11/2026). Se congela como **v1.0 el 27/11/2026** con la etiqueta Git `umbrales-v1.0`; después solo cambia por control de cambios (E06, sección 6.7).
+> **Plantilla:** Formatos 04 (requisitos y criterios) + Formatos 06 (6.2–6.5: método y escala) · **Estado:** v1.0, congelada el **22/11/2026** con la etiqueta Git `umbrales-v1.0` (borrador v0.1: 18/11/2026); después solo cambia por control de cambios (E06, sección 6.7).
 > La columna "Resultado" queda en "Pendiente" hasta la medición oficial en producción (E09 y E11). No se llena con valores de desarrollo.
 
 | Campo | Valor |
@@ -9,7 +9,7 @@
 | Sistema evaluado | CV Lectura — Sistema web de RRHH con lectura automática de CVs |
 | Versión evaluada | Despliegue de producción https://cv-lectura.vercel.app (el commit de Git se registra en cada evidencia) |
 | Equipo | Giancarlos Ormeño, Raquel Montes, Hermy Salcedo, Nancy Vilcas y Paul Carretero |
-| Fecha / versión | 18/11/2026 · v0.1 (borrador) |
+| Fecha / versión | 22/11/2026 · v1.0 (umbrales congelados, etiqueta `umbrales-v1.0`) |
 
 ## 5.1 Objetivo y alcance de la especificación
 
@@ -54,7 +54,7 @@ Prioridad: **A** (alta) = responde directamente al enunciado (datos extraídos, 
 
 | ID | Criterio medible de aceptación | Condiciones de medición | Evidencia requerida | Aceptado (Sí/No) |
 |---|---|---|---|---|
-| RQ-FUN-01 | Promedio de 3 corridas ≥ 90 % | Producción; dataset cv-01 a cv-34 (30 generados + 4 con el formato del CV de cada integrante); modelo de IA fijado y temperatura 0; reglas de 5.5 | 3 reportes del comparador + versión del modelo | Pendiente |
+| RQ-FUN-01 | Promedio de 3 corridas ≥ 90 % | Producción; dataset cv-01 a cv-34 (30 generados + 4 con el formato del CV de cada integrante); modelo de IA fijado (`gpt-4o-mini-2024-07-18`) y temperatura 0; reglas de 5.5 | 3 reportes del comparador + versión del modelo | Pendiente |
 | RQ-FUN-02 | F1 promedio ≥ 0,85 | Igual que RQ-FUN-01 | 3 reportes del comparador | Pendiente |
 | RQ-FUN-03 | 100 % de los casos de la fórmula aprobados | Suite unitaria de `calcularPuntaje` en el CI | Reporte de Vitest | Pendiente |
 | RQ-FUN-04 | 100 % de los CP funcionales aprobados (E2E y manuales) | Producción; cuentas de prueba del *seed* | Reporte de Playwright y fichas E09 | Pendiente |
@@ -150,3 +150,11 @@ Cada característica se valora a partir de sus requisitos:
 | N07 Que una falla no lo descarte injustamente | RQ-FIA-01, RQ-SOP-01 | % de fallas controladas; % en revisión manual sin puntaje | CP-006, CP-007, CP-035 |
 | N08 Disponible y en su navegador o celular | RQ-FIA-02, RQ-FLE-01 | % de tiempo disponible; % de E2E por navegador | CP-023, CP-024 |
 | N09 Mejorar sin romper lo que funciona | RQ-MAN-01, RQ-MAN-02, RQ-MAN-03 | % de cobertura; issues graves; violaciones | CP-020, CP-021, CP-022 |
+
+## 5.9 Control de cambios
+
+Después del congelamiento (22/11/2026, etiqueta `umbrales-v1.0`), todo cambio a un requisito, una meta o una regla de comparación se registra aquí y genera una nueva versión y una nueva etiqueta Git (E06, sección 6.7). Un umbral nunca se cambia para que un requisito pase.
+
+| Fecha | Versión | Requisito o regla afectada | Valor anterior | Valor nuevo | Motivo | Aprobado por |
+|---|---|---|---|---|---|---|
+| 22/11/2026 | v1.0 | Todos | — | Versión inicial congelada | Congelamiento antes de la medición oficial | Equipo |

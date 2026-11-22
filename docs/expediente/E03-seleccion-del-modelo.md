@@ -54,7 +54,7 @@ La evaluación sigue la cadena del curso: **característica → subcaracterísti
 
 **Reglas que se aplican en toda la evaluación:**
 
-- Los umbrales se congelan antes de medir (27/11/2026, etiqueta Git `umbrales-v1.0`) y solo cambian por control de cambios.
+- Los umbrales se congelan antes de medir (22/11/2026, etiqueta Git `umbrales-v1.0`) y solo cambian por control de cambios.
 - Todas las mediciones oficiales se hacen en producción (https://cv-lectura.vercel.app), no en local.
 - Un porcentaje de pruebas aprobadas no se presenta como "porcentaje de calidad total" (S09).
 - Si un criterio no aplica, se escribe "No aplica" con su motivo.
