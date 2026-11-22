@@ -16,7 +16,8 @@
     "expediente": "node scripts/expediente-a-docx.mjs",
     "dataset": "tsx scripts/generar-dataset.ts",
     "corrida:local": "tsx scripts/corrida-local.ts",
-    "comparar": "tsx scripts/comparar-extraccion.ts"
+    "comparar": "tsx scripts/comparar-extraccion.ts",
+    "medicion": "tsx scripts/medicion-prod.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",
