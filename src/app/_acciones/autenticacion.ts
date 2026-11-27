@@ -38,6 +38,18 @@ const Registro = z.object({
     .regex(/[0-9]/, "La contraseña debe incluir un número"),
 });
 
+/** Traduce los códigos de error de Supabase Auth a mensajes accionables para el postulante. */
+const ERRORES_REGISTRO: Record<string, string> = {
+  weak_password: "La contraseña es muy débil o aparece en filtraciones conocidas. Prueba con otra que incluya minúsculas, mayúsculas, números y un símbolo.",
+  email_exists: "Ya existe una cuenta con este correo. Ingresa con tu contraseña.",
+  user_already_exists: "Ya existe una cuenta con este correo. Ingresa con tu contraseña.",
+  email_address_invalid: "El correo no es aceptado. Usa un correo real (los dominios de prueba como example.com no se admiten).",
+  email_address_not_authorized: "No podemos enviar el correo de confirmación a esta dirección. Usa otro correo o avisa al equipo.",
+  over_email_send_rate_limit: "Se alcanzó el límite de registros por hora. Intenta de nuevo en unos minutos.",
+  over_request_rate_limit: "Demasiados intentos seguidos. Espera un momento y vuelve a intentar.",
+  signup_disabled: "El registro de nuevas cuentas está deshabilitado temporalmente.",
+};
+
 /** Registro público: siempre crea un postulante (el rol reclutador solo se asigna con el seed). */
 export async function registrar(_previo: EstadoFormulario, formData: FormData): Promise<EstadoFormulario> {
   const campos = { nombre: String(formData.get("nombre") ?? ""), email: String(formData.get("email") ?? "") };
@@ -50,7 +62,11 @@ export async function registrar(_previo: EstadoFormulario, formData: FormData): 
     password: datos.data.clave,
     options: { data: { nombre: datos.data.nombre } },
   });
-  if (error) return { error: "No se pudo crear la cuenta. Verifica los datos o usa otro correo.", campos };
+  if (error) {
+    console.error("[registro] signUp falló:", error.code ?? error.status, error.message);
+    const mensaje = (error.code && ERRORES_REGISTRO[error.code]) ?? "No se pudo crear la cuenta. Verifica los datos o usa otro correo.";
+    return { error: mensaje, campos };
+  }
 
   redirect("/ofertas");
 }
